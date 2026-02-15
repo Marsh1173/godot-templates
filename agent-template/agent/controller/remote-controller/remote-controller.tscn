@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cbg86mkrkfp4y"]
+
+[ext_resource type="Script" uid="uid://dwj64hlg260g" path="res://agent-template/agent/controller/remote-controller/remote-controller.gd" id="1_3dojb"]
+
+[node name="RemoteController" type="Node" unique_id=1544290604]
+script = ExtResource("1_3dojb")
+metadata/_custom_type_script = "uid://bapun1w3hjin1"

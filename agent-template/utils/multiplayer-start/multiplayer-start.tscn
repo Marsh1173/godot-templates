@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3uvs5ep2bb6u"]
+
+[ext_resource type="Script" uid="uid://86quiy4yr5s5" path="res://agent-template/utils/multiplayer-start/multiplayer-start.gd" id="1_e8epx"]
+
+[node name="MultiplayerStart" type="Node" unique_id=1052789211]
+script = ExtResource("1_e8epx")

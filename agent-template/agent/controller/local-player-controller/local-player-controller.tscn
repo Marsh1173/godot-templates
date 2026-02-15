@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://7x3uk8k4vr4b"]
+
+[ext_resource type="Script" uid="uid://du4llf4ndifod" path="res://agent-template/agent/controller/local-player-controller/local-player-controller.gd" id="1_tm8vj"]
+[ext_resource type="PackedScene" uid="uid://b2ensebv70ed8" path="res://agent-template/agent/controller/local-player-controller/controlled-camera/ControlledCamera.tscn" id="2_otku0"]
+[ext_resource type="PackedScene" uid="uid://cu2q826wf7lhk" path="res://agent-template/agent/controller/local-player-controller/ui-manager/ui-manager.tscn" id="3_w3r4f"]
+
+[node name="LocalPlayerController" type="Node" unique_id=1544290604]
+script = ExtResource("1_tm8vj")
+metadata/_custom_type_script = "uid://bapun1w3hjin1"
+
+[node name="ControlledCamera" parent="." unique_id=883384569 instance=ExtResource("2_otku0")]
+
+[node name="UiManager" parent="." unique_id=393131892 instance=ExtResource("3_w3r4f")]

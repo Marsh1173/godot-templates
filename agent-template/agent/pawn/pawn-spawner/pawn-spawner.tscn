@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://csmig8q0bro1i"]
+
+[ext_resource type="Script" uid="uid://betfbtue2ggbe" path="res://agent-template/agent/pawn/pawn-spawner/pawn-spawner.gd" id="1_cn1mk"]
+
+[node name="PawnSpawner" type="MultiplayerSpawner" unique_id=2123001306]
+_spawnable_scenes = PackedStringArray("uid://cpw78peh0sc6m")
+spawn_path = NodePath(".")
+spawn_limit = 1
+script = ExtResource("1_cn1mk")

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cpw78peh0sc6m"]
+
+[ext_resource type="Script" uid="uid://cdknm7kt3fgc5" path="res://agent-template/agent/pawn/pawn.gd" id="1_ssi63"]
+[ext_resource type="PackedScene" uid="uid://3ft2rpkxjyrl" path="res://agent-template/agent/pawn/movement-component/movement-component.tscn" id="2_vp167"]
+[ext_resource type="PackedScene" uid="uid://brn8vv7ut6s4n" path="res://agent-template/agent/pawn/stats-component/stats-component.tscn" id="3_ijfqk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijfqk"]
+albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2aexi"]
+material = SubResource("StandardMaterial3D_ijfqk")
+
+[sub_resource type="PrismMesh" id="PrismMesh_vp167"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ssi63"]
+
+[node name="Pawn" type="CharacterBody3D" unique_id=863707550]
+collision_layer = 6
+script = ExtResource("1_ssi63")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1860502455]
+mesh = SubResource("CapsuleMesh_2aexi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=873451092]
+transform = Transform3D(-0.8532744, -5.526418e-08, 6.2464356e-10, 0, -0.024936618, -0.18112949, 7.4595604e-08, -0.6321485, 0.0071450896, 0, 0.4780187, -0.5011055)
+mesh = SubResource("PrismMesh_vp167")
+
+[node name="MovementComponent" parent="." unique_id=1062655757 instance=ExtResource("2_vp167")]
+
+[node name="StatsComponent" parent="." unique_id=883702993 instance=ExtResource("3_ijfqk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1683207666]
+shape = SubResource("CapsuleShape3D_ssi63")

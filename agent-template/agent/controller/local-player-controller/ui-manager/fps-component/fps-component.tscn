@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bh2mqx3hbr7ok"]
+
+[ext_resource type="Script" uid="uid://bi03lbayqpbeo" path="res://agent-template/agent/controller/local-player-controller/ui-manager/fps-component/fps-component.gd" id="1_p8frg"]
+
+[node name="FpsComponent" type="Control" unique_id=1299180042]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_p8frg")
+
+[node name="Label" type="Label" parent="." unique_id=504429707]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS: "

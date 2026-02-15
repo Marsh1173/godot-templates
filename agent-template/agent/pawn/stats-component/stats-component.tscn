@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brn8vv7ut6s4n"]
+
+[ext_resource type="Script" uid="uid://bexumuc5qcr77" path="res://agent-template/agent/pawn/stats-component/stats-component.gd" id="1_1eeiv"]
+
+[node name="StatsComponent" type="Node" unique_id=883702993]
+script = ExtResource("1_1eeiv")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2ensebv70ed8"]
+
+[ext_resource type="Script" uid="uid://diywqaxwc1bc1" path="res://agent-template/agent/controller/local-player-controller/controlled-camera/controlled_camera.gd" id="1_wu5ng"]
+
+[node name="ControlledCamera" type="Node3D" unique_id=883384569]
+script = ExtResource("1_wu5ng")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=237166670]
+target_position = Vector3(0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1839006584]

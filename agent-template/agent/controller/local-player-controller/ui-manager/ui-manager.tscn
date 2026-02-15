@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cu2q826wf7lhk"]
+
+[ext_resource type="Script" uid="uid://lwvqdo34mrv2" path="res://agent-template/agent/controller/local-player-controller/ui-manager/ui-manager.gd" id="1_xbw7b"]
+
+[node name="UiManager" type="Control" unique_id=393131892]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xbw7b")

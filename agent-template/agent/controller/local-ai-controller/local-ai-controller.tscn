@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://13kijqd87f4p"]
+
+[ext_resource type="Script" uid="uid://00xue7ovj21m" path="res://agent-template/agent/controller/local-ai-controller/local-ai-controller.gd" id="1_pjyt3"]
+
+[node name="LocalAiController" type="Node" unique_id=1665964371]
+script = ExtResource("1_pjyt3")
+metadata/_custom_type_script = "uid://bapun1w3hjin1"

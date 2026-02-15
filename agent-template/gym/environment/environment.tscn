@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b0iscpsx5ba7m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pibsb"]
+
+[sub_resource type="Sky" id="Sky_4bwgq"]
+sky_material = SubResource("ProceduralSkyMaterial_pibsb")
+
+[sub_resource type="Environment" id="Environment_yce1a"]
+background_mode = 2
+background_energy_multiplier = 5.3
+sky = SubResource("Sky_4bwgq")
+ssao_enabled = true
+ssao_radius = 2.0
+
+[node name="Environment" type="WorldEnvironment" unique_id=340627359]
+environment = SubResource("Environment_yce1a")

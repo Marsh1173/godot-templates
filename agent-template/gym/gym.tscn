@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bn0uskicgq7l0"]
+
+[ext_resource type="Script" uid="uid://didjxeru7lnjk" path="res://agent-template/gym/gym.gd" id="1_w5k1r"]
+[ext_resource type="PackedScene" uid="uid://2bqc3owq6734" path="res://agent-template/gym/block/block.tscn" id="2_me3mq"]
+[ext_resource type="PackedScene" uid="uid://b0iscpsx5ba7m" path="res://agent-template/gym/environment/environment.tscn" id="3_paxhk"]
+[ext_resource type="PackedScene" uid="uid://crwmspi1hlio7" path="res://agent-template/agent/spawner/agent-spawner.tscn" id="4_paxhk"]
+
+[node name="Gym" type="Node3D" unique_id=240276319]
+script = ExtResource("1_w5k1r")
+
+[node name="Floor" parent="." unique_id=1058949975 instance=ExtResource("2_me3mq")]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -1, 0)
+
+[node name="Block1" parent="." unique_id=717590764 instance=ExtResource("2_me3mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -3.5, 0, -7)
+
+[node name="Block2" parent="." unique_id=1095756623 instance=ExtResource("2_me3mq")]
+transform = Transform3D(6, 0, 0, 0, 2, 0, 0, 0, 6, -7, 0.5, -7)
+
+[node name="Environment" parent="." unique_id=340627359 instance=ExtResource("3_paxhk")]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=103430473]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.49709117, 0)
+shaded = true
+double_sided = false
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Gym"
+font_size = 512
+uppercase = true
+
+[node name="AgentSpawner" parent="." unique_id=2099929487 instance=ExtResource("4_paxhk")]

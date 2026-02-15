@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cxvkcs37yb43y"]
+
+[ext_resource type="Script" uid="uid://dj0lmxig2x6dw" path="res://agent-template/agent/agent.gd" id="1_4xa2e"]
+[ext_resource type="PackedScene" uid="uid://csmig8q0bro1i" path="res://agent-template/agent/pawn/pawn-spawner/pawn-spawner.tscn" id="2_ekj4m"]
+
+[node name="Agent" type="Node" unique_id=919114124 groups=["Agents"]]
+script = ExtResource("1_4xa2e")
+
+[node name="PawnSpawner" parent="." unique_id=2123001306 instance=ExtResource("2_ekj4m")]
