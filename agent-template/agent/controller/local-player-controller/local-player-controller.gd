@@ -9,6 +9,12 @@ func set_view_direction(pitch: float, yaw: float):
 	controlled_camera.rotation.x = pitch
 	controlled_camera.rotation.y = yaw
 	
+func _process(_delta):
+	var action = Action.new(Action.Name.SetViewDirection)
+	action.pitch = focus_pitch
+	action.yaw = focus_yaw
+	queue_action(action)
+	
 func _physics_process(_delta):
 	if focus_node is Node3D:
 		controlled_camera.global_position = focus_node.global_position
@@ -19,11 +25,6 @@ func _unhandled_input(event: InputEvent):
 			max(-PI / 2, min(PI / 2, focus_pitch + (-event.relative.y * view_sensitivity))),
 			fmod(focus_yaw - (event.relative.x * view_sensitivity), PI * 2),
 		)
-		
-		var action = Action.new(Action.Name.SetViewDirection)
-		action.pitch = focus_pitch
-		action.yaw = focus_yaw
-		queue_action(action)
 		get_viewport().set_input_as_handled()
 	
 	elif event is InputEventMouseButton and event.is_pressed():

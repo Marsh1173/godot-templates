@@ -3,7 +3,7 @@ extends Node
 const GYM = preload("res://agent-template/gym/gym.tscn")
 
 var game_instance = -1
-const IP_ADDRESS := "192.168.1.159"
+const IP_ADDRESS := "127.0.0.1"
 const PORT := 8080
 
 const instance_player_ids = [25, 27, 23, 21, 18, 15]
@@ -26,6 +26,7 @@ var agent_datas: Array[Array] = [
 var agent_id_to_peer_id: Dictionary[int, int] = {}
 
 func _ready():
+	print(IP.get_local_addresses())
 	_connect_everyone()
 	
 func _connect_everyone():

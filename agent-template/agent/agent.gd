@@ -23,11 +23,12 @@ func with_data(_agent_id: int, _agent_name: String, _peer_id_or_null):
 
 func _ready():
 	if peer_id_or_null == multiplayer.get_unique_id():
-		controller = local_player_controller_scene.instantiate();
+		controller = local_player_controller_scene.instantiate().with_data(peer_id_or_null);
 	elif peer_id_or_null == null and MyNetwork.is_authority(multiplayer):
-		controller = local_ai_controller_scene.instantiate();
+		controller = local_ai_controller_scene.instantiate().with_data(1);
 	else:
-		controller = remote_controller_scene.instantiate();
+		var owner_peer_id = 1 if peer_id_or_null == null else peer_id_or_null
+		controller = remote_controller_scene.instantiate().with_data(owner_peer_id);
 	
 	controller.name = "Controller" # Force identical name for cross-network node traversal
 	add_child(controller, true)
