@@ -3,4 +3,7 @@ The host replicates state (pos, velocity, rotation, movement mode) to peers, NOT
 
 How to keep the player rotating and moving with their controller?
 * Only host and owner peer track movement state (is-moving-left etc)
-* 
+
+
+
+Every tick, host sends state updates to peers. Peers set their state to that, or smoothly interpolate if pos or rotation.
