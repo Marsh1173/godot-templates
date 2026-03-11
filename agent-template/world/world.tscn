@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dr0mjka3ukg4q"]
+
+[ext_resource type="Script" uid="uid://bay0n5pxunoyo" path="res://agent-template/world/world.gd" id="1_app24"]
+[ext_resource type="PackedScene" uid="uid://b0iscpsx5ba7m" path="res://agent-template/environment/environment.tscn" id="2_hhi1c"]
+[ext_resource type="PackedScene" uid="uid://crwmspi1hlio7" path="res://agent-template/agent/spawner/agent-spawner.tscn" id="3_ica1m"]
+[ext_resource type="PackedScene" uid="uid://bevu27xslljg4" path="res://agent-template/items/item-spawner/item-spawner.tscn" id="4_uvuju"]
+
+[node name="World" type="Node3D" unique_id=958155976]
+script = ExtResource("1_app24")
+
+[node name="Environment" parent="." unique_id=340627359 instance=ExtResource("2_hhi1c")]
+
+[node name="AgentSpawner" parent="." unique_id=2099929487 instance=ExtResource("3_ica1m")]
+
+[node name="ItemSpawner" parent="." unique_id=796922595 instance=ExtResource("4_uvuju")]

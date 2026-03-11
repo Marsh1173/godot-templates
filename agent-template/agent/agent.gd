@@ -24,7 +24,7 @@ func with_data(_agent_id: int, _agent_name: String, _peer_id_or_null):
 func _ready():
 	if peer_id_or_null == multiplayer.get_unique_id():
 		controller = local_player_controller_scene.instantiate().with_data(peer_id_or_null);
-	elif peer_id_or_null == null and MyNetwork.is_authority(multiplayer):
+	elif peer_id_or_null == null and MyUtils.is_authority(multiplayer):
 		controller = local_ai_controller_scene.instantiate().with_data(1);
 	else:
 		var owner_peer_id = 1 if peer_id_or_null == null else peer_id_or_null
@@ -39,16 +39,20 @@ func _ready():
 	pawn_spawner.child_exiting_tree.connect(_on_pawn_despawn)
 
 func _on_pawn_spawn(_pawn: Pawn):
-	controller.set_focus_node(_pawn)
 	pawn = _pawn
+	pawn.set_peer_id_or_null(peer_id_or_null)
+	
+	# pawn_spawner.child_entered_tree is fired before pawn's _ready() is called
+	await pawn.ready
+	controller.set_focus_node(_pawn)
 
-func _on_pawn_despawn():
+func _on_pawn_despawn(_node: Node):
 	controller.set_focus_node(null)
 	pawn = null
 
 func _process(_delta):
 	var controller_actions: Array[Action] = controller.gather_actions()
 	
-	for action in controller_actions:
-		if pawn is Pawn:
+	if pawn != null and pawn.is_inside_tree():
+		for action in controller_actions:
 			pawn.handle_action(action)

@@ -21,16 +21,16 @@ NOT RESPONSIBLE FOR
 """
 
 @onready var pawn: Pawn = $".."
-@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
+@onready var stamina_component: StaminaComponent = $"../StaminaComponent"
 
-#region movement flags
-@export var moving_forward: bool = false
-@export var moving_backward: bool = false
-@export var moving_left: bool = false
-@export var moving_right: bool = false
+#region movement flags used by host and pawn owner
+var moving_forward: bool = false
+var moving_backward: bool = false
+var moving_left: bool = false
+var moving_right: bool = false
 
-@export var is_sprinting: bool = false
-@export var is_jumping: bool = false
+var is_sprinting: bool = false
+var is_jumping: bool = false
 #endregion
 
 #region consts
@@ -42,19 +42,58 @@ const air_accel: float = 30
 #const sprint_speed_multiplier: float = 1.2
 #endregion
 
+func _ready():
+	stamina_component.exhausted.connect(stop_sprinting)
+
+func stop_sprinting():
+	#if MyUtils.is_authority(multiplayer): WE NEED TO ADD A SYNCHRONIZER FOR THIS PROPERTY
+	is_sprinting = false
+
 func _physics_process(delta: float):
-	#1. Authority check
-	#2. Death check
-	#3. Apply gravity
-	apply_gravity(delta)
-	#4. Check hard movement locks
-	#5. Check forced movement (roll, knockback)
-	apply_forced_movement()
-	#6. Resolve normal movement intent
-	apply_movement(delta)
+	if MyUtils.is_authority(multiplayer) or pawn.is_owned_by_peer():
+		#1. Authority check
+		#2. Death check
+		#3. Apply gravity
+		apply_gravity(delta)
+		#4. Check hard movement locks
+		#5. Check forced movement (roll, knockback)
+		apply_forced_movement()
+		#6. Resolve normal movement intent
+		apply_movement(delta)
+	
 	#7. move_and_slide()
 	pawn.move_and_slide()
+	
 	#8. Emit transitions (signals)
+	if MyUtils.is_authority(multiplayer):
+		sync_pos_from_host.rpc([
+			pawn.global_position.x,
+			pawn.global_position.y,
+			pawn.global_position.z,
+			pawn.velocity.x,
+			pawn.velocity.y,
+			pawn.velocity.z,
+			pawn.global_rotation.y
+		])
+	
+@rpc("authority", "call_remote", "unreliable_ordered")
+func sync_pos_from_host(data: Variant):
+	var global_position = Vector3(data[0], data[1], data[2])
+	var velocity = Vector3(data[3], data[4], data[5])
+	var global_rotation_y = data[6]
+	
+	if not pawn.is_owned_by_peer():
+		pawn.global_position = global_position
+		pawn.velocity = velocity
+		pawn.global_rotation.y = global_rotation_y
+	else:
+		# Only set values if peer's values differ too much from host's values
+		if global_position.distance_to(pawn.global_position) > 0.3:
+			pawn.global_position = global_position
+		if velocity.distance_to(pawn.velocity) > 0.3:
+			pawn.velocity = velocity
+		if abs(angle_difference(global_rotation_y, pawn.global_rotation.y)) > 0.3:
+			pawn.global_rotation.y = global_rotation_y
 
 func apply_gravity(delta: float):
 	var gravity_vec = pawn.get_gravity()
@@ -62,14 +101,16 @@ func apply_gravity(delta: float):
 
 func apply_forced_movement():
 	if pawn.is_on_floor() and is_jumping:
-		pawn.velocity.y = pawn.stats_component.jump_height.get_value()
+		pawn.velocity.y = pawn.stats_component.jump_height.value
 
 func apply_movement(delta: float):
 	var accel: float = ground_accel
-	var max_speed: float = pawn.stats_component.move_speed.get_value()
+	var max_speed: float = pawn.stats_component.move_speed.value
 	
 	if is_sprinting:
-		max_speed *= pawn.stats_component.sprint_speed_multiplier.get_value()
+		max_speed *= pawn.stats_component.sprint_speed_multiplier.value
+		if MyUtils.is_authority(multiplayer):
+			stamina_component.stamina -= delta * 10
 	
 	if !pawn.is_on_floor():
 		accel = air_accel

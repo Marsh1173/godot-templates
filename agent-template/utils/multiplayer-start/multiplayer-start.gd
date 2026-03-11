@@ -26,7 +26,6 @@ var agent_datas: Array[Array] = [
 var agent_id_to_peer_id: Dictionary[int, int] = {}
 
 func _ready():
-	print(IP.get_local_addresses())
 	_connect_everyone()
 	
 func _connect_everyone():
@@ -76,6 +75,6 @@ func start_game():
 	var gym = GYM.instantiate()
 	add_child(gym, true)
 	
-	if MyNetwork.is_authority(multiplayer):
-		gym.ready_with_host_data(agent_id_to_peer_id, agent_datas)
+	if MyUtils.is_authority(multiplayer):
+		gym.world.ready_with_host_data(agent_id_to_peer_id, agent_datas)
 	

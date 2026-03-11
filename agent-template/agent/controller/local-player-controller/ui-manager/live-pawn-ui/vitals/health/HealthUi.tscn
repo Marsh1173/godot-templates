@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://clntdoludrou4"]
+
+[ext_resource type="Script" uid="uid://cyjedsint35ma" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/vitals/health/health-ui.gd" id="1_xtdql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtdql"]
+bg_color = Color(0.98046875, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="HealthUi" type="Control" unique_id=793820325]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -15.0
+offset_right = 100.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_xtdql")
+
+[node name="Bar" type="ProgressBar" parent="." unique_id=420636337]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_xtdql")
+value = 100.0
+show_percentage = false

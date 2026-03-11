@@ -15,7 +15,10 @@ enum Name {
 	StopJump,
 	StartSprint,
 	StopSprint,
+	# Ability actions
 	Roll,
+	StartPrimaryAbility,
+	StopPrimaryAbility,
 	# Other
 	SetViewDirection,
 }
@@ -27,6 +30,22 @@ enum Name {
 
 func _init(_name: Name = Name.StartJump):
 	name = _name
+
+# Some actions are applied locally instantly for snappy responsiveness, e.g. jumping
+func is_locally_applied_action() -> bool:
+	return name == Name.StartMoveForward or\
+		name == Name.StopMoveForward or\
+		name == Name.StartMoveBackward or\
+		name == Name.StopMoveBackward or\
+		name == Name.StartMoveLeft or\
+		name == Name.StopMoveLeft or\
+		name == Name.StartMoveRight or\
+		name == Name.StopMoveRight or\
+		name == Name.StartJump or\
+		name == Name.StopJump or\
+		name == Name.StartSprint or\
+		name == Name.StopSprint or\
+		name == Name.SetViewDirection
 
 static var _serialization_config: Dictionary[String, int] = {
 	"name": TYPE_INT,

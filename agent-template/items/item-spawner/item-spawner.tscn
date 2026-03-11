@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bevu27xslljg4"]
+
+[ext_resource type="Script" uid="uid://dc8ykomiebuka" path="res://agent-template/items/item-spawner/item-spawner.gd" id="1_jl6hl"]
+
+[node name="ItemSpawner" type="MultiplayerSpawner" unique_id=796922595]
+_spawnable_scenes = PackedStringArray("uid://dlqw03cxv7cxb")
+spawn_path = NodePath(".")
+script = ExtResource("1_jl6hl")

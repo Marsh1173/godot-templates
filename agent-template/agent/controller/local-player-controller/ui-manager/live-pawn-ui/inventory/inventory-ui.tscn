@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bvpxqqfdnu8k3"]
+
+[ext_resource type="Script" uid="uid://cl36fg5qi0hjq" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/inventory/inventory-ui.gd" id="1_fxpld"]
+[ext_resource type="PackedScene" uid="uid://dmqta2n6n1cuf" path="res://agent-template/utils/blur-panel/blur-panel.tscn" id="2_sr2qx"]
+[ext_resource type="PackedScene" uid="uid://6pv5wlewdnn8" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/inventory/item-ui.tscn" id="3_c0hj4"]
+
+[node name="InventoryUi" type="Control" unique_id=378167811]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_fxpld")
+
+[node name="BlurPanel" parent="." unique_id=973025174 instance=ExtResource("2_sr2qx")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = -28.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="BlurPanel" unique_id=1071072732]
+layout_mode = 2
+
+[node name="ItemUi" parent="BlurPanel/HFlowContainer" unique_id=1666285470 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi2" parent="BlurPanel/HFlowContainer" unique_id=2039179298 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi3" parent="BlurPanel/HFlowContainer" unique_id=315149448 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi4" parent="BlurPanel/HFlowContainer" unique_id=980609708 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi5" parent="BlurPanel/HFlowContainer" unique_id=809054176 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi6" parent="BlurPanel/HFlowContainer" unique_id=1369991488 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi7" parent="BlurPanel/HFlowContainer" unique_id=1261220265 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi8" parent="BlurPanel/HFlowContainer" unique_id=958469228 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi9" parent="BlurPanel/HFlowContainer" unique_id=1712673565 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi10" parent="BlurPanel/HFlowContainer" unique_id=481389877 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi11" parent="BlurPanel/HFlowContainer" unique_id=252772443 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi12" parent="BlurPanel/HFlowContainer" unique_id=167797897 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi13" parent="BlurPanel/HFlowContainer" unique_id=851237937 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi14" parent="BlurPanel/HFlowContainer" unique_id=1705375718 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi15" parent="BlurPanel/HFlowContainer" unique_id=1227548439 instance=ExtResource("3_c0hj4")]
+layout_mode = 2
+
+[node name="ItemUi16" parent="BlurPanel/HFlowContainer" unique_id=2111705025 instance=ExtResource("3_c0hj4")]
+layout_mode = 2

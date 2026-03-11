@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6pv5wlewdnn8"]
+
+[ext_resource type="Script" uid="uid://c1tqlb5m3l0ik" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/inventory/item-ui.gd" id="1_8xcs2"]
+[ext_resource type="Texture2D" uid="uid://ct55jkeh3k533" path="res://icon.svg" id="1_wck7q"]
+
+[node name="ItemUi" type="TextureRect" unique_id=1666285470]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1112.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wck7q")
+expand_mode = 1
+script = ExtResource("1_8xcs2")

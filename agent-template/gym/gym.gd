@@ -1,17 +1,8 @@
 extends Node3D
 
-@onready var agent_spawner: AgentSpawner = $AgentSpawner
-
-# Only called on host
-func ready_with_host_data(agent_id_to_peer_id: Dictionary[int, int], agent_datas: Array[Array]):
-	agent_spawner.ready_with_host_data(agent_id_to_peer_id, agent_datas)
+@onready var world: World = $World
 	
 func _ready():
-	pass
-	#var player: Agent = agent_scene.instantiate().with_data(false);
-	#player.name = "Player"
-	#add_child(player, true)
-	
-	#var ai = agent_scene.instantiate()._with_data(true);
-	#ai.name = "AI"
-	#add_child(ai, true) # Force readable name for cross-network communication
+	if MyUtils.is_authority(multiplayer):
+		world.item_spawner.spawn_item(ItemData.new(ItemData.ID.Wood), Vector3(2, 6, 3))
+		world.item_spawner.spawn_item(ItemData.new(ItemData.ID.Apple), Vector3(1, 6, 3))

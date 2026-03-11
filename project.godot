@@ -15,6 +15,10 @@ run/main_scene="uid://3uvs5ep2bb6u"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+WindowManager="*uid://cdywqn2e27syq"
+
 [display]
 
 window/vsync/vsync_mode=3
@@ -22,6 +26,7 @@ window/vsync/vsync_mode=3
 [global_group]
 
 Agents="All agents, AI, player, local, or remote"
+Inventories="Any inventory component that attracts dropped items or can be interacted with"
 
 [input]
 

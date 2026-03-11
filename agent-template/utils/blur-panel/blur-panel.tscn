@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dmqta2n6n1cuf"]
+
+[ext_resource type="Shader" uid="uid://cj0dv4p3pxjch" path="res://agent-template/utils/blur-panel/blur-panel.gdshader" id="1_o53fi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rm4yr"]
+shader = ExtResource("1_o53fi")
+shader_parameter/darken_amount = 1.400000019
+shader_parameter/blur_amount = 1.50000007125
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o53fi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+anti_aliasing = false
+
+[node name="BlurPanel" type="PanelContainer" unique_id=973025174]
+material = SubResource("ShaderMaterial_rm4yr")
+pivot_offset = Vector2(32, 32)
+theme_override_styles/panel = SubResource("StyleBoxFlat_o53fi")

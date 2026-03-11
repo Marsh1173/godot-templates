@@ -1,6 +1,7 @@
 class_name LocalPlayerController
 extends Controller
 
+@onready var ui_manager: UiManager = $UiManager
 @onready var controlled_camera: Node3D = $ControlledCamera
 const view_sensitivity: float = 0.0075
 
@@ -16,8 +17,16 @@ func _process(_delta):
 	queue_action(action)
 	
 func _physics_process(_delta):
-	if focus_node is Node3D:
+	if focus_node != null:
 		controlled_camera.global_position = focus_node.global_position
+
+func set_focus_node(node):
+	super(node)
+	if node is Pawn:
+		ui_manager.set_pawn_or_null(node)
+	else:
+		ui_manager.set_pawn_or_null(null)
+		
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -27,12 +36,13 @@ func _unhandled_input(event: InputEvent):
 		)
 		get_viewport().set_input_as_handled()
 	
-	elif event is InputEventMouseButton and event.is_pressed():
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
+	elif event is InputEventMouseButton and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.is_pressed():
+				queue_action(Action.new(Action.Name.StartPrimaryAbility))
+			else:
+				queue_action(Action.new(Action.Name.StopPrimaryAbility))
+			get_viewport().set_input_as_handled()
 	elif event is InputEventKey:
 		if event.is_action_pressed("move-forward"):
 			queue_action(Action.new(Action.Name.StartMoveForward))

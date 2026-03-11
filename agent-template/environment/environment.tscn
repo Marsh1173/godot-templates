@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b0iscpsx5ba7m"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_d4y7n"]
+rayleigh_coefficient = 2.5
+mie_coefficient = 0.05
+mie_color = Color(1, 0.81960785, 0.627451, 1)
+ground_color = Color(0.16862746, 0.13333334, 0.09803922, 1)
+
+[sub_resource type="Sky" id="Sky_4bwgq"]
+sky_material = SubResource("PhysicalSkyMaterial_d4y7n")
+
+[sub_resource type="Environment" id="Environment_yce1a"]
+background_mode = 2
+sky = SubResource("Sky_4bwgq")
+tonemap_mode = 3
+tonemap_exposure = 1.2
+ssao_enabled = true
+ssao_radius = 2.0
+glow_enabled = true
+glow_intensity = 0.8
+glow_bloom = 0.1
+glow_blend_mode = 2
+fog_light_color = Color(1, 0.8, 0.53333336, 1)
+fog_sky_affect = 0.055
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(1, 0.8, 0.53333336, 1)
+volumetric_fog_anisotropy = 0.7
+
+[node name="Environment" type="WorldEnvironment" unique_id=340627359]
+environment = SubResource("Environment_yce1a")
+
+[node name="Tone light" type="DirectionalLight3D" parent="." unique_id=46735119]
+transform = Transform3D(-0.37939247, 0.71186066, -0.5910295, 0.7217761, -0.17195135, -0.6704266, -0.5788785, -0.6809459, -0.44856694, 0, 0, 0)
+light_color = Color(0.60754395, 0.7547436, 0.984375, 1)
+light_energy = 0.1
+shadow_blur = 2.0
+sky_mode = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1624596345]
+transform = Transform3D(0.90154725, 0.11008224, 0.41844293, -0.38987127, 0.6261005, 0.6752768, -0.1876514, -0.7719329, 0.60737705, 0, 0, 0)
+light_color = Color(1, 0.81960785, 0.627451, 1)
+light_energy = 2.0
+shadow_enabled = true
+shadow_blur = 2.0

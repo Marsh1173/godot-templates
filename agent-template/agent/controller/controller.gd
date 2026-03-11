@@ -1,7 +1,7 @@
 extends Node
 class_name Controller
 	
-var focus_node = null
+var focus_node: Node3D = null
 var focus_pitch: float = 0
 var focus_yaw: float = 0
 
@@ -15,9 +15,12 @@ func with_data(_owner_peer_id: int):
 	return self
 
 func queue_action(action: Action):
-	if MyNetwork.is_authority(multiplayer):
+	if MyUtils.is_authority(multiplayer):
 		action_buffer.append(action)
 	else:
+		# If it's a locally applied action, send to host AND apply locally
+		if multiplayer.get_unique_id() == owner_peer_id and action.is_locally_applied_action():
+			action_buffer.append(action)
 		var serialized_action = action.to_json()
 		send_action.rpc_id(1, serialized_action)
 

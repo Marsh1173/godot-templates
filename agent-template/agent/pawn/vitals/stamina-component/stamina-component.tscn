@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cw1w4g5c2v46w"]
+
+[ext_resource type="Script" uid="uid://sgibd7i0uuxd" path="res://agent-template/agent/pawn/vitals/stamina-component/stamina-component.gd" id="1_o0xeu"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_o0xeu"]
+properties/0/path = NodePath(".:stamina")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="StaminaComponent" type="Node" unique_id=1977300720]
+script = ExtResource("1_o0xeu")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1999956016]
+replication_config = SubResource("SceneReplicationConfig_o0xeu")

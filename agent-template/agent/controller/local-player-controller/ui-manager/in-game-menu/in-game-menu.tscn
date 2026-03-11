@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://whiy1lp0tl7t"]
+
+[ext_resource type="PackedScene" uid="uid://dmqta2n6n1cuf" path="res://agent-template/utils/blur-panel/blur-panel.tscn" id="1_xkuc4"]
+[ext_resource type="Script" uid="uid://b4ujkqbq4qqif" path="res://agent-template/agent/controller/local-player-controller/ui-manager/in-game-menu/in-game-menu.gd" id="1_yghus"]
+
+[node name="InGameMenu" type="Control" unique_id=1235966956]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_yghus")
+
+[node name="BlurPanel" parent="." unique_id=973025174 instance=ExtResource("1_xkuc4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -15.5
+offset_right = 36.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BlurPanel" unique_id=75507146]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="BlurPanel/VBoxContainer" unique_id=1047461031]
+layout_mode = 2
+text = "Resume"
+
+[node name="Fullscreen" type="Button" parent="BlurPanel/VBoxContainer" unique_id=2092459847]
+layout_mode = 2
+text = "Toggle fullscreen"
+
+[node name="Options" type="Button" parent="BlurPanel/VBoxContainer" unique_id=478121311]
+visible = false
+layout_mode = 2
+text = "Options"
+
+[node name="Leave game" type="Button" parent="BlurPanel/VBoxContainer" unique_id=1115543900]
+layout_mode = 2
+text = "Leave game"
+
+[connection signal="pressed" from="BlurPanel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="BlurPanel/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="BlurPanel/VBoxContainer/Leave game" to="." method="_on_leave_game_pressed"]

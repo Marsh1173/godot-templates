@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ghaixm5r06lj"]
+
+[ext_resource type="Script" uid="uid://duu5m8rwv37sh" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/vitals/stamina/stamina-ui.gd" id="1_tjcwv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjcwv"]
+bg_color = Color(1, 0.9366516, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="StaminaUi" type="Control" unique_id=1055528535]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjcwv")
+
+[node name="Bar" type="ProgressBar" parent="." unique_id=1003092766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_tjcwv")
+value = 100.0
+show_percentage = false

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://4l2m7g2sdxhy"]
+
+[ext_resource type="Script" uid="uid://cpgj4wiyg2gor" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/live-pawn-ui.gd" id="1_0ffdw"]
+[ext_resource type="PackedScene" uid="uid://ghaixm5r06lj" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/vitals/stamina/StaminaUi.tscn" id="2_lcaf0"]
+[ext_resource type="PackedScene" uid="uid://bvpxqqfdnu8k3" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/inventory/inventory-ui.tscn" id="2_q4qg5"]
+[ext_resource type="PackedScene" uid="uid://clntdoludrou4" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/vitals/health/HealthUi.tscn" id="3_q4qg5"]
+
+[node name="LivePawnUi" type="Control" unique_id=1143854109]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0ffdw")
+
+[node name="InventoryUi" parent="." unique_id=378167811 instance=ExtResource("2_q4qg5")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1070407182]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -35.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HealthUi" parent="VBoxContainer" unique_id=793820325 instance=ExtResource("3_q4qg5")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="StaminaUi" parent="VBoxContainer" unique_id=1055528535 instance=ExtResource("2_lcaf0")]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2

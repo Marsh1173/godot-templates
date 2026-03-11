@@ -4,6 +4,14 @@ The host replicates state (pos, velocity, rotation, movement mode) to peers, NOT
 How to keep the player rotating and moving with their controller?
 * Only host and owner peer track movement state (is-moving-left etc)
 
+MOVEMENT ACTION FLOW
+Sends action to server
+	and if it's a movement or a look action, apply locally instantly
+Server gets action, applies, updates all peers
+	if peer tries to update itself with a movement action, 
+	else interpolate smoothly
 
-
-Every tick, host sends state updates to peers. Peers set their state to that, or smoothly interpolate if pos or rotation.
+NEXT UPS
+	Death / spectating / spawning
+	Inventory
+	Health

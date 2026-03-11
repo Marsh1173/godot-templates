@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dnsu5kjw8xb8i"]
+
+[ext_resource type="Script" uid="uid://bk88ldkrs8uy0" path="res://agent-template/agent/pawn/inventory-component/inventory-component.gd" id="1_xar25"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xar25"]
+properties/0/path = NodePath(".:serialized_inventory")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="InventoryComponent" type="Node3D" unique_id=324210412 groups=["Inventories"]]
+script = ExtResource("1_xar25")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=717187966]
+replication_config = SubResource("SceneReplicationConfig_xar25")
