@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://byscqe1mt5rpo"]
+
+[ext_resource type="Script" uid="uid://cd12jwp3xn3ux" path="res://agent-template/agent/pawn/interactor-component/interactor-component.gd" id="1_f58sf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f58sf"]
+radius = 1.0473633
+height = 5.317379
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_f58sf"]
+
+[node name="InteractorComponent" type="Area3D" unique_id=1306219181]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_f58sf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=392807084]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371138e-08, 0.99999994, 0, -0.99999994, -4.371139e-08, 0, -4.2354216e-08, -1.9689515)
+shape = SubResource("CapsuleShape3D_f58sf")
+
+[node name="ClosestToDecider" type="Node3D" parent="." unique_id=513744178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6003485)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1687873878]
+replication_config = SubResource("SceneReplicationConfig_f58sf")

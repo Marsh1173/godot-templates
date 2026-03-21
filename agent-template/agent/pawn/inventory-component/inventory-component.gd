@@ -35,6 +35,7 @@ var inventory: Array[Variant] = []:
 func _ready():
 	if MyUtils.is_authority(multiplayer):
 		stats_component.inventory_size.changed.connect(change_inventory_size)
+		change_inventory_size(0, 0) # As host, clear it first
 		change_inventory_size(0, stats_component.inventory_size.value)
 		pawn.died.connect(throw_out_all_items)
 
@@ -67,7 +68,7 @@ func change_inventory_size(_old_size_f: float, new_size_f: float):
 func has_space_in_inventory() -> bool:
 	return inventory.has(null)
 
-# Attempts to put the item in the provided index, if any.
+# Attempts to put the item in the provided index, then first available space if any.
 # Only called on host. Throws error if no space.
 func add_item(item_data: ItemData, index: int = -1):
 	# Get valid index

@@ -26,7 +26,7 @@ window/vsync/vsync_mode=3
 [global_group]
 
 Agents="All agents, AI, player, local, or remote"
-Inventories="Any inventory component that attracts dropped items or can be interacted with"
+Interactables="Something that can be interacted with (lever, item, chest, etc)"
 
 [input]
 
@@ -75,6 +75,7 @@ roll={
 3d_physics/layer_1="Terrain"
 3d_physics/layer_2="Dynamic entities"
 3d_physics/layer_3="Hitbox"
+3d_physics/layer_4="Interactables"
 
 [physics]
 

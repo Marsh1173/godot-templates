@@ -48,28 +48,28 @@ func _process(delta: float):
 		# slow rotating
 		mesh_instance_3d.rotate_y(delta / 2)
 		
-		if fposmod(time_since_spawn, check_period) - delta <= 0 and\
-			MyUtils.is_authority(multiplayer):
-			
-			check_for_nearby_inventories()
-
-# Only called on host
-func check_for_nearby_inventories():
-	var inventories = get_tree().get_nodes_in_group("Inventories")
-	for inventory in inventories:
-		if inventory is InventoryComponent and\
-			global_position.distance_squared_to(inventory.global_position) < inventory_attract_range_squared and\
-			inventory.has_space_in_inventory():
-				
-			inventory.add_item(item_data)
-			set_location_that_picked_up_this_item.rpc(inventory.global_position)
-			return
+		#if fposmod(time_since_spawn, check_period) - delta <= 0 and\
+			#MyUtils.is_authority(multiplayer):
+			#
+			#check_for_nearby_inventories()
+#
+## Only called on host
+#func check_for_nearby_inventories():
+	#var inventories = get_tree().get_nodes_in_group("Inventories")
+	#for inventory in inventories:
+		#if inventory is InventoryComponent and\
+			#global_position.distance_squared_to(inventory.global_position) < inventory_attract_range_squared and\
+			#inventory.has_space_in_inventory():
+				#
+			#inventory.add_item(item_data)
+			#set_location_that_picked_up_this_item.rpc(inventory.global_position)
+			#return
 
 @rpc("authority", "call_local", "reliable")
 func set_location_that_picked_up_this_item(_location_that_picked_up_this_item: Vector3):
 	location_that_picked_up_this_item = _location_that_picked_up_this_item
-
-const FOOD_INGREDIENT_TOMATO_SPHERE_043 = preload("uid://ujokehd2shs2")
+	
+const FOOD_INGREDIENT_TOMATO_SPHERE_043 = preload("res://agent-template/models/items/food_ingredient_tomato_Sphere_043.res")
 const WOOD_LOG_A_WOOD_LOG_A = preload("uid://dwspfoobq6r5m")
 
 func add_item_mesh():

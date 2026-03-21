@@ -6,6 +6,7 @@ class_name Pawn
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var stamina_component: StaminaComponent = $StaminaComponent
 @onready var inventory_component: InventoryComponent = $InventoryComponent
+@onready var interactor_component: InteractorComponent = $InteractorComponent
 
 var _peer_id_or_null = null
 
@@ -14,8 +15,8 @@ signal died()
 func _ready():
 	health_component.health_changed.connect(_did_health_reach_zero)
 
-func _did_health_reach_zero(_old_value: int, new_value: int):
-	if new_value == 0 and MyUtils.is_authority(multiplayer):
+func _did_health_reach_zero(old_value: int, new_value: int):
+	if new_value == 0 and old_value != 0 and MyUtils.is_authority(multiplayer):
 		died.emit()
 		queue_free()
 

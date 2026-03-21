@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6sfqnn5olouk" path="res://agent-template/agent/pawn/vitals/health-component/health-component.tscn" id="4_p0p7d"]
 [ext_resource type="PackedScene" uid="uid://cw1w4g5c2v46w" path="res://agent-template/agent/pawn/vitals/stamina-component/stamina-component.tscn" id="5_x3d5m"]
 [ext_resource type="PackedScene" uid="uid://dnsu5kjw8xb8i" path="res://agent-template/agent/pawn/inventory-component/inventory-component.tscn" id="6_ybaor"]
+[ext_resource type="PackedScene" uid="uid://byscqe1mt5rpo" path="res://agent-template/agent/pawn/interactor-component/interactor-component.tscn" id="7_hs15t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijfqk"]
 albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
@@ -37,6 +38,8 @@ mesh = SubResource("PrismMesh_vp167")
 [node name="StaminaComponent" parent="." unique_id=1977300720 instance=ExtResource("5_x3d5m")]
 
 [node name="InventoryComponent" parent="." unique_id=476974385 instance=ExtResource("6_ybaor")]
+
+[node name="InteractorComponent" parent="." unique_id=1343561041 instance=ExtResource("7_hs15t")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1683207666]
 shape = SubResource("CapsuleShape3D_ssi63")

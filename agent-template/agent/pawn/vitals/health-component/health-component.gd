@@ -16,6 +16,8 @@ func _ready():
 		health = round(stats_component.max_health.value) # float to int
 		stats_component.max_health.changed.connect(_on_max_health_change)
 
-func _on_max_health_change(_old_value: float, new_value: float):
+func _on_max_health_change(old_value: float, new_value: float):
 	if new_value < health:
 		health = round(new_value) # float to int
+	elif health == round(old_value):
+		health = round(new_value) # If player is full health, remain full health
