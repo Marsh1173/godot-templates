@@ -2,8 +2,12 @@ extends RefCounted
 class_name ItemData
 
 enum ID {
+	Beer,
+	Berries,
+	Meat,
+	Obsidian,
+	Stone,
 	Wood,
-	Apple,
 }
 
 @export var id: ID

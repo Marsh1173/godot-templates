@@ -16,7 +16,7 @@ func toggle_menu(open: bool):
 	blur_panel.visible = open
 	var is_playing_over_network := MyUtils.is_playing_over_network(multiplayer)
 	if open:
-		WindowManager.register_window("InGameMenu")
+		WindowManager.register_window("InGameMenu", blur_panel)
 		mouse_filter = Control.MOUSE_FILTER_STOP
 	else:
 		WindowManager.unregister_window("InGameMenu")

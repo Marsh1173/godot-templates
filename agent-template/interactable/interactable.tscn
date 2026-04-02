@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bslh4wv8j4vyp" path="res://agent-template/interactable/interactable.gd" id="1_casde"]
 
-[node name="Interactable" type="RigidBody3D" unique_id=1819282779 groups=["Interactables"]]
+[node name="Interactable" type="Area3D" unique_id=394152868 groups=["Interactables"]]
 collision_layer = 8
 collision_mask = 8
+monitoring = false
 script = ExtResource("1_casde")

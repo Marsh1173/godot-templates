@@ -14,5 +14,4 @@ mouse_filter = 2
 script = ExtResource("1_xbw7b")
 
 [node name="InGameMenu" parent="." unique_id=1235966956 instance=ExtResource("2_ycub8")]
-process_mode = 3
 layout_mode = 1

@@ -17,8 +17,8 @@ func ready_with_data(_pawn: Pawn):
 func toggle_menu(open: bool):
 	blur_panel.visible = open
 	if open:
-		WindowManager.register_window("InGameInventory")
 		mouse_filter = Control.MOUSE_FILTER_STOP
+		WindowManager.register_window("InGameInventory", blur_panel)
 	else:
 		WindowManager.unregister_window("InGameInventory")
 		mouse_filter = Control.MOUSE_FILTER_IGNORE

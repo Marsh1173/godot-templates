@@ -2,6 +2,8 @@ extends RigidBody3D
 class_name DroppedItem
 
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var interactable: Interactable = $Interactable
+@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
 var item_data: ItemData
 var _starting_pos: Vector3
@@ -15,66 +17,82 @@ func with_data(_item_data: ItemData, pos: Vector3, throw_angle_or_null: float) -
 
 func _ready():
 	global_position = _starting_pos
+	interactable.interact_prompt = "Pick up " + ItemRegistry.item_registry.get(item_data.id).name
 	add_item_mesh()
-
-var time_since_spawn: float = 0.0
-const check_period: float = 0.3
-const inventory_attract_range_squared: float = 4
-
-#region pickup animation
-var location_that_picked_up_this_item = null
-var time_since_pickup: float = 0.0
-const pickup_anim_length: float = 0.15
-#endregion
+	interactable.on_attempt_interact.connect(_on_attempt_interact)
 
 func _process(delta: float):
 	if location_that_picked_up_this_item != null:
-		time_since_pickup += delta
-		
-		mesh_instance_3d.global_position = mesh_instance_3d.global_position.lerp(
-			location_that_picked_up_this_item,
-			delta / (pickup_anim_length - time_since_pickup)
-		)
-		
-		# Lerp scale from 0.5 (mesh instance's default scale) to 0 and no further
-		mesh_instance_3d.scale = Vector3.ONE * 0.5 * max(0, (1 - (time_since_pickup / pickup_anim_length)))
-		
-		if time_since_pickup >= pickup_anim_length and MyUtils.is_authority(multiplayer):
-			queue_free()
+		_zoom_to_location_that_picked_up_this_item(delta)
 	else:
-		time_since_spawn += delta
-		# Bobbing motion
-		mesh_instance_3d.position.y = 0.5 + sin(time_since_spawn * 2) / 6
-		# slow rotating
-		mesh_instance_3d.rotate_y(delta / 2)
-		
-		#if fposmod(time_since_spawn, check_period) - delta <= 0 and\
-			#MyUtils.is_authority(multiplayer):
-			#
-			#check_for_nearby_inventories()
-#
-## Only called on host
-#func check_for_nearby_inventories():
-	#var inventories = get_tree().get_nodes_in_group("Inventories")
-	#for inventory in inventories:
-		#if inventory is InventoryComponent and\
-			#global_position.distance_squared_to(inventory.global_position) < inventory_attract_range_squared and\
-			#inventory.has_space_in_inventory():
-				#
-			#inventory.add_item(item_data)
-			#set_location_that_picked_up_this_item.rpc(inventory.global_position)
-			#return
+		_do_bob(delta)
+
+#region bobbing anim
+var time_since_spawn: float = 0.0
+func _do_bob(delta):
+	time_since_spawn += delta
+	# Bobbing motion
+	mesh_instance_3d.position.y = sin(time_since_spawn * 2) / 6
+	# slow rotating
+	mesh_instance_3d.rotate_y(delta / 2)
+#endregion
+
+#region interaction logic
+# Only called on host
+func _on_attempt_interact(interactor: InteractorComponent):
+	if interactor.inventory_component != null and\
+		interactor.inventory_component.has_space_in_inventory():
+			
+		interactor.inventory_component.add_item(item_data)
+		set_location_that_picked_up_this_item.rpc(interactor.inventory_component.global_position)
+#endregion
+
+#region zoom to location that picked this up
+var location_that_picked_up_this_item = null
+var time_since_pickup: float = 0.0
+const pickup_anim_length: float = 0.15
 
 @rpc("authority", "call_local", "reliable")
 func set_location_that_picked_up_this_item(_location_that_picked_up_this_item: Vector3):
 	location_that_picked_up_this_item = _location_that_picked_up_this_item
+	interactable.queue_free() # Interactable can't be interacted with anymore
+	multiplayer_synchronizer.queue_free() # Interactable pos shouldn't be synced anymore
+
+func _zoom_to_location_that_picked_up_this_item(delta: float):
+	time_since_pickup += delta
 	
-const FOOD_INGREDIENT_TOMATO_SPHERE_043 = preload("res://agent-template/models/items/food_ingredient_tomato_Sphere_043.res")
-const WOOD_LOG_A_WOOD_LOG_A = preload("uid://dwspfoobq6r5m")
+	mesh_instance_3d.global_position = mesh_instance_3d.global_position.lerp(
+		location_that_picked_up_this_item,
+		delta / (pickup_anim_length - time_since_pickup)
+	)
+	
+	# Lerp scale from 0.5 (mesh instance's default scale) to 0.001 and no further
+	mesh_instance_3d.scale = Vector3.ONE * 0.5 * max(0.001, (1 - (time_since_pickup / pickup_anim_length)))
+	
+	if time_since_pickup >= pickup_anim_length and MyUtils.is_authority(multiplayer):
+		queue_free()
+#endregion
+
+#region mesh
+const BEER = preload("uid://dmq7p12tbkor2")
+const BERRIES = preload("uid://dk66gy7oc0465")
+const MEAT = preload("uid://bphxdfcdd26ed")
+const OBSIDIAN = preload("uid://b6vjutl8u1666")
+const STONE = preload("uid://b6g32rxopmuxt")
+const WOOD = preload("uid://8cmlk5rjwtf5")
 
 func add_item_mesh():
 	match item_data.id:
+		ItemData.ID.Beer:
+			mesh_instance_3d.mesh = BEER
+		ItemData.ID.Berries:
+			mesh_instance_3d.mesh = BERRIES
+		ItemData.ID.Meat:
+			mesh_instance_3d.mesh = MEAT
+		ItemData.ID.Obsidian:
+			mesh_instance_3d.mesh = OBSIDIAN
+		ItemData.ID.Stone:
+			mesh_instance_3d.mesh = STONE
 		ItemData.ID.Wood:
-			mesh_instance_3d.mesh = WOOD_LOG_A_WOOD_LOG_A
-		ItemData.ID.Apple:
-			mesh_instance_3d.mesh = FOOD_INGREDIENT_TOMATO_SPHERE_043
+			mesh_instance_3d.mesh = WOOD
+#endregion

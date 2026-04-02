@@ -6,6 +6,8 @@
 script = ExtResource("1_wu5ng")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=237166670]
+transform = Transform3D(0.96592593, -0.12940952, 0.22414389, 0, 0.8660254, 0.50000006, -0.25881907, -0.4829629, 0.8365164, 0, 0, 0)
 target_position = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1839006584]
+transform = Transform3D(0.9986295, -0.017899951, 0.049179714, 0, 0.9396926, 0.34202012, -0.05233596, -0.3415514, 0.9384048, 0, 0, 0)

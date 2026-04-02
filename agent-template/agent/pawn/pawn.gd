@@ -8,7 +8,7 @@ class_name Pawn
 @onready var inventory_component: InventoryComponent = $InventoryComponent
 @onready var interactor_component: InteractorComponent = $InteractorComponent
 
-var _peer_id_or_null = null
+var peer_id_or_null = null
 
 signal died()
 
@@ -20,11 +20,15 @@ func _did_health_reach_zero(old_value: int, new_value: int):
 		died.emit()
 		queue_free()
 
-func set_peer_id_or_null(inner_peer_id_or_null):
-	_peer_id_or_null = inner_peer_id_or_null
+func set_peer_id_or_null(_peer_id_or_null):
+	peer_id_or_null = _peer_id_or_null
+	interactor_component.set_peer_id_or_null(peer_id_or_null)
 
 func is_owned_by_peer() -> bool:
-	return multiplayer.get_unique_id() == _peer_id_or_null
+	if peer_id_or_null == null:
+		return MyUtils.is_authority(multiplayer)
+	else:
+		return multiplayer.get_unique_id() == peer_id_or_null
 
 func handle_action(action: Action):
 	match action.name:

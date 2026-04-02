@@ -80,6 +80,25 @@ func _unhandled_input(event: InputEvent):
 		elif event.is_action_released("jump"):
 			queue_action(Action.new(Action.Name.StopJump))
 			get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("roll"):
-			queue_action(Action.new(Action.Name.Roll))
-			get_viewport().set_input_as_handled()
+		#elif event.is_action_pressed("roll"):
+			#queue_action(Action.new(Action.Name.Roll))
+			#get_viewport().set_input_as_handled()
+		elif event.is_action_pressed("interact"):
+			if focus_node is Pawn:
+				get_viewport().set_input_as_handled()
+				var targeted_interactable = focus_node.interactor_component.targeted_interactable_or_null
+				if targeted_interactable is Interactable:
+					match targeted_interactable.contextual_id:
+						Interactable.ContextualId.None:
+							if MyUtils.is_authority(multiplayer):
+								focus_node.interactor_component.request_interact(targeted_interactable.get_path())
+							else:
+								focus_node.interactor_component.request_interact.rpc_id(1, targeted_interactable.get_path())
+						_:
+							assert(false, "Interactable contextual ID not implemented yet")
+		#elif event.is_action_released("interact"):
+			#if focus_node is Pawn and focus_node.interactor_component.targeted_interactable_or_null is Interactable:
+				#focus_node.interactor_component.targeted_interactable_or_null.attempt_stop_interact(
+					#focus_node.interactor_component
+				#)
+			#get_viewport().set_input_as_handled()

@@ -40,10 +40,10 @@ func _ready():
 
 func _on_pawn_spawn(_pawn: Pawn):
 	pawn = _pawn
-	pawn.set_peer_id_or_null(peer_id_or_null)
 	
 	# pawn_spawner.child_entered_tree is fired before pawn's _ready() is called
 	await pawn.ready
+	pawn.set_peer_id_or_null(peer_id_or_null)
 	controller.set_focus_node(_pawn)
 
 func _on_pawn_despawn(_node: Node):
