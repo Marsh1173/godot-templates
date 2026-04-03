@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dbh3l51ai63uo"
-path="res://.godot/imported/Goblin.blend-972512a1c3c9fce5fbc54b3a249fa89b.scn"
+path="res://.godot/imported/Goblin.blend-eb5962acf0986ed0bdaaa3860902b431.scn"
 
 [deps]
 
-source_file="res://agent-template/models/Goblin.blend"
-dest_files=["res://.godot/imported/Goblin.blend-972512a1c3c9fce5fbc54b3a249fa89b.scn"]
+source_file="res://agent-template/models/goblin/Goblin.blend"
+dest_files=["res://.godot/imported/Goblin.blend-eb5962acf0986ed0bdaaa3860902b431.scn"]
 
 [params]
 
