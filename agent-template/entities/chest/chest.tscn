@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqr4ari6brchp"]
 
 [ext_resource type="ArrayMesh" uid="uid://ckr62vty7dulc" path="res://agent-template/entities/chest/chest_Cube.res" id="1_8m3i8"]
-[ext_resource type="PackedScene" uid="uid://d3gcwhfludr5d" path="res://agent-template/interactable/interactable.tscn" id="2_8m3i8"]
+[ext_resource type="PackedScene" path="res://agent-template/interactable/interactable.tscn" id="2_8m3i8"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_cls0e"]
 properties/0/path = NodePath(".:position")
