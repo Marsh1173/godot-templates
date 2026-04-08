@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://brn8vv7ut6s4n" path="res://agent-template/agent/pawn/stats-component/stats-component.tscn" id="3_ijfqk"]
 [ext_resource type="PackedScene" uid="uid://6sfqnn5olouk" path="res://agent-template/agent/pawn/vitals/health-component/health-component.tscn" id="4_p0p7d"]
 [ext_resource type="PackedScene" uid="uid://cw1w4g5c2v46w" path="res://agent-template/agent/pawn/vitals/stamina-component/stamina-component.tscn" id="5_x3d5m"]
-[ext_resource type="PackedScene" uid="uid://dnsu5kjw8xb8i" path="res://agent-template/agent/pawn/inventory-component/inventory-component.tscn" id="6_ybaor"]
+[ext_resource type="PackedScene" uid="uid://dnsu5kjw8xb8i" path="res://agent-template/items/inventory-component/inventory-component.tscn" id="6_ybaor"]
 [ext_resource type="PackedScene" uid="uid://byscqe1mt5rpo" path="res://agent-template/interactable/interactor-component/interactor-component.tscn" id="7_hs15t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijfqk"]

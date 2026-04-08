@@ -3,6 +3,7 @@ class_name World
 
 @onready var agent_spawner: AgentSpawner = $AgentSpawner
 @onready var item_spawner: ItemSpawner = $ItemSpawner
+@onready var entity_spawner: EntitySpawner = $EntitySpawner
 
 # Only called on host
 func ready_with_host_data(agent_id_to_peer_id: Dictionary[int, int], agent_datas: Array[Array]):

@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://dlqw03cxv7cxb"]
 
 [ext_resource type="Script" uid="uid://drdi8b5rtsddk" path="res://agent-template/items/dropped-item/dropped-item.gd" id="1_gxi4f"]
-[ext_resource type="PackedScene" uid="uid://d3gcwhfludr5d" path="res://agent-template/interactable/interactable.tscn" id="2_dmdfu"]
+[ext_resource type="PackedScene" path="res://agent-template/interactable/interactable.tscn" id="2_dmdfu"]
 [ext_resource type="ArrayMesh" uid="uid://dmq7p12tbkor2" path="res://agent-template/items/models/Beer.res" id="2_nh3vw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxi4f"]
 size = Vector3(0.3, 0.3, 0.3)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_nh3vw"]
-radius = 0.2474412
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nh3vw"]
 properties/0/path = NodePath(".:linear_velocity")
@@ -17,6 +14,9 @@ properties/0/replication_mode = 2
 properties/1/path = NodePath(".:position")
 properties/1/spawn = true
 properties/1/replication_mode = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nh3vw"]
+radius = 0.2474412
 
 [node name="DroppedItem" type="RigidBody3D" unique_id=1927960997]
 collision_layer = 2
@@ -34,11 +34,11 @@ instance_shader_parameters/rim_enabled = 1.0
 instance_shader_parameters/rim_width = 4.6330002200675
 mesh = ExtResource("2_nh3vw")
 
-[node name="Interactable" parent="." unique_id=1819282779 instance=ExtResource("2_dmdfu")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=52704875]
-shape = SubResource("SphereShape3D_nh3vw")
-
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=114744944]
 delta_interval = 0.5
 replication_config = SubResource("SceneReplicationConfig_nh3vw")
+
+[node name="Interactable" parent="." unique_id=394152868 instance=ExtResource("2_dmdfu")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Interactable" unique_id=52704875]
+shape = SubResource("SphereShape3D_nh3vw")

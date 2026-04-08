@@ -1,0 +1,2 @@
+extends MultiplayerSpawner
+class_name EntitySpawner

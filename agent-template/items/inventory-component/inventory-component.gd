@@ -1,10 +1,10 @@
 extends Node3D
 class_name InventoryComponent
 
-@onready var stats_component: StatsComponent = $"../StatsComponent"
-@onready var pawn: Pawn = $".."
-
 signal on_inventory_change(inventory: Array[Variant])
+
+#Currently only called on host :(
+signal on_item_add(item: ItemData)
 
 func _serialize_item_data_or_null(item):
 	if item == null:
@@ -32,12 +32,10 @@ var inventory: Array[Variant] = []:
 			serialized_inventory = new_value.map(_serialize_item_data_or_null)
 		on_inventory_change.emit(inventory)
 
-func _ready():
+func ready_with_data(inventory_size: float):
 	if MyUtils.is_authority(multiplayer):
-		stats_component.inventory_size.changed.connect(change_inventory_size)
 		change_inventory_size(0, 0) # As host, clear it first
-		change_inventory_size(0, stats_component.inventory_size.value)
-		pawn.died.connect(throw_out_all_items)
+		change_inventory_size(0, inventory_size)
 
 # Only called on host
 func change_inventory_size(_old_size_f: float, new_size_f: float):
@@ -77,12 +75,13 @@ func add_item(item_data: ItemData, index: int = -1):
 	
 	if index == -1:
 		# Still couldn't find any valid inventory spots
-		breakpoint
+		assert(false, "Tried to insert into a full inventory")
 		return
 	
 	# Apply
 	inventory.set(index, item_data)
 	inventory = inventory.duplicate() # Trigger network sync
+	on_item_add.emit(item_data)
 
 # Only called on host
 func throw_out_all_items():

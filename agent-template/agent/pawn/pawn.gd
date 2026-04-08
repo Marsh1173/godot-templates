@@ -14,6 +14,12 @@ signal died()
 
 func _ready():
 	health_component.health_changed.connect(_did_health_reach_zero)
+	
+	if MyUtils.is_authority(multiplayer):
+		inventory_component.ready_with_data(stats_component.inventory_size.value)
+		
+		stats_component.inventory_size.changed.connect(inventory_component.change_inventory_size)
+		died.connect(inventory_component.throw_out_all_items)
 
 func _did_health_reach_zero(old_value: int, new_value: int):
 	if new_value == 0 and old_value != 0 and MyUtils.is_authority(multiplayer):

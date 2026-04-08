@@ -12,7 +12,7 @@ func with_data(_item_data: ItemData, pos: Vector3, throw_angle_or_null: float) -
 	item_data = _item_data
 	_starting_pos = pos
 	if throw_angle_or_null != null:
-		linear_velocity = (Vector3.FORWARD + Vector3.UP).rotated(Vector3.UP, throw_angle_or_null)
+		linear_velocity = (Vector3.FORWARD + Vector3.UP).rotated(Vector3.UP, throw_angle_or_null) * 2
 	return self
 
 func _ready():

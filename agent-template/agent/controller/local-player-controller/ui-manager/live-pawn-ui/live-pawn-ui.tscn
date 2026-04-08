@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 script = ExtResource("1_0ffdw")
 
 [node name="InventoryUi" parent="." unique_id=378167811 instance=ExtResource("2_q4qg5")]
