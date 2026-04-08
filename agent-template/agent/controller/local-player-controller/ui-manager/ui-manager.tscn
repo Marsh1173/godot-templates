@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 script = ExtResource("1_xbw7b")
 
 [node name="InGameMenu" parent="." unique_id=1235966956 instance=ExtResource("2_ycub8")]

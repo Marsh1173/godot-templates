@@ -16,6 +16,11 @@ offset_bottom = 40.0
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1723126419]
 transparent_bg = true
 handle_input_locally = false
+msaa_2d = 3
+msaa_3d = 3
+screen_space_aa = 2
+use_occlusion_culling = true
+size = Vector2i(256, 256)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=803704912]

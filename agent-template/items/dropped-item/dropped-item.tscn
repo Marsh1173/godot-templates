@@ -27,17 +27,17 @@ script = ExtResource("1_gxi4f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_gxi4f")
 
+[node name="Interactable" parent="." unique_id=394152868 instance=ExtResource("2_dmdfu")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Interactable" unique_id=52704875]
+shape = SubResource("SphereShape3D_nh3vw")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=493881874]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 instance_shader_parameters/rim_color = Color(1, 1, 1, 1)
 instance_shader_parameters/rim_enabled = 1.0
 instance_shader_parameters/rim_width = 4.6330002200675
 mesh = ExtResource("2_nh3vw")
-
-[node name="Interactable" parent="." unique_id=1819282779 instance=ExtResource("2_dmdfu")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=52704875]
-shape = SubResource("SphereShape3D_nh3vw")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=114744944]
 delta_interval = 0.5

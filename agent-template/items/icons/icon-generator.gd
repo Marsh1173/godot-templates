@@ -24,3 +24,5 @@ func generate_icons():
 		# 3. Capture and save
 		var image = viewport.get_texture().get_image()
 		image.save_png(item.get_icon_path())
+		print("Created icon for " + item.name)
+	print("Done")

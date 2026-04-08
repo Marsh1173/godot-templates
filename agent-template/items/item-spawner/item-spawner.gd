@@ -1,7 +1,7 @@
 extends MultiplayerSpawner
 class_name ItemSpawner
 
-const DROPPED_ITEM = preload("uid://dlqw03cxv7cxb")
+const DROPPED_ITEM = preload("res://agent-template/items/dropped-item/dropped-item.tscn")
 
 func _ready():
 	spawn_function = _custom_spawn_logic
