@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqr4ari6brchp"]
 
-[ext_resource type="ArrayMesh" uid="uid://ckr62vty7dulc" path="res://agent-template/entities/chest/chest_Cube.res" id="1_8m3i8"]
-[ext_resource type="PackedScene" path="res://agent-template/interactable/interactable.tscn" id="2_8m3i8"]
+[ext_resource type="ArrayMesh" uid="uid://cfob5y38g43ar" path="res://agent-template/entities/chest/chest_Cube.res" id="1_8m3i8"]
+[ext_resource type="PackedScene" uid="uid://d3gcwhfludr5d" path="res://agent-template/interactable/interactable.tscn" id="2_8m3i8"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_cls0e"]
 properties/0/path = NodePath(".:position")
@@ -11,7 +11,7 @@ properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8m3i8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_l54xo"]
 
 [node name="Chest" type="Node3D" unique_id=486743671]
 
@@ -22,6 +22,7 @@ mesh = ExtResource("1_8m3i8")
 replication_config = SubResource("SceneReplicationConfig_cls0e")
 
 [node name="Interactable" parent="." unique_id=394152868 instance=ExtResource("2_8m3i8")]
+interact_prompt = "Open chest"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1927193876]
-shape = SubResource("BoxShape3D_8m3i8")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1032596509]
+shape = SubResource("BoxShape3D_l54xo")

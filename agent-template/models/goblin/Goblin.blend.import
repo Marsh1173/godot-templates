@@ -37,7 +37,58 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://basmr64baat0n"
+}
+},
+"nodes": {
+"PATH:Arm": {
+"import/skip_import": true
+},
+"PATH:Belt": {
+"import/skip_import": true
+},
+"PATH:Boot": {
+"import/skip_import": true
+},
+"PATH:Boot_001": {
+"import/skip_import": true
+},
+"PATH:Camera": {
+"import/skip_import": true
+},
+"PATH:Eyes": {
+"import/skip_import": true
+},
+"PATH:Hair": {
+"import/skip_import": true
+},
+"PATH:Head": {
+"import/skip_import": true
+},
+"PATH:Jacket": {
+"import/skip_import": true
+},
+"PATH:Leg": {
+"import/skip_import": true
+},
+"PATH:Light": {
+"import/skip_import": true
+},
+"PATH:Poncho": {
+"import/skip_import": true
+},
+"PATH:tmpecxv40j__ply": {
+"import/skip_import": true
+},
+"PATH:tmpecxv40j__ply_001": {
+"import/skip_import": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

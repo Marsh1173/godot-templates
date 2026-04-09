@@ -56,14 +56,14 @@ const pickup_anim_length: float = 0.15
 func set_location_that_picked_up_this_item(_location_that_picked_up_this_item: Vector3):
 	location_that_picked_up_this_item = _location_that_picked_up_this_item
 	interactable.queue_free() # Interactable can't be interacted with anymore
-	multiplayer_synchronizer.queue_free() # Interactable pos shouldn't be synced anymore
+	multiplayer_synchronizer.queue_free() # Item pos shouldn't be synced anymore
 
 func _zoom_to_location_that_picked_up_this_item(delta: float):
 	time_since_pickup += delta
 	
 	mesh_instance_3d.global_position = mesh_instance_3d.global_position.lerp(
 		location_that_picked_up_this_item,
-		delta / (pickup_anim_length - time_since_pickup)
+		delta / max(0.001, (pickup_anim_length - time_since_pickup)) # Somehow without the max() we get a Divide By Zero error because of this
 	)
 	
 	# Lerp scale from 0.5 (mesh instance's default scale) to 0.001 and no further

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6pv5wlewdnn8"]
 
 [ext_resource type="Script" uid="uid://c1tqlb5m3l0ik" path="res://agent-template/agent/controller/local-player-controller/ui-manager/live-pawn-ui/inventory/item-ui.gd" id="1_8xcs2"]
-[ext_resource type="Texture2D" uid="uid://q7sh11ib40ek" path="res://agent-template/items/icons/Beer_icon.png" id="1_wck7q"]
+[ext_resource type="Texture2D" uid="uid://dmor263d1fuda" path="res://agent-template/items/icons/Beer_icon.png" id="1_wck7q"]
 
 [node name="ItemUi" type="Panel" unique_id=1294108447]
 custom_minimum_size = Vector2(40, 40)
