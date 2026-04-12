@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bngva1yirtiw6"]
+
+[ext_resource type="Script" uid="uid://cbj0ovx8sm2ss" path="res://map-template/environment/environment.gd" id="1_834qp"]
+[ext_resource type="Material" uid="uid://douk0vbdu5ku5" path="res://map-template/environment/sky-shader-material.tres" id="1_deabe"]
+
+[sub_resource type="Sky" id="Sky_834qp"]
+sky_material = ExtResource("1_deabe")
+
+[sub_resource type="Environment" id="Environment_02eft"]
+background_mode = 2
+sky = SubResource("Sky_834qp")
+
+[node name="Environment" type="Node3D" unique_id=1474578257]
+script = ExtResource("1_834qp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1564219917]
+environment = SubResource("Environment_02eft")

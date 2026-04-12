@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bngva1yirtiw6"]
+
+[ext_resource type="Script" uid="uid://cbj0ovx8sm2ss" path="res://map-template/environment/environment.gd" id="1_834qp"]
+[ext_resource type="Material" uid="uid://douk0vbdu5ku5" path="res://map-template/environment/sky-shader-material.tres" id="1_deabe"]
+
+[sub_resource type="Gradient" id="Gradient_02eft"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.2, 0.2915031, 0.7457515, 0.82)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ydnvs"]
+gradient = SubResource("Gradient_02eft")
+
+[sub_resource type="Gradient" id="Gradient_ydnvs"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.2, 0.2915031, 0.7457515, 0.82)
+colors = PackedColorArray(0, 0.54858714, 0.6743147, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54901963, 0.6745098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r2ahd"]
+gradient = SubResource("Gradient_ydnvs")
+
+[sub_resource type="Gradient" id="Gradient_erdbg"]
+offsets = PackedFloat32Array(0.16, 0.2, 0.24, 0.33, 0.38, 0.61, 0.7, 0.76, 0.79, 0.82)
+colors = PackedColorArray(0, 0.1494191, 0.24618548, 1, 0.09205916, 0.07593609, 0.26077136, 1, 0.22745098, 0.14509805, 0.2509804, 1, 0.42693433, 0.53100204, 0.74765515, 1, 0.33042815, 0.6158674, 0.8763068, 1, 0.33042815, 0.6158674, 0.8763068, 1, 0.37235785, 0.3518003, 0.6186498, 1, 0.34148535, 0.13467678, 0.21730381, 1, 0.18464375, 0.06300467, 0.22286412, 1, 0, 0.1494191, 0.24618548, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_by662"]
+gradient = SubResource("Gradient_erdbg")
+use_hdr = true
+
+[sub_resource type="Gradient" id="Gradient_hugfm"]
+offsets = PackedFloat32Array(0.16, 0.2, 0.24, 0.33, 0.38, 0.61, 0.7, 0.76, 0.79, 0.82)
+colors = PackedColorArray(2.1658838e-07, 0.1441397, 0.28976288, 1, 0.18039216, 0.11372549, 0.42745098, 1, 0.7019608, 0.29411766, 0.37254903, 1, 0.75458, 0.74065936, 0.81565994, 1, 0.58201087, 0.7620227, 0.8720006, 1, 0.58201087, 0.7620227, 0.8720006, 1, 0.8507936, 0.6972252, 0.7352297, 1, 0.580882, 0.25661945, 0.2604769, 1, 0.2849698, 0.11292211, 0.39337337, 1, 2.1658838e-07, 0.1441397, 0.28976288, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k8y0t"]
+gradient = SubResource("Gradient_hugfm")
+
+[sub_resource type="Gradient" id="Gradient_xgiuy"]
+offsets = PackedFloat32Array(0.16, 0.2, 0.24, 0.33, 0.38, 0.61, 0.7, 0.76, 0.79, 0.82)
+colors = PackedColorArray(0, 0.6, 0.77254903, 1, 0.36286873, 0.25293383, 0.6274891, 1, 0.9490196, 0.46666667, 0.37254903, 1, 0.8862745, 0.8, 0.6666667, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.9529412, 0.9019608, 0.5921569, 1, 0.8784314, 0.5529412, 0.2784314, 1, 0.4117647, 0.27058825, 0.63529414, 1, 0, 0.6, 0.77254903, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkqya"]
+gradient = SubResource("Gradient_xgiuy")
+
+[sub_resource type="Sky" id="Sky_834qp"]
+sky_material = ExtResource("1_deabe")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_02eft"]
+background_mode = 2
+sky = SubResource("Sky_834qp")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.3
+tonemap_mode = 2
+
+[node name="Environment" type="Node3D" unique_id=1474578257]
+script = ExtResource("1_834qp")
+sun_color_gradient = SubResource("GradientTexture1D_ydnvs")
+moon_color_gradient = SubResource("GradientTexture1D_r2ahd")
+zenith_gradient = SubResource("GradientTexture1D_by662")
+horizon_gradient = SubResource("GradientTexture1D_k8y0t")
+ground_gradient = SubResource("GradientTexture1D_fkqya")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1564219917]
+environment = SubResource("Environment_02eft")
+
+[node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=179810992]
+shadow_enabled = true
+
+[node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1308965232]
+shadow_enabled = true

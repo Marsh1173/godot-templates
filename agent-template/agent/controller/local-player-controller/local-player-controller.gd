@@ -3,7 +3,7 @@ extends Controller
 
 @onready var ui_manager: UiManager = $UiManager
 @onready var controlled_camera: Node3D = $ControlledCamera
-const view_sensitivity: float = 0.0075
+const view_sensitivity: float = 0.007
 
 func set_view_direction(pitch: float, yaw: float):
 	super.set_view_direction(pitch, yaw)

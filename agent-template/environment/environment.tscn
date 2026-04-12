@@ -27,8 +27,9 @@ environment = SubResource("Environment_yce1a")
 
 [node name="Tone light" type="DirectionalLight3D" parent="." unique_id=46735119]
 transform = Transform3D(-0.37939247, 0.71186066, -0.5910295, 0.7217761, -0.17195135, -0.6704266, -0.5788785, -0.6809459, -0.44856694, 0, 0, 0)
-light_color = Color(0.60754395, 0.7547436, 0.984375, 1)
-light_energy = 0.2
+light_color = Color(0.8637179, 0.9142904, 0.99430007, 1)
+light_energy = 0.3
+light_volumetric_fog_energy = 0.0
 shadow_blur = 2.0
 sky_mode = 1
 

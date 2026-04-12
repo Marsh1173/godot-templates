@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bjbscjjr4acqj"]
+
+[ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="1_usepk"]
+[ext_resource type="PackedScene" uid="uid://cnobe2d080jb4" path="res://map-template/demo/observer/observer.tscn" id="2_g50rc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usepk"]
+albedo_color = Color(0.39832765, 0.45984352, 0.5035471, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g50rc"]
+material = SubResource("StandardMaterial3D_usepk")
+size = Vector2(50, 50)
+
+[node name="MapDemo" type="Node3D" unique_id=2146387203]
+
+[node name="Environment" parent="." unique_id=1474578257 instance=ExtResource("1_usepk")]
+
+[node name="Observer" parent="." unique_id=1249773883 instance=ExtResource("2_g50rc")]
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1146964314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1149063, 0)
+mesh = SubResource("PlaneMesh_g50rc")
