@@ -4,3 +4,6 @@
 
 # Generated icon files
 **/*_icon.png*
+
+# Export presets
+export_presets.cfg

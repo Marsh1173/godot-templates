@@ -10,6 +10,7 @@ const day_len_in_seconds: float = 120
 
 func _process(delta: float):
 	time += delta
+	#time = 50
 	var time_percent: float = fposmod(time, day_len_in_seconds) / day_len_in_seconds
 	_update_sky(time_percent)
 	_update_sun_and_moon(time_percent)
@@ -42,7 +43,7 @@ func _update_sun_and_moon(time_percent: float):
 	# 3. Handle Light Intensity (Don't want both on at once!)
 	# If the sun is below the horizon, turn it down and turn the moon up
 	var sun_altitude = sun_dir.y 
-	sunlight.light_energy = clamp(-sun_altitude * 3.0, 0.0, 3.0)
+	sunlight.light_energy = clamp(-sun_altitude * 2.0, 0.0, 2.0)
 	moonlight.light_energy = clamp(sun_altitude * 2.0, 0.0, 0.5) # Moon is dimmer
 	
 	# 4. Set moon crescent-ness

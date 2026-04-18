@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bjbscjjr4acqj"]
 
+[ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/debug-stats-component/debug-stats-component.tscn" id="1_g50rc"]
 [ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="1_usepk"]
 [ext_resource type="PackedScene" uid="uid://cnobe2d080jb4" path="res://map-template/demo/observer/observer.tscn" id="2_g50rc"]
 
@@ -11,6 +12,8 @@ material = SubResource("StandardMaterial3D_usepk")
 size = Vector2(50, 50)
 
 [node name="MapDemo" type="Node3D" unique_id=2146387203]
+
+[node name="DebugStatsComponent" parent="." unique_id=1299180042 instance=ExtResource("1_g50rc")]
 
 [node name="Environment" parent="." unique_id=1474578257 instance=ExtResource("1_usepk")]
 

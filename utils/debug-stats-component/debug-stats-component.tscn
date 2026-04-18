@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh2mqx3hbr7ok"]
 
-[ext_resource type="Script" uid="uid://bi03lbayqpbeo" path="res://agent-template/agent/controller/local-player-controller/ui-manager/debug-stats-component/debug-stats-component.gd" id="1_p8frg"]
+[ext_resource type="Script" uid="uid://bi03lbayqpbeo" path="res://utils/debug-stats-component/debug-stats-component.gd" id="1_p8frg"]
 
 [node name="DebugStatsComponent" type="Control" unique_id=1299180042]
 layout_mode = 3
