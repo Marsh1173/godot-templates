@@ -10,7 +10,8 @@ const day_len_in_seconds: float = 120
 
 func _process(delta: float):
 	time += delta
-	#time = 50
+	#time = 35 # Lock to morning
+	
 	var time_percent: float = fposmod(time, day_len_in_seconds) / day_len_in_seconds
 	_update_sky(time_percent)
 	_update_sun_and_moon(time_percent)
