@@ -29,9 +29,9 @@ uniform float star_twinkle_speed : hint_range(0.0, 10.0) = 1.3;
 uniform vec3 star_color : source_color = vec3(1.0, 1.0, 1.0);
 
 // --- CLOUD UNIFORMS (Add these at the top) ---
-uniform float cloud_scale : hint_range(0.1, 2.0) = 0.15;
+uniform float cloud_scale : hint_range(0.1, 2.0) = 0.05;
 uniform float cloud_speed : hint_range(0.0, 0.1) = 0.0025;
-uniform float cloud_edge : hint_range(0.0, 1.0) = 0.25;
+uniform float cloud_edge : hint_range(0.0, 1.0) = 0.3;
 uniform vec3 cloud_color : source_color = vec3(1.0, 1.0, 1.0);
 
 // Helper for cloud rotation
@@ -137,13 +137,16 @@ void sky() {
 	
 	// --- CLOUD LOGIC ---
 	float cloud_density = 0.0;
+	
+	float vertical_squish = pow(max(EYEDIR.y, 0.0) + 0.3, 2);
+	
 	// We use EYEDIR.xz for the horizontal plane and project the sphere
-	vec2 cloud_p = EYEDIR.xz / (max(EYEDIR.y, 0.0) + 0.3); 
+	vec2 cloud_p = EYEDIR.xz / (vertical_squish);
 	cloud_p *= cloud_scale;
 	cloud_p.x += TIME * cloud_speed;
 
 	// Iterative Sine-based Noise loop
-	for(float s = 200.0; s > 10.0; s *= 0.8) {
+	for(float s = 50.0; s > 10.0; s *= 0.8) {
 	    cloud_p *= rot(s);
 	    cloud_p += s;
 	    // Accumulate sine waves
@@ -153,7 +156,7 @@ void sky() {
 	// Shape the clouds (thresholding)
 	float cloud_mask = cloud_density * smoothstep(cloud_edge + 0.1, cloud_edge, cloud_density - 0.095);
 	// Fade clouds near horizon so they don't look like a flat cap
-	float horizon_fade = smoothstep(0.05, 0.4, EYEDIR.y);
+	float horizon_fade = smoothstep(0.05, 0.3, EYEDIR.y);
 	
 	// 1. Calculate a "daylight factor"
 	// sun_direction.y is 1.0 at noon and -1.0 at midnight.

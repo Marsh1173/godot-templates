@@ -22,3 +22,7 @@ shader_parameter/star_size = 0.2
 shader_parameter/star_glow_intensity = 0.2
 shader_parameter/star_twinkle_speed = 1.3
 shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_scale = 0.05
+shader_parameter/cloud_speed = 0.0025
+shader_parameter/cloud_edge = 0.3
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
