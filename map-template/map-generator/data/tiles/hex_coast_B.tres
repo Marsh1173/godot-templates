@@ -9,11 +9,11 @@ tile_name = &"coast_B"
 tile_id = 1
 edges = {
 0: 0,
-1: 4,
-2: 1,
+1: 0,
+2: 4,
 3: 1,
-4: 4,
-5: 0
+4: 1,
+5: 4
 }
 weight = 50.0
 mesh_scene = ExtResource("1_4rlxj")

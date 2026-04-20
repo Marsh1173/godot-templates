@@ -9,11 +9,11 @@ tile_name = &"grass_sloped_high"
 tile_id = 6
 edges = {
 0: 5,
-1: 5,
-2: 5,
+1: 0,
+2: 0,
 3: 0,
-4: 0,
-5: 0
+4: 5,
+5: 5
 }
 weight = 500.0
 mesh_scene = ExtResource("1_lfoxn")

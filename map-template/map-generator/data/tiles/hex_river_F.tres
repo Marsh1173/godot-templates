@@ -9,11 +9,11 @@ tile_name = &"river_F"
 tile_id = 16
 edges = {
 0: 0,
-1: 3,
+1: 0,
 2: 3,
 3: 0,
 4: 3,
-5: 0
+5: 3
 }
 weight = 20.0
 mesh_scene = ExtResource("1_gamgu")
