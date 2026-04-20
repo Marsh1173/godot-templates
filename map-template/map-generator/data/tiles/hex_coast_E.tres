@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="HexTileType" format=3 uid="uid://c4e7apjrrap63"]
+
+[ext_resource type="PackedScene" uid="uid://bpptq2cdid8io" path="res://map-template/map-generator/data/tiles/gltfs/hex_coast_E.gltf" id="1_08bt4"]
+[ext_resource type="Script" uid="uid://bf7a2iv8eiufq" path="res://map-template/map-generator/data/hex-tile-type.gd" id="2_hlo1p"]
+
+[resource]
+script = ExtResource("2_hlo1p")
+tile_name = &"coast_E"
+tile_id = 4
+edges = {
+0: 0,
+1: 0,
+2: 4,
+3: 4,
+4: 0,
+5: 0
+}
+weight = 50.0
+mesh_scene = ExtResource("1_08bt4")
+symmetry = 1

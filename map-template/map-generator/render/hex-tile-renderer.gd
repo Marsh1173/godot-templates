@@ -92,7 +92,7 @@ func render_grid(result: Dictionary, offset: Vector3i = Vector3i.ZERO) -> void:
 		instance.position = world_pos
 
 		# Rotate by rotation * 60 degrees around the Y axis
-		instance.rotation.y = data["rotation"] * (TAU / 6.0)
+		instance.rotation.y = data["rotation"] * (TAU / 6.0) + (TAU * 7 / 12.0)
 
 		# Name the node for debugging (e.g., "tile_0_2_-2")
 		instance.name = "tile_%d_%d_%d" % [int(coords.x), int(coords.y), int(coords.z)]

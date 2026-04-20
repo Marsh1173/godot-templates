@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="HexTileType" format=3 uid="uid://d2my00hx672w1"]
+
+[ext_resource type="PackedScene" uid="uid://bb00llo2xvjeq" path="res://map-template/map-generator/data/tiles/gltfs/hex_river_D.gltf" id="1_iggp8"]
+[ext_resource type="Script" uid="uid://bf7a2iv8eiufq" path="res://map-template/map-generator/data/hex-tile-type.gd" id="2_oxeaq"]
+
+[resource]
+script = ExtResource("2_oxeaq")
+tile_name = &"river_D"
+tile_id = 14
+edges = {
+0: 3,
+1: 0,
+2: 3,
+3: 0,
+4: 3,
+5: 0
+}
+weight = 20.0
+mesh_scene = ExtResource("1_iggp8")
+symmetry = 2

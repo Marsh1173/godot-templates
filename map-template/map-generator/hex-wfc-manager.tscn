@@ -1,13 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bshc0g0wd1266"]
 
-[ext_resource type="Script" path="res://map-template/map-generator/hex-wfc-manager.gd" id="1"]
+[ext_resource type="Script" uid="uid://4nj2l6hhd07m" path="res://map-template/map-generator/hex-wfc-manager.gd" id="1"]
 
-[node name="HexWFCManager" type="Node3D"]
+[node name="HexWFCManager" type="Node3D" unique_id=603364247]
 script = ExtResource("1")
-generation_seed = 0
-grid_radius = 5
-max_level = 4
-hex_size = 1.0
-level_height = 0.5
 chunk_count = 0
-auto_generate = true

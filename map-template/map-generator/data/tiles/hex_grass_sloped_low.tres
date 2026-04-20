@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="HexTileType" format=3 uid="uid://x7usbwbgs4lw"]
+
+[ext_resource type="PackedScene" uid="uid://ngysj1lkaqal" path="res://map-template/map-generator/data/tiles/gltfs/hex_grass_sloped_low.gltf" id="1_yh37g"]
+[ext_resource type="Script" uid="uid://bf7a2iv8eiufq" path="res://map-template/map-generator/data/hex-tile-type.gd" id="2_7maqy"]
+
+[resource]
+script = ExtResource("2_7maqy")
+tile_name = &"grass_sloped_low"
+tile_id = 7
+edges = {
+0: 5,
+1: 5,
+2: 5,
+3: 0,
+4: 5,
+5: 5
+}
+weight = 500.0
+mesh_scene = ExtResource("1_yh37g")
+level_increment = 1
+high_edges = Array[int]([3, 4, 5])
+symmetry = 1

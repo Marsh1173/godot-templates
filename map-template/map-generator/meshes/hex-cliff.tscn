@@ -1,7 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cvt3qmr73snwu"]
 
 [sub_resource type="StandardMaterial3D" id="mat"]
-albedo_color = Color(0.5, 0.45, 0.35, 1.0)
+albedo_color = Color(0.5, 0.45, 0.35, 1)
 
 [sub_resource type="CylinderMesh" id="mesh"]
 material = SubResource("mat")
@@ -12,18 +12,17 @@ radial_segments = 6
 rings = 0
 
 [sub_resource type="CylinderShape3D" id="shape"]
-radius = 1.0
 height = 0.5
+radius = 1.0
 
-[node name="HexCliff" type="Node3D"]
+[node name="HexCliff" type="Node3D" unique_id=715464397]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1466928302]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, -0.25, 0)
 mesh = SubResource("mesh")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 1
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1882189268]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=453445682]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, -0.25, 0)
 shape = SubResource("shape")

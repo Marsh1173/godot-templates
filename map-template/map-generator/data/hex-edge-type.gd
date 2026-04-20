@@ -45,13 +45,13 @@ enum Type {
 	COAST = 4,       ## Transition between land and water. Bridges grass<->water.
 	CLIFF = 5,       ## Vertical terrain drop. Connects tiles at different levels.
 	CLIFF_ROAD = 6,  ## Cliff with a road going up/down it.
-	FOREST = 7,      ## Dense tree coverage. Creates forest regions.
+	#FOREST = 7,      ## Dense tree coverage. Creates forest regions.
 }
 
 ## Human-readable names for each edge type (used in debug output).
 const NAMES: Array[StringName] = [
 	&"grass", &"water", &"road", &"river",
-	&"coast", &"cliff", &"cliff_road", &"forest",
+	&"coast", &"cliff", &"cliff_road", ## &"forest",
 ]
 
 

@@ -1,29 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://c68vebsydjyys"]
 
-[sub_resource type="StandardMaterial3D" id="mat"]
-albedo_color = Color(0.15, 0.35, 0.75, 1.0)
+[ext_resource type="PackedScene" uid="uid://btjs28ibg8bn6" path="res://map-template/map-generator/data/tiles/gltfs/hex_water.gltf" id="1_kqd3o"]
 
-[sub_resource type="CylinderMesh" id="mesh"]
-material = SubResource("mat")
-top_radius = 1.0
-bottom_radius = 1.0
-height = 0.2
-radial_segments = 6
-rings = 0
+[node name="HexWater" type="Node3D" unique_id=939577446]
 
-[sub_resource type="CylinderShape3D" id="shape"]
-radius = 1.0
-height = 0.2
-
-[node name="HexWater" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, -0.1, 0)
-mesh = SubResource("mesh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, -0.1, 0)
-shape = SubResource("shape")
+[node name="hex_water2" parent="." unique_id=251121280 instance=ExtResource("1_kqd3o")]

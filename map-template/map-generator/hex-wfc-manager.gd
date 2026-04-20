@@ -74,7 +74,7 @@ extends Node3D
 
 ## Outer radius of each hexagon (center to vertex distance in world units).
 ## Controls how far apart tiles are spaced.
-@export var hex_size: float = 1.0
+@export var hex_size: float = 1.1547000408172607
 
 ## World-space height per elevation level.
 @export var level_height: float = 0.5
