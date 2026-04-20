@@ -10,8 +10,8 @@
 script = ExtResource("1_770gj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=963910992]
-visible = false
 shape = SubResource("CapsuleShape3D_tnnq0")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=803743968]
 visible = false

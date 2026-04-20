@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/debug-stats-component/debug-stats-component.tscn" id="1_g50rc"]
 [ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="1_usepk"]
 [ext_resource type="PackedScene" uid="uid://cnobe2d080jb4" path="res://map-template/demo/observer/observer.tscn" id="2_g50rc"]
+[ext_resource type="PackedScene" path="res://map-template/map-generator/hex-wfc-manager.tscn" id="4_l3gvf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usepk"]
 albedo_color = Color(0.39832765, 0.45984352, 0.5035471, 1)
@@ -21,4 +22,7 @@ size = Vector2(50, 50)
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1146964314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1149063, 0)
+visible = false
 mesh = SubResource("PlaneMesh_g50rc")
+
+[node name="HexWFCManager" parent="." unique_id=412043443 instance=ExtResource("4_l3gvf")]

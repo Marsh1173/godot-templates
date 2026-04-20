@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HexTileType" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://map-template/map-generator/data/hex-tile-type.gd" id="1"]
+[ext_resource type="PackedScene" path="res://map-template/map-generator/meshes/hex-cliff.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+tile_name = &"cliff"
+tile_id = 10
+edges = { 0: 0, 1: 5, 2: 0, 3: 0, 4: 5, 5: 0 }
+weight = 20.0
+mesh_scene = ExtResource("2")
+level_increment = 1
+high_edges = [1]
+prevent_chaining = false
+symmetry = 3
+walkable = false
