@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://bsktmwn7rs3pt"]
+
+[ext_resource type="PackedScene" uid="uid://dsi07wy2rnx61" path="res://map-template/map-generator/tiles/gltfs/hex_road_A_sloped_low.gltf" id="1_lojo3"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map-template/map-generator/core/hex-tile.gd" id="2_kas76"]
+
+[resource]
+script = ExtResource("2_kas76")
+tile_name = &"road-a-sloped-low"
+scene = ExtResource("1_lojo3")
+edges = Array[int]([1, 0, 0, 1, 0, 0])
+edge_heights = Array[int]([1, 1, 0, 0, 0, 1])
+symmetry_mod = 2
+metadata/_custom_type_script = "uid://cmjk2lbq52sd8"

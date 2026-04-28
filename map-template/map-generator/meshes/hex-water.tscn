@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://c68vebsydjyys"]
-
-[ext_resource type="PackedScene" uid="uid://btjs28ibg8bn6" path="res://map-template/map-generator/data/tiles/gltfs/hex_water.gltf" id="1_kqd3o"]
-
-[node name="HexWater" type="Node3D" unique_id=939577446]
-
-[node name="hex_water2" parent="." unique_id=251121280 instance=ExtResource("1_kqd3o")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://t0ec57vong4l"]
+
+[ext_resource type="PackedScene" uid="uid://c0ahsfv8reqin" path="res://map-template/map-generator/tiles/gltfs/hex_river_A_curvy.gltf" id="1_nc81l"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map-template/map-generator/core/hex-tile.gd" id="2_57uil"]
+
+[resource]
+script = ExtResource("2_57uil")
+tile_name = &"river-a-curvy"
+scene = ExtResource("1_nc81l")
+weight = 0.15
+edges = Array[int]([2, 0, 0, 2, 0, 0])
+symmetry_mod = 2
+metadata/_custom_type_script = "uid://cmjk2lbq52sd8"
