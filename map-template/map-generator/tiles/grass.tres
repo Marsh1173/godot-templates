@@ -7,7 +7,7 @@
 script = ExtResource("1_3j3w2")
 tile_name = &"grass"
 scene = ExtResource("1_fi27n")
-weight = 20.0
+weight = 10.0
 edges = Array[int]([0, 0, 0, 0, 0, 0])
 symmetry_mod = 6
 metadata/_custom_type_script = "uid://cmjk2lbq52sd8"

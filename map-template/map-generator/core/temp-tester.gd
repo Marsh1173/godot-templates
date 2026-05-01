@@ -1,7 +1,7 @@
 class_name TempTester
 extends Node
 
-@export var size: int = 5
+@export var size: int = 6
 @export var height: int = 3
 
 ## Background thread for solving.
@@ -58,7 +58,7 @@ func create_meshes(solver: Solver):
 		var scene: Node3D = cell.possible_tiles[0].scene.instantiate()
 		scene.position = HexMath.axial_to_world(cell.coords.x, cell.coords.y, 1.1547)
 		scene.rotation.y = cell.possible_tiles[0].rotation * PI / 3
-		scene.position.y = cell.possible_tiles[0].edge_heights.min() * 0.5
+		scene.position.y = cell.possible_tiles[0].edge_heights.min()
 		add_child(scene)
 	if _thread != null:
 		_thread.wait_to_finish()

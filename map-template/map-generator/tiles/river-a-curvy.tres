@@ -7,7 +7,7 @@
 script = ExtResource("2_57uil")
 tile_name = &"river-a-curvy"
 scene = ExtResource("1_nc81l")
-weight = 0.15
+weight = 0.2
 edges = Array[int]([2, 0, 0, 2, 0, 0])
 symmetry_mod = 2
 metadata/_custom_type_script = "uid://cmjk2lbq52sd8"

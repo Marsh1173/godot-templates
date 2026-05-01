@@ -93,6 +93,7 @@ func _setup_grid_recursive(curr: Vector2i, size: int):
 
 #region Observe and propagate
 func get_lowest_entropy_cell() -> Cell:
+	const buffer: float = 2
 	var lowest_entropy: float = INF
 	var tied_cells: Array[Cell] = []
 	
@@ -104,10 +105,10 @@ func get_lowest_entropy_cell() -> Cell:
 		if entropy == 0:
 			return null
 		
-		if entropy < lowest_entropy - 0.5:
+		if entropy < lowest_entropy - buffer:
 			lowest_entropy = entropy
 			tied_cells = [cell]
-		elif entropy < lowest_entropy + 0.5:
+		elif entropy < lowest_entropy + buffer:
 			tied_cells.append(cell)
 	
 	if len(tied_cells) == 0:
@@ -177,8 +178,19 @@ func calc_matched_tiles(
 	
 	for neighbor_tile: HexTile in neighbor:
 		for current_tile: HexTile in current_tiles:
-			if neighbor_tile.edges[opposite_dir] == current_tile.edges[direction_to_neighbor_index] and\
-			neighbor_tile.edge_heights[opposite_dir] == current_tile.edge_heights[direction_to_neighbor_index]:
+			var height_matches: bool = neighbor_tile.edge_heights[opposite_dir] == current_tile.edge_heights[direction_to_neighbor_index]
+			var curr_edge: HexTile.Edge = current_tile.edges[direction_to_neighbor_index]
+			var opp_edge: HexTile.Edge = neighbor_tile.edges[opposite_dir]
+			
+			var cliffs_match: bool = (curr_edge == HexTile.Edge.CLIFF_LEFT or curr_edge == HexTile.Edge.CLIFF_RIGHT) and \
+				(opp_edge == HexTile.Edge.CLIFF_LEFT or opp_edge == HexTile.Edge.CLIFF_RIGHT) and \
+				(opp_edge != curr_edge)
+			
+			var non_cliffs_match: bool = curr_edge != HexTile.Edge.CLIFF_LEFT and curr_edge != HexTile.Edge.CLIFF_RIGHT and \
+				opp_edge != HexTile.Edge.CLIFF_LEFT and opp_edge != HexTile.Edge.CLIFF_RIGHT and \
+				opp_edge == curr_edge
+			
+			if height_matches and (cliffs_match or non_cliffs_match):
 				new_neighbor.append(neighbor_tile)
 				break
 	
