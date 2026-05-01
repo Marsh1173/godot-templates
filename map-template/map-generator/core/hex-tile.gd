@@ -25,12 +25,8 @@ enum Edge {
 ## Keeps track of how many 60-degree turns for this specific tile's mesh. Can be 0-5
 var rotation: int = 0
 
-func reset_edge_heights():
-	var new_edge_heights: Array[int] = edge_heights.duplicate()
-	var lowest: int = new_edge_heights.min()
-	for i in range(len(new_edge_heights)):
-		new_edge_heights[i] -= lowest
-	edge_heights = new_edge_heights
+## Index in Solver.all_possible_tiles_master_list, assigned at load time
+var index: int = 0
 
 func create_raised_variants(height: int) -> Array[HexTile]:
 	var copies: Array[HexTile] = []

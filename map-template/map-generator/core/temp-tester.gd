@@ -1,8 +1,8 @@
 class_name TempTester
 extends Node
 
-@export var size: int = 6
-@export var height: int = 3
+@export var size: int = 7
+@export var height: int = 2
 
 ## Background thread for solving.
 var _thread: Thread

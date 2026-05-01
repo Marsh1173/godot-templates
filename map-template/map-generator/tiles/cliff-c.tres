@@ -7,7 +7,7 @@
 script = ExtResource("2_347yx")
 tile_name = &"cliff-c"
 scene = ExtResource("1_tf5vj")
-weight = 10.0
+weight = 2.0
 edges = Array[int]([0, 0, 0, 3, 0, 4])
 edge_heights = Array[int]([0, 0, 0, 0, 1, 0])
 metadata/_custom_type_script = "uid://cmjk2lbq52sd8"
