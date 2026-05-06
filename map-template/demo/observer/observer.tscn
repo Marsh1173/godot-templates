@@ -20,4 +20,4 @@ mesh = SubResource("CapsuleMesh_770gj")
 [node name="CameraPivot" type="Node3D" parent="." unique_id=383430667]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=31940255]
-transform = Transform3D(1, 0, 0, 0, 0.9805017, 0.19651091, 0, -0.19651091, 0.9805017, 0, 1.7022843, 2.9258885)
+transform = Transform3D(1, 0, 0, 0, 0.9805017, 0.19651091, 0, -0.19651091, 0.9805017, 0, 0, 0)

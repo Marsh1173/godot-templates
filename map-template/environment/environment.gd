@@ -6,11 +6,11 @@ extends Node3D
 @onready var moonlight: DirectionalLight3D = $Moonlight
 
 var time: float = 0
-const day_len_in_seconds: float = 300
+const day_len_in_seconds: float = 60 * 8 # 8 minutes
 
 func _process(delta: float):
 	time += delta
-	time = 0.30 * day_len_in_seconds # Lock to morning
+	#time = 0.30 * day_len_in_seconds # Lock to morning
 	
 	var time_percent: float = fposmod(time, day_len_in_seconds) / day_len_in_seconds
 	_update_sky(time_percent)
@@ -44,8 +44,8 @@ func _update_sun_and_moon(time_percent: float):
 	# 3. Handle Light Intensity (Don't want both on at once!)
 	# If the sun is below the horizon, turn it down and turn the moon up
 	var sun_altitude = sun_dir.y 
-	sunlight.light_energy = clamp(-sun_altitude * 2.0, 0.0, 2.0)
-	moonlight.light_energy = clamp(sun_altitude * 2.0, 0.0, 0.5) # Moon is dimmer
+	sunlight.light_energy = clamp(-sun_altitude * 1.0, 0.0, 0.6)
+	moonlight.light_energy = clamp(sun_altitude * 2.0, 0.0, 0.3) # Moon is dimmer
 	
 	# 4. Set moon crescent-ness
 	sky_material.set_shader_parameter("moon_crescent_offset", fposmod(time / (day_len_in_seconds * 17), 0.2) - 0.1)
