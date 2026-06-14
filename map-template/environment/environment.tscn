@@ -5,7 +5,7 @@
 
 [sub_resource type="Gradient" id="Gradient_02eft"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0.1421051, 0.37236825, 0.65197355, 0.89539456)
+offsets = PackedFloat32Array(0.1421051, 0.37029687, 0.65197355, 0.89539456)
 colors = PackedColorArray(0, 0, 0, 1, 0.6180157, 0.6983686, 0.7667954, 1, 0.6180157, 0.6983686, 0.7667954, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ydnvs"]
@@ -67,7 +67,9 @@ ground_gradient = SubResource("GradientTexture1D_fkqya")
 environment = SubResource("Environment_02eft")
 
 [node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=179810992]
+transform = Transform3D(1, 0, 0, 0, 0.016632285, 0.9998618, 0, -0.9998618, 0.016632285, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1308965232]
+transform = Transform3D(1, 0, 0, 0, 0.023088655, -0.99973345, 0, 0.99973345, 0.023088655, 0, 0, 0)
 shadow_enabled = true

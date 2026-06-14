@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://dc8v6wwjqxsa5"]
+
+[ext_resource type="Script" uid="uid://dsejvsi7pwe2b" path="res://agent-template/textures/texture-gradient/texture-gradient-generator.gd" id="1_opact"]
+
+[sub_resource type="Gradient" id="Gradient_ktmoo"]
+colors = PackedColorArray(0.50180656, 0.41259515, 0.31869924, 1, 0.31563652, 0.26790094, 0.18840697, 1)
+
+[sub_resource type="Gradient" id="Gradient_opact"]
+colors = PackedColorArray(0.7019608, 0.6745098, 0.6117647, 1, 0.5372549, 0.5058824, 0.42352942, 1)
+
+[sub_resource type="Gradient" id="Gradient_n5we0"]
+offsets = PackedFloat32Array(0, 0.9942121)
+colors = PackedColorArray(0.39607844, 0.49803922, 0.38431373, 1, 0.2509804, 0.34509805, 0.24313726, 1)
+
+[sub_resource type="Gradient" id="Gradient_gy4is"]
+colors = PackedColorArray(0.54901963, 0.47843137, 0.38039216, 1, 0.44705883, 0.36862746, 0.27450982, 1)
+
+[sub_resource type="Gradient" id="Gradient_s8rh2"]
+colors = PackedColorArray(0.5058824, 0.49411765, 0.45882353, 1, 0.2784314, 0.28627452, 0.25882354, 1)
+
+[sub_resource type="Gradient" id="Gradient_3832u"]
+colors = PackedColorArray(0.48235294, 0.5882353, 0.3764706, 1, 0.32156864, 0.4392157, 0.22745098, 1)
+
+[sub_resource type="Gradient" id="Gradient_xl46b"]
+offsets = PackedFloat32Array(0, 0.26, 1)
+colors = PackedColorArray(0.6509804, 0.5137255, 0.3647059, 1, 0.6039216, 0.58431375, 0.40784314, 1, 0.48235294, 0.5882353, 0.3764706, 1)
+
+[sub_resource type="Gradient" id="Gradient_a6eji"]
+colors = PackedColorArray(0.41568628, 0.49019608, 0.40392157, 1, 0.21960784, 0.28627452, 0.20784314, 1)
+
+[sub_resource type="Gradient" id="Gradient_nvvqn"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_5g50m"]
+colors = PackedColorArray(0.60784316, 0.62352943, 0.7490196, 1, 0.11764706, 0.1254902, 0.1882353, 1)
+
+[sub_resource type="Gradient" id="Gradient_ykvmp"]
+offsets = PackedFloat32Array(0, 0.5, 0.9974275)
+colors = PackedColorArray(0.9999997, 0.5486225, 0.5777138, 1, 0.9372549, 0.25882354, 0.26666668, 1, 0.20784314, 0.07450981, 0.05490196, 1)
+
+[node name="TextureGradientGenerator" type="Node2D" unique_id=1420310356]
+script = ExtResource("1_opact")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=731412479]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1723126419]
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 3
+msaa_3d = 3
+screen_space_aa = 2
+use_occlusion_culling = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=9402097]
+
+[node name="Top row" type="Node" parent="SubViewportContainer/SubViewport" unique_id=1721012538]
+
+[node name="Leather" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=455519227]
+position = Vector2(8, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Linen" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1646105722]
+position = Vector2(24, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_opact")
+joint_mode = 1
+
+[node name="Forest Cloth" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=268312309]
+position = Vector2(40, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_n5we0")
+joint_mode = 1
+
+[node name="Canvas Cloth" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1395399561]
+position = Vector2(56, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_gy4is")
+joint_mode = 1
+
+[node name="Metal" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=777913064]
+position = Vector2(72, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_s8rh2")
+joint_mode = 1
+
+[node name="Green Skin" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1239735954]
+position = Vector2(88, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_3832u")
+joint_mode = 1
+
+[node name="Subsurface Green Skin" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=2135124042]
+position = Vector2(104, 0)
+points = PackedVector2Array(0, 0, 0, 64, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_xl46b")
+joint_mode = 1
+
+[node name="Green Hair" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1124865805]
+position = Vector2(120, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_a6eji")
+joint_mode = 1
+
+[node name="Black to White" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1844051075]
+position = Vector2(136, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_nvvqn")
+joint_mode = 1
+
+[node name="Stone" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1978301267]
+position = Vector2(152, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_5g50m")
+joint_mode = 1
+
+[node name="Red Fruit" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=478606407]
+position = Vector2(168, 0)
+points = PackedVector2Array(0, 0, 0, 64, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ykvmp")
+joint_mode = 1
+
+[node name="Line2D12" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=594457897]
+position = Vector2(184, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D13" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=771589122]
+position = Vector2(200, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D14" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=657804228]
+position = Vector2(216, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D15" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=723647281]
+position = Vector2(232, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D16" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=720065047]
+position = Vector2(248, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D17" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1468595317]
+position = Vector2(264, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D18" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=840113791]
+position = Vector2(280, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D19" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1646625238]
+position = Vector2(296, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D20" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=216824631]
+position = Vector2(312, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D21" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=944586184]
+position = Vector2(328, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D22" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1436495648]
+position = Vector2(344, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D23" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=496118586]
+position = Vector2(360, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D24" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1568926686]
+position = Vector2(376, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D25" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1791242043]
+position = Vector2(392, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D26" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=261658427]
+position = Vector2(408, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D27" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=148000173]
+position = Vector2(424, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D28" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=91772725]
+position = Vector2(440, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D29" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1128746369]
+position = Vector2(456, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D30" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=744655727]
+position = Vector2(472, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D31" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=791011036]
+position = Vector2(488, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1
+
+[node name="Line2D32" type="Line2D" parent="SubViewportContainer/SubViewport/Top row" unique_id=1490527665]
+position = Vector2(504, 0)
+points = PackedVector2Array(0, 0, 0, 128)
+width = 16.0
+gradient = SubResource("Gradient_ktmoo")
+joint_mode = 1

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://nlimh40qja4m"]
+
+[ext_resource type="PackedScene" uid="uid://djl3q6ynbkau0" path="res://map-template/environment/special-clouds/clouds.tscn" id="2_t8135"]
+[ext_resource type="CompressedTexture3D" uid="uid://437feiv1oerc" path="res://map-template/environment/special-clouds/textures/clouds/cloud_sdf_detail.exr" id="3_p7a2v"]
+[ext_resource type="CompressedTexture3D" uid="uid://bwvwaoihjy78g" path="res://map-template/environment/special-clouds/textures/clouds/cloud_sdf_base.exr" id="4_lbw6e"]
+[ext_resource type="CompressedTexture3D" uid="uid://4ncscg8jgec0" path="res://map-template/environment/special-clouds/textures/clouds/cloud_volume_a.png" id="6_qfyv4"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_p7a2v"]
+mie_color = Color(1, 0.8117647, 0.5529412, 1)
+
+[sub_resource type="Sky" id="Sky_h7kf7"]
+sky_material = SubResource("PhysicalSkyMaterial_p7a2v")
+
+[sub_resource type="Environment" id="Environment_oa3jf"]
+background_mode = 2
+sky = SubResource("Sky_h7kf7")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.3
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+
+[node name="Environment2" type="Node3D" unique_id=1227818727]
+
+[node name="clouds" parent="." unique_id=1715942459 node_paths=PackedStringArray("world_environment", "directional_light") instance=ExtResource("2_t8135")]
+world_environment = NodePath("../WorldEnvironment")
+directional_light = NodePath("../Light")
+cloud_base_texture = ExtResource("4_lbw6e")
+cloud_detail_texture = ExtResource("3_p7a2v")
+cloud_volume_texture = ExtResource("6_qfyv4")
+
+[node name="Light" type="DirectionalLight3D" parent="." unique_id=1879088097]
+transform = Transform3D(0.682, -0.467, 0.563, -0.398, 0.409, 0.821, -0.613, -0.784, 0.093, 0, 0, 0)
+rotation_edit_mode = 2
+light_color = Color(1, 0.8117647, 0.5529412, 1)
+light_energy = 0.3
+light_angular_distance = 1.0
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1241386755]
+environment = SubResource("Environment_oa3jf")

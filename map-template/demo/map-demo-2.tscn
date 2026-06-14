@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b0r5c310w7e3d"]
+
+[ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/debug-stats-component/debug-stats-component.tscn" id="1_oilu7"]
+[ext_resource type="PackedScene" uid="uid://nlimh40qja4m" path="res://map-template/environment/environment-2.tscn" id="2_vo2vg"]
+[ext_resource type="PackedScene" uid="uid://cnobe2d080jb4" path="res://map-template/demo/observer/observer.tscn" id="3_v6byq"]
+[ext_resource type="PackedScene" uid="uid://5votfdsc4kxk" path="res://map-template/map-generator/core/temp-tester.tscn" id="4_1tuck"]
+
+[node name="MapDemo2" type="Node3D" unique_id=1676090579]
+
+[node name="DebugStatsComponent" parent="." unique_id=1299180042 instance=ExtResource("1_oilu7")]
+
+[node name="Observer" parent="." unique_id=1249773883 instance=ExtResource("3_v6byq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3198876, 0)
+
+[node name="TempTester" parent="." unique_id=1781223095 instance=ExtResource("4_1tuck")]
+
+[node name="Environment2" parent="." unique_id=1227818727 instance=ExtResource("2_vo2vg")]

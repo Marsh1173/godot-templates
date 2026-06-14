@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://didjxeru7lnjk" path="res://agent-template/gym/gym.gd" id="1_w5k1r"]
 [ext_resource type="PackedScene" uid="uid://2bqc3owq6734" path="res://agent-template/gym/block/block.tscn" id="2_me3mq"]
 [ext_resource type="PackedScene" uid="uid://dr0mjka3ukg4q" path="res://agent-template/world/world.tscn" id="2_ntnsb"]
+[ext_resource type="ArrayMesh" uid="uid://cfov7cj6ibqtk" path="res://map-template/doodads/models/Doodads_Tree_3.res" id="4_ntnsb"]
+[ext_resource type="ArrayMesh" uid="uid://cek17ur884pg3" path="res://map-template/doodads/models/Doodads_Tree_1.res" id="5_1o4se"]
+[ext_resource type="ArrayMesh" uid="uid://dqim3xayn537i" path="res://map-template/doodads/models/Doodads_Tree_2.res" id="6_pqvan"]
+[ext_resource type="ArrayMesh" uid="uid://b3s7jfo23fatr" path="res://map-template/doodads/models/Doodads_Rock_med_3.res" id="7_1o4se"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1o4se"]
+points = PackedVector3Array(0.099115364, 0.10927399, -2.1696, 0.10010354, 4.5103073, 2.2402787, -0.022791274, 4.4981294, 2.2203293, 0.34442818, 6.955369, -2.0560062, -1.9797813, 6.5824327, -0.9519604, -1.8972293, -0.5900253, 0.9011176, 1.9340379, -0.26521763, 1.0043266, 1.9732217, 7.025832, -0.7217731, -1.7572875, 6.9997416, 1.1418462, 1.8070964, -0.5009243, -1.1933429, 1.6995822, 6.8494844, 1.2565057, -1.6280006, -0.5460141, -1.3319826, -0.5121339, -0.39156768, 1.9851513, -0.38894135, 6.944313, -2.0499418, 0.2271771, 7.167762, 1.9053217, 0.85659957, -0.8625712, -0.09888627, 0.4572288, 0.27647305, 2.0680285, -1.5299187, 7.1789055, -0.8527516, -1.9529177, 1.3496405, -1.1795595, -1.9513121, 3.1588502, 1.1112316, -0.7545122, -0.5020475, -1.9261549, 1.23404, 7.1826005, -1.48232, 1.9271841, 6.2052093, 1.1228703, -1.219435, 2.3210871, 1.702152, 1.5490385, 0.014433305, 1.4776534, 1.9007016, 1.4763588, -1.1754149, -2.0094047, -0.4417885, 0.026438713, -0.1456491, 6.846125, 2.1165621, 0.2251633, -0.56864226, 1.890185, -1.4834119, 6.932056, -1.43442, 0.5818422, 0.98201835, -2.0295424, 1.6778992, 6.8030233, -1.3097296)
 
 [node name="Gym" type="Node3D" unique_id=240276319]
 script = ExtResource("1_w5k1r")
@@ -27,3 +34,42 @@ outline_modulate = Color(0, 0, 0, 0)
 text = "Gym"
 font_size = 512
 uppercase = true
+
+[node name="DoodadsTree3" type="MeshInstance3D" parent="." unique_id=98047048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6933293, -0.26403308, -0.8327694)
+mesh = ExtResource("4_ntnsb")
+
+[node name="DoodadsTree1" type="MeshInstance3D" parent="." unique_id=1164743918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2833385, -0.26403403, -7.2011375)
+mesh = ExtResource("5_1o4se")
+
+[node name="DoodadsTree2" type="MeshInstance3D" parent="." unique_id=1152349861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.120194, -0.44350404, 7.231309)
+mesh = ExtResource("6_pqvan")
+
+[node name="DoodadsRockMed3" type="MeshInstance3D" parent="." unique_id=364218144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1528032, -4.7642956, 7.4977207)
+mesh = ExtResource("7_1o4se")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoodadsRockMed3" unique_id=2016742342]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoodadsRockMed3/StaticBody3D" unique_id=1863560199]
+shape = SubResource("ConvexPolygonShape3D_1o4se")
+
+[node name="DoodadsRockMed4" type="MeshInstance3D" parent="." unique_id=107168670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.26132, -6.388634, 7.4977207)
+mesh = ExtResource("7_1o4se")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoodadsRockMed4" unique_id=1746729766]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoodadsRockMed4/StaticBody3D" unique_id=781311338]
+shape = SubResource("ConvexPolygonShape3D_1o4se")
+
+[node name="DoodadsRockMed5" type="MeshInstance3D" parent="." unique_id=1619663466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.435751, -5.575637, 10.45643)
+mesh = ExtResource("7_1o4se")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoodadsRockMed5" unique_id=1742357691]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoodadsRockMed5/StaticBody3D" unique_id=1952350655]
+shape = SubResource("ConvexPolygonShape3D_1o4se")

@@ -1,0 +1,29 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://4ncscg8jgec0"
+path.s3tc="res://.godot/imported/cloud_volume_a.png-dbcc2cd2e666910e486965ea20e68899.s3tc.ctex3d"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://map-template/environment/special-clouds/textures/clouds/cloud_volume_a.png"
+dest_files=["res://.godot/imported/cloud_volume_a.png-dbcc2cd2e666910e486965ea20e68899.s3tc.ctex3d"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=8
+slices/vertical=8

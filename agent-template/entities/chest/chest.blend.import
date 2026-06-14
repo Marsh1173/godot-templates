@@ -41,8 +41,8 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://agent-template/models/Texture gradients.tres",
-"use_external/path": "uid://basmr64baat0n"
+"use_external/fallback_path": "res://agent-template/textures/texture-gradient/Texture gradients.tres",
+"use_external/path": "uid://bpb0fgemrmoru"
 }
 },
 "meshes": {

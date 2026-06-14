@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bpb0fgemrmoru"]
+
+[ext_resource type="Shader" uid="uid://7t27p4id7cxv" path="res://agent-template/textures/texture-gradient/Texture gradients.gdshader" id="1_831jv"]
+[ext_resource type="Texture2D" uid="uid://bmqmltesggmp7" path="res://agent-template/textures/texture-gradient/texture-gradient.png" id="2_abj1b"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_831jv")
+shader_parameter/texture_albedo = ExtResource("2_abj1b")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
