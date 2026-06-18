@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/debug-stats-component/debug-stats-component.tscn" id="1_g50rc"]
 [ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="1_usepk"]
 [ext_resource type="PackedScene" uid="uid://cnobe2d080jb4" path="res://map-template/demo/observer/observer.tscn" id="2_g50rc"]
-[ext_resource type="PackedScene" uid="uid://nlimh40qja4m" path="res://map-template/environment/environment-2.tscn" id="3_oxdva"]
 [ext_resource type="PackedScene" uid="uid://5votfdsc4kxk" path="res://map-template/map-generator/core/temp-tester.tscn" id="4_l3gvf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l3gvf"]
@@ -13,9 +12,6 @@
 [node name="DebugStatsComponent" parent="." unique_id=1299180042 instance=ExtResource("1_g50rc")]
 
 [node name="Environment" parent="." unique_id=1474578257 instance=ExtResource("1_usepk")]
-visible = false
-
-[node name="Environment2" parent="." unique_id=1227818727 instance=ExtResource("3_oxdva")]
 
 [node name="Observer" parent="." unique_id=1249773883 instance=ExtResource("2_g50rc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3198876, 0)
@@ -26,3 +22,5 @@ visible = false
 mesh = SubResource("BoxMesh_l3gvf")
 
 [node name="TempTester" parent="." unique_id=1781223095 instance=ExtResource("4_l3gvf")]
+size = 5
+height = 2

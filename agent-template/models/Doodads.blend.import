@@ -46,12 +46,93 @@ _subresources={
 }
 },
 "meshes": {
+"Doodads_Cube": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube.res",
+"save_to_file/path": "uid://cnpng0e0jlyb1"
+},
+"Doodads_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_001.res",
+"save_to_file/path": "uid://bpwwraxsefb10"
+},
+"Doodads_Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_002.res",
+"save_to_file/path": "uid://3yt0fvdhohll"
+},
+"Doodads_Cube_003": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_003.res",
+"save_to_file/path": "uid://dh67g4okxiv2q"
+},
 "Doodads_Cube_004": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_004.res",
 "save_to_file/path": "uid://dg0j6ivv4vsof"
 },
+"Doodads_Cube_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_005.res",
+"save_to_file/path": "uid://d2i6kklb2k47o"
+},
+"Doodads_Cube_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_006.res",
+"save_to_file/path": "uid://deasiqnr47xrr"
+},
+"Doodads_Cube_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_007.res",
+"save_to_file/path": "uid://b5ojh2tyt6y0n"
+},
+"Doodads_Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_008.res",
+"save_to_file/path": "uid://qhqbopp6pj2r"
+},
+"Doodads_Cube_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_009.res",
+"save_to_file/path": "uid://b14gtc7g74wb6"
+},
 "Doodads_Cube_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_010.res",
 "save_to_file/path": "uid://c5vk32xsexssb"
@@ -62,23 +143,161 @@ _subresources={
 "save_to_file/path": "uid://c7kitmj7giqtu"
 },
 "Doodads_Cube_012": {
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_012.res",
-"save_to_file/path": "uid://day8o8y7msk4w"
-},
-"Doodads_Cube_013": {
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_013.res",
-"save_to_file/path": "uid://c0nj8atpehn6r"
-},
-"Doodads_Rock_med_1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_med_1.res",
-"save_to_file/path": "uid://dm03exi37bvqv"
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_012.res",
+"save_to_file/path": "uid://day8o8y7msk4w"
+},
+"Doodads_Cube_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_013.res",
+"save_to_file/path": "uid://c0nj8atpehn6r"
+},
+"Doodads_Cube_0132": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_0132.res",
+"save_to_file/path": "uid://cwfixoiofvine"
+},
+"Doodads_Cube_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_014.res",
+"save_to_file/path": "uid://c7actpig7v1cq"
+},
+"Doodads_Cube_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_015.res",
+"save_to_file/path": "uid://d2khvl0ryp5d4"
+},
+"Doodads_Cube_016": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_016.res",
+"save_to_file/path": "uid://ccyhufk7ghoqv"
+},
+"Doodads_Cube_017": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_017.res",
+"save_to_file/path": "uid://hu0digo1f4bc"
+},
+"Doodads_Cube_018": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_018.res",
+"save_to_file/path": "uid://dlwjqtghvhpfr"
+},
+"Doodads_Cube_019": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_019.res",
+"save_to_file/path": "uid://d10xx363prj0"
+},
+"Doodads_Cube_020": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cube_020.res",
+"save_to_file/path": "uid://05nborqg0ssd"
+},
+"Doodads_Cylinder": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Cylinder.res",
+"save_to_file/path": "uid://ue7ddquuydw0"
+},
+"Doodads_Pine_tree_large_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Pine_tree_large_1.res",
+"save_to_file/path": "uid://bgduodxdtnj2q"
+},
+"Doodads_Pine_tree_large_2": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Pine_tree_large_2.res",
+"save_to_file/path": "uid://been4yjmivdlr"
+},
+"Doodads_Plane": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane.res",
+"save_to_file/path": "uid://cafy35w4xmr08"
+},
+"Doodads_Plane_002": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_002.res",
+"save_to_file/path": "uid://cgaiv8jltqjdv"
+},
+"Doodads_Plane_003": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_003.res",
+"save_to_file/path": "uid://dvx7458vornxl"
+},
+"Doodads_Plane_004": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_004.res",
+"save_to_file/path": "uid://bhkv5d1vqtvdq"
+},
+"Doodads_Plane_006": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_006.res",
+"save_to_file/path": "uid://drrl62og8q0r8"
+},
+"Doodads_Plane_007": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_007.res",
+"save_to_file/path": "uid://bqh782ybtlhtg"
+},
+"Doodads_Plane_008": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_008.res",
+"save_to_file/path": "uid://cw4c5ld7k832w"
+},
+"Doodads_Plane_009": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_009.res",
+"save_to_file/path": "uid://b32774radd283"
+},
+"Doodads_Plane_010": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_010.res",
+"save_to_file/path": "uid://b1a4w2pso80fj"
+},
+"Doodads_Plane_011": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_011.res",
+"save_to_file/path": "uid://d1em54ysmggvv"
+},
+"Doodads_Plane_012": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_012.res",
+"save_to_file/path": "uid://bjx20to7cywrc"
+},
+"Doodads_Plane_013": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Plane_013.res",
+"save_to_file/path": "uid://wfmljobe3h27"
 },
 "Doodads_Rock_med_2": {
 "generate/lightmap_uv": 0,
@@ -89,6 +308,15 @@ _subresources={
 "save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_med_2.res",
 "save_to_file/path": "uid://djp5jdbf5pf2m"
 },
+"Doodads_Rock_med_3": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_med_3.res",
+"save_to_file/path": "uid://b3s7jfo23fatr"
+},
 "Doodads_Rock_med_4": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -98,46 +326,15 @@ _subresources={
 "save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_med_4.res",
 "save_to_file/path": "uid://qsqop1u3u27c"
 },
-"Doodads_Rock_small_1": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_small_1.res",
-"save_to_file/path": "uid://dgn2jepg8ltwo"
-},
-"Doodads_Rock_small_2": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_small_2.res",
-"save_to_file/path": "uid://b8s86kpyn4ps1"
-},
-"Doodads_Rock_small_3": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_small_3.res",
-"save_to_file/path": "uid://bmqicxwk35hhc"
-},
-"Doodads_Rock_small_4": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Rock_small_4.res",
-"save_to_file/path": "uid://c2ojssgo77uk6"
-},
 "Doodads_Text": {
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Text.res",
 "save_to_file/path": "uid://ce6h5xw2yhhyj"
+},
+"Doodads_Text_001": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Text_001.res",
+"save_to_file/path": "uid://d2obw6mi2tk21"
 },
 "Doodads_Tree_1": {
 "generate/lightmap_uv": 0,
@@ -168,17 +365,80 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:Branch_001": {
+"import/skip_import": true
+},
+"PATH:Branch_002": {
+"import/skip_import": true
+},
+"PATH:Branch_003": {
+"import/skip_import": true
+},
+"PATH:Branch_003 TBC": {
+"import/skip_import": true
+},
+"PATH:Cutout": {
+"import/skip_import": true
+},
+"PATH:Cutout final": {
+"import/skip_import": true
+},
+"PATH:Cutout final shell": {
+"import/skip_import": true
+},
+"PATH:Cutout wrapped": {
+"import/skip_import": true
+},
 "PATH:How to use": {
+"import/skip_import": true
+},
+"PATH:How to use pine trees": {
+"import/skip_import": true
+},
+"PATH:Leaf OG 1": {
+"import/skip_import": true
+},
+"PATH:Leaf OG 2": {
+"import/skip_import": true
+},
+"PATH:Leaf shape": {
+"import/skip_import": true
+},
+"PATH:Leaf_001": {
+"import/skip_import": true
+},
+"PATH:Leaf_002": {
+"import/skip_import": true
+},
+"PATH:Leaf_003": {
+"import/skip_import": true
+},
+"PATH:Leaf_004": {
+"import/skip_import": true
+},
+"PATH:Leaf_005": {
+"import/skip_import": true
+},
+"PATH:Pine tree step 1": {
+"import/skip_import": true
+},
+"PATH:Pine tree step 2": {
+"import/skip_import": true
+},
+"PATH:Pine tree step 3": {
+"import/skip_import": true
+},
+"PATH:Pine tree step 4": {
 "import/skip_import": true
 },
 "PATH:Rock Generator": {
 "import/skip_import": true
 },
 "PATH:Rock_large_1": {
-"import/skip_import": true
+"generate/physics": true
 },
 "PATH:Rock_large_2": {
-"import/skip_import": true
+"generate/physics": true
 },
 "PATH:Rock_large_3": {
 "import/skip_import": true
@@ -187,9 +447,6 @@ _subresources={
 "import/skip_import": true
 },
 "PATH:Sun": {
-"import/skip_import": true
-},
-"PATH:Tree Generator": {
 "import/skip_import": true
 }
 }
