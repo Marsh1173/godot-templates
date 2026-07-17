@@ -44,6 +44,34 @@ const air_accel: float = 30
 
 func _ready():
 	stamina_component.exhausted.connect(stop_sprinting)
+	pawn.action_received.connect(_on_action_received)
+
+func _on_action_received(action: Action):
+	match action.name:
+		Action.Name.StartMoveForward:
+			moving_forward = true
+		Action.Name.StopMoveForward:
+			moving_forward = false
+		Action.Name.StartMoveBackward:
+			moving_backward = true
+		Action.Name.StopMoveBackward:
+			moving_backward = false
+		Action.Name.StartMoveLeft:
+			moving_left = true
+		Action.Name.StopMoveLeft:
+			moving_left = false
+		Action.Name.StartMoveRight:
+			moving_right = true
+		Action.Name.StopMoveRight:
+			moving_right = false
+		Action.Name.StartSprint:
+			is_sprinting = true
+		Action.Name.StopSprint:
+			is_sprinting = false
+		Action.Name.StartJump:
+			is_jumping = true
+		Action.Name.StopJump:
+			is_jumping = false
 
 func stop_sprinting():
 	#if MyUtils.is_authority(multiplayer): WE NEED TO ADD A SYNCHRONIZER FOR THIS PROPERTY
