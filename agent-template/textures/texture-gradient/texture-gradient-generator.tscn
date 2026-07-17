@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dsejvsi7pwe2b" path="res://agent-template/textures/texture-gradient/texture-gradient-generator.gd" id="1_opact"]
 
 [sub_resource type="Gradient" id="Gradient_ktmoo"]
-colors = PackedColorArray(0.50180656, 0.41259515, 0.31869924, 1, 0.31563652, 0.26790094, 0.18840697, 1)
+colors = PackedColorArray(0.59, 0.45312, 0.30679998, 1, 0.4, 0.3172, 0.184, 1)
 
 [sub_resource type="Gradient" id="Gradient_opact"]
 colors = PackedColorArray(0.7019608, 0.6745098, 0.6117647, 1, 0.5372549, 0.5058824, 0.42352942, 1)
@@ -13,10 +13,10 @@ offsets = PackedFloat32Array(0, 0.9942121)
 colors = PackedColorArray(0.39607844, 0.49803922, 0.38431373, 1, 0.2509804, 0.34509805, 0.24313726, 1)
 
 [sub_resource type="Gradient" id="Gradient_gy4is"]
-colors = PackedColorArray(0.54901963, 0.47843137, 0.38039216, 1, 0.44705883, 0.36862746, 0.27450982, 1)
+colors = PackedColorArray(0.61, 0.50579166, 0.35990003, 1, 0.48, 0.38712, 0.27359998, 1)
 
 [sub_resource type="Gradient" id="Gradient_s8rh2"]
-colors = PackedColorArray(0.5058824, 0.49411765, 0.45882353, 1, 0.2784314, 0.28627452, 0.25882354, 1)
+colors = PackedColorArray(0.61, 0.59627503, 0.55509996, 1, 0.36923334, 0.38, 0.34199998, 1)
 
 [sub_resource type="Gradient" id="Gradient_3832u"]
 colors = PackedColorArray(0.48235294, 0.5882353, 0.3764706, 1, 0.32156864, 0.4392157, 0.22745098, 1)
@@ -32,7 +32,7 @@ colors = PackedColorArray(0.41568628, 0.49019608, 0.40392157, 1, 0.21960784, 0.2
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_5g50m"]
-colors = PackedColorArray(0.60784316, 0.62352943, 0.7490196, 1, 0.11764706, 0.1254902, 0.1882353, 1)
+colors = PackedColorArray(0.6318, 0.64909, 0.78, 1, 0.2108, 0.22587334, 0.34, 1)
 
 [sub_resource type="Gradient" id="Gradient_ykvmp"]
 offsets = PackedFloat32Array(0, 0.5, 0.9974275)

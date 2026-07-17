@@ -114,13 +114,9 @@ static func _build_compat_table():
 					continue
 				var c_edge: HexTile.Edge = c_tile.edges[dir]
 
-				var cliffs_match: bool = (c_edge == HexTile.Edge.CLIFF_LEFT or c_edge == HexTile.Edge.CLIFF_RIGHT) and \
-					(n_edge == HexTile.Edge.CLIFF_LEFT or n_edge == HexTile.Edge.CLIFF_RIGHT) and \
-					(n_edge != c_edge)
+				var cliffs_match: bool = (c_edge == HexTile.Edge.CLIFF_LEFT or c_edge == HexTile.Edge.CLIFF_RIGHT) and (n_edge == HexTile.Edge.CLIFF_LEFT or n_edge == HexTile.Edge.CLIFF_RIGHT) and (n_edge != c_edge)
 
-				var non_cliffs_match: bool = c_edge != HexTile.Edge.CLIFF_LEFT and c_edge != HexTile.Edge.CLIFF_RIGHT and \
-					n_edge != HexTile.Edge.CLIFF_LEFT and n_edge != HexTile.Edge.CLIFF_RIGHT and \
-					n_edge == c_edge
+				var non_cliffs_match: bool = c_edge != HexTile.Edge.CLIFF_LEFT and c_edge != HexTile.Edge.CLIFF_RIGHT and n_edge != HexTile.Edge.CLIFF_LEFT and n_edge != HexTile.Edge.CLIFF_RIGHT and n_edge == c_edge
 
 				if cliffs_match or non_cliffs_match:
 					compatible[c_idx] = true

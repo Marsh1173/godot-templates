@@ -40,8 +40,7 @@ func _do_bob(delta):
 #region interaction logic
 # Only called on host
 func _on_attempt_interact(interactor: InteractorComponent):
-	if interactor.inventory_component != null and\
-		interactor.inventory_component.has_space_in_inventory():
+	if interactor.inventory_component != null and interactor.inventory_component.has_space_in_inventory():
 			
 		interactor.inventory_component.add_item(item_data)
 		set_location_that_picked_up_this_item.rpc(interactor.inventory_component.global_position)
@@ -73,26 +72,5 @@ func _zoom_to_location_that_picked_up_this_item(delta: float):
 		queue_free()
 #endregion
 
-#region mesh
-const BEER = preload("uid://dmq7p12tbkor2")
-const BERRIES = preload("uid://dk66gy7oc0465")
-const MEAT = preload("uid://bphxdfcdd26ed")
-const OBSIDIAN = preload("uid://b6vjutl8u1666")
-const STONE = preload("uid://b6g32rxopmuxt")
-const WOOD = preload("uid://8cmlk5rjwtf5")
-
 func add_item_mesh():
-	match item_data.id:
-		ItemData.ID.Beer:
-			mesh_instance_3d.mesh = BEER
-		ItemData.ID.Berries:
-			mesh_instance_3d.mesh = BERRIES
-		ItemData.ID.Meat:
-			mesh_instance_3d.mesh = MEAT
-		ItemData.ID.Obsidian:
-			mesh_instance_3d.mesh = OBSIDIAN
-		ItemData.ID.Stone:
-			mesh_instance_3d.mesh = STONE
-		ItemData.ID.Wood:
-			mesh_instance_3d.mesh = WOOD
-#endregion
+	mesh_instance_3d.mesh = ItemRegistry.get_item_mesh(item_data.id)

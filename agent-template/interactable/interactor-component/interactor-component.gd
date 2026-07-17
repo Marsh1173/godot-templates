@@ -3,6 +3,9 @@ class_name InteractorComponent
 
 @export var inventory_component: InventoryComponent = null
 
+@export_group("Make visible to syncronizer")
+@export var active_interactable_node_path_or_null = null
+
 var peer_id_or_null = null
 
 func set_peer_id_or_null(_peer_id_or_null):
@@ -88,4 +91,28 @@ func request_interact(target_path: NodePath, interact_context_key: String = ''):
 		return
 	
 	interactable.attempt_interact(self, interact_context_key)
+
+# Called on the host from the peers
+@rpc("any_peer", "call_remote", "reliable")
+func request_stop_interact(interact_context_key: String = ''):
+	if not MyUtils.is_authority(multiplayer):
+		assert(false, "request_stop_interact must be called on authority")
+		return
+	
+	# Check if caller has authority for interactor
+	var called_by_authority := multiplayer.get_remote_sender_id() == 0 # 0 means called outside RPC
+	var called_by_player: bool = peer_id_or_null == multiplayer.get_remote_sender_id()
+	if !called_by_authority and !called_by_player:
+		assert(false, "Only peer_id_or_null can call request_stop_interact, is " + str(multiplayer.get_remote_sender_id()) + ", should be " + str(peer_id_or_null))
+		return
+	
+	#var interactable = get_node(target_path)
+	## Sometimes client and host are out of sync for a few ms, might have deleted it
+	#if not interactable is Interactable:
+		#return
+	## Or might have moved out of range
+	#if not interactables_in_range.has(interactable):
+		#return
+	#
+	#interactable.attempt_interact(self, interact_context_key)
 #endregion

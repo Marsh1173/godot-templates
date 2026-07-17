@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://didjxeru7lnjk" path="res://agent-template/gym/gym.gd" id="1_w5k1r"]
 [ext_resource type="PackedScene" uid="uid://2bqc3owq6734" path="res://agent-template/gym/block/block.tscn" id="2_me3mq"]
 [ext_resource type="PackedScene" uid="uid://dr0mjka3ukg4q" path="res://agent-template/world/world.tscn" id="2_ntnsb"]
-[ext_resource type="ArrayMesh" uid="uid://davmon1twwkmt" path="res://map-template/doodads/models/Doodads_Pine_tree_large_2.res" id="4_bpitf"]
-[ext_resource type="ArrayMesh" uid="uid://c01qlr82hhxvu" path="res://map-template/doodads/models/Doodads_Cube_020.res" id="5_d0th3"]
+[ext_resource type="ArrayMesh" uid="uid://been4yjmivdlr" path="res://map-template/doodads/models/Doodads_Pine_tree_large_2.res" id="4_bpitf"]
+[ext_resource type="ArrayMesh" uid="uid://05nborqg0ssd" path="res://map-template/doodads/models/Doodads_Cube_020.res" id="5_d0th3"]
 [ext_resource type="ArrayMesh" uid="uid://cnpng0e0jlyb1" path="res://map-template/doodads/models/Doodads_Cube.res" id="6_ulbqm"]
 [ext_resource type="ArrayMesh" uid="uid://b3s7jfo23fatr" path="res://map-template/doodads/models/Doodads_Rock_med_3.res" id="7_1o4se"]
 [ext_resource type="ArrayMesh" uid="uid://bpwwraxsefb10" path="res://map-template/doodads/models/Doodads_Cube_001.res" id="7_fmlsi"]
@@ -137,6 +137,7 @@ shape = SubResource("ConcavePolygonShape3D_h266e")
 
 [node name="Tree20" type="MeshInstance3D" parent="Trees" unique_id=1213159450]
 transform = Transform3D(0.5278807, 0, 1.929078, 0, 2, 0, -1.929078, 0, 0.5278807, 47.254166, -0.4149307, 56.174397)
+lod_bias = 0.005
 mesh = ExtResource("4_bpitf")
 
 [node name="Tree21" type="MeshInstance3D" parent="Trees" unique_id=1385311354]

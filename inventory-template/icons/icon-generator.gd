@@ -7,6 +7,9 @@ extends Node3D
 		if Engine.is_editor_hint():
 			generate_icons()
 
+func _ready():
+	generate_icons()
+
 func generate_icons():
 	var mesh_instance: MeshInstance3D = $SubViewportContainer/SubViewport/MeshInstance
 	var viewport: Viewport = $SubViewportContainer/SubViewport

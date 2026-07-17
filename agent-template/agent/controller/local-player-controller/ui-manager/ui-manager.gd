@@ -5,8 +5,8 @@ const LIVE_PAWN_UI = preload("uid://4l2m7g2sdxhy")
 const DEBUG_STATS_COMPONENT = preload("uid://bh2mqx3hbr7ok")
 
 func _ready():
-	if OS.is_debug_build():
-		add_child(DEBUG_STATS_COMPONENT.instantiate())
+	#if OS.is_debug_build(): If testing 
+	add_child(DEBUG_STATS_COMPONENT.instantiate())
 
 var pawn: Pawn = null
 

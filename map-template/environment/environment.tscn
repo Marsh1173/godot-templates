@@ -36,7 +36,7 @@ gradient = SubResource("Gradient_hugfm")
 
 [sub_resource type="Gradient" id="Gradient_xgiuy"]
 offsets = PackedFloat32Array(0.16, 0.2, 0.24, 0.33, 0.38, 0.61, 0.7, 0.76, 0.79, 0.82)
-colors = PackedColorArray(0, 0.6, 0.77254903, 1, 0.36286873, 0.25293383, 0.6274891, 1, 0.9490196, 0.46666667, 0.37254903, 1, 0.7420839, 0.8327773, 0.8462577, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.7420839, 0.8327773, 0.8462577, 1, 0.8784314, 0.5529412, 0.2784314, 1, 0.4117647, 0.27058825, 0.63529414, 1, 0, 0.6, 0.77254903, 1)
+colors = PackedColorArray(0, 0.33333334, 0.43529412, 1, 0.36286873, 0.25293383, 0.6274891, 1, 0.9490196, 0.46666667, 0.37254903, 1, 0.7420839, 0.8327773, 0.8462577, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.7420839, 0.8327773, 0.8462577, 1, 0.8784314, 0.5529412, 0.2784314, 1, 0.4117647, 0.27058825, 0.63529414, 1, 0, 0.33333334, 0.43529412, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_fkqya"]
 gradient = SubResource("Gradient_xgiuy")
@@ -49,9 +49,9 @@ process_mode = 2
 background_mode = 2
 sky = SubResource("Sky_834qp")
 ambient_light_source = 3
-ambient_light_color = Color(0.302611, 0.30261102, 0.302611, 1)
-ambient_light_sky_contribution = 0.75
-ambient_light_energy = 0.5
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.6
+ambient_light_energy = 0.1
 tonemap_mode = 3
 tonemap_exposure = 1.2
 ssao_enabled = true

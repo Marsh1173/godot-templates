@@ -72,10 +72,8 @@ func handle_action(action: Action):
 			var agents = get_tree().get_nodes_in_group("Agents")
 			var other_pawns: Array[Pawn] = []
 			for agent in agents:
-				if agent is Agent and\
-					agent.pawn is Pawn and\
-					self != agent.pawn:
-						other_pawns.append(agent.pawn)
+				if agent is Agent and agent.pawn is Pawn and self != agent.pawn:
+					other_pawns.append(agent.pawn)
 			
 			var closest_pawn = null
 			for other_pawn in other_pawns:

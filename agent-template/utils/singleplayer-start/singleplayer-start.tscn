@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcoafavf51w6n"]
+
+[ext_resource type="Script" uid="uid://deaimrvfeates" path="res://agent-template/utils/singleplayer-start/singleplayer_start.gd" id="1_kl4kl"]
+
+[node name="SingleplayerStart" type="Node" unique_id=1962424030]
+script = ExtResource("1_kl4kl")

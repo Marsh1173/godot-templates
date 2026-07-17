@@ -1,7 +1,8 @@
 extends Node3D
 
 @onready var world: World = $World
-var CHEST_SCENE = preload("res://agent-template/entities/chest/chest.tscn")
+const CHEST_SCENE = preload("res://agent-template/entities/chest/chest.tscn")
+const BERRY_BUSH_SCENE = preload("uid://ctv0bmra5aybu")
 	
 func _ready():
 	if MyUtils.is_authority(multiplayer):
@@ -16,3 +17,7 @@ func _ready():
 		chest.position = Vector3(4, 0, 4)
 		chest.rotation.y = PI / 3
 		world.entity_spawner.add_child(chest)
+		
+		var berry_bush: Node3D = BERRY_BUSH_SCENE.instantiate()
+		berry_bush.position = Vector3(8, -0.247, -7)
+		world.entity_spawner.add_child(berry_bush)

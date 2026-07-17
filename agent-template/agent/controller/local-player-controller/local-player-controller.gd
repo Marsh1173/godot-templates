@@ -96,9 +96,10 @@ func _unhandled_input(event: InputEvent):
 								focus_node.interactor_component.request_interact.rpc_id(1, targeted_interactable.get_path())
 						_:
 							assert(false, "Interactable contextual ID not implemented yet")
-		#elif event.is_action_released("interact"):
-			#if focus_node is Pawn and focus_node.interactor_component.targeted_interactable_or_null is Interactable:
-				#focus_node.interactor_component.targeted_interactable_or_null.attempt_stop_interact(
-					#focus_node.interactor_component
-				#)
-			#get_viewport().set_input_as_handled()
+		elif event.is_action_released("interact"):
+			if focus_node is Pawn:
+				get_viewport().set_input_as_handled()
+				if MyUtils.is_authority(multiplayer):
+					focus_node.interactor_component.request_stop_interact()
+				else:
+					focus_node.interactor_component.request_stop_interact.rpc_id(1)

@@ -50,3 +50,53 @@ static func make_item_registry() -> Dictionary[ItemData.ID, ItemDefinition]:
 			"Wood",
 		),
 	}
+
+#region mesh
+const BEER_MESH: Mesh = preload("uid://dmq7p12tbkor2")
+const BERRIES_MESH: Mesh = preload("uid://dk66gy7oc0465")
+const MEAT_MESH: Mesh = preload("uid://bphxdfcdd26ed")
+const OBSIDIAN_MESH: Mesh = preload("uid://b6vjutl8u1666")
+const STONE_MESH: Mesh = preload("uid://b6g32rxopmuxt")
+const WOOD_MESH: Mesh = preload("uid://8cmlk5rjwtf5")
+
+static func get_item_mesh(id: ItemData.ID) -> Mesh:
+	match id:
+		ItemData.ID.Beer:
+			return BEER_MESH
+		ItemData.ID.Berries:
+			return BERRIES_MESH
+		ItemData.ID.Meat:
+			return MEAT_MESH
+		ItemData.ID.Obsidian:
+			return OBSIDIAN_MESH
+		ItemData.ID.Stone:
+			return STONE_MESH
+		ItemData.ID.Wood:
+			return WOOD_MESH
+	assert(false, "Tried to get an item mesh with an invalid id")
+	return
+#endregion
+
+##region icon
+#const BEER_MESH: Mesh = preload("uid://dmq7p12tbkor2")
+#const BERRIES_MESH = preload("uid://dk66gy7oc0465")
+#const MEAT_MESH = preload("uid://bphxdfcdd26ed")
+#const OBSIDIAN_MESH = preload("uid://b6vjutl8u1666")
+#const STONE_MESH = preload("uid://b6g32rxopmuxt")
+#const WOOD_MESH = preload("uid://8cmlk5rjwtf5")
+#
+#static func get_item_icon(id: ItemData.ID):
+	#match id:
+		#ItemData.ID.Beer:
+			#return BEER_MESH
+		#ItemData.ID.Berries:
+			#return BERRIES_MESH
+		#ItemData.ID.Meat:
+			#return MEAT_MESH
+		#ItemData.ID.Obsidian:
+			#return OBSIDIAN_MESH
+		#ItemData.ID.Stone:
+			#return STONE_MESH
+		#ItemData.ID.Wood:
+			#return WOOD_MESH
+##endregion
