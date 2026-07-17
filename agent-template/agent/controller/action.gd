@@ -55,7 +55,7 @@ static var _serialization_config: Dictionary[String, int] = {
 
 static var _serialization_key = Serialization.register("Action", _serialization_config)
 
-static func from_json(json_string: String) -> Action:
-	return Serialization.get_config(_serialization_key)["from_json"].call(json_string, Action.new)
-func to_json() -> String:
-	return Serialization.get_config(_serialization_key)["to_json"].call(self)
+static func from_dict(data: Dictionary) -> Action:
+	return Serialization.get_config(_serialization_key)["from_dict"].call(data, Action.new)
+func to_dict() -> Dictionary:
+	return Serialization.get_config(_serialization_key)["to_dict"].call(self)
