@@ -23,11 +23,8 @@ NOT RESPONSIBLE FOR
 @onready var pawn: Pawn = $".."
 @onready var stamina_component: StaminaComponent = $"../StaminaComponent"
 
-#region movement flags used by host and pawn owner
-var moving_forward: bool = false
-var moving_backward: bool = false
-var moving_left: bool = false
-var moving_right: bool = false
+#region movement state used by host and pawn owner
+var movement_vector: Vector2 = Vector2.ZERO
 
 var is_sprinting: bool = false
 var is_jumping: bool = false
@@ -48,22 +45,6 @@ func _ready():
 
 func _on_action_received(action: Action):
 	match action.name:
-		Action.Name.StartMoveForward:
-			moving_forward = true
-		Action.Name.StopMoveForward:
-			moving_forward = false
-		Action.Name.StartMoveBackward:
-			moving_backward = true
-		Action.Name.StopMoveBackward:
-			moving_backward = false
-		Action.Name.StartMoveLeft:
-			moving_left = true
-		Action.Name.StopMoveLeft:
-			moving_left = false
-		Action.Name.StartMoveRight:
-			moving_right = true
-		Action.Name.StopMoveRight:
-			moving_right = false
 		Action.Name.StartSprint:
 			is_sprinting = true
 		Action.Name.StopSprint:
@@ -143,20 +124,8 @@ func apply_movement(delta: float):
 	if !pawn.is_on_floor():
 		accel = air_accel
 	
-	var velocity_vector: Vector2 = Vector2.ZERO
-	
-	if moving_backward and !moving_forward:
-		velocity_vector.y += 1
-	if moving_forward and !moving_backward:
-		velocity_vector.y -= 1
-	
-	if moving_right and !moving_left:
-		velocity_vector.x += 1
-	if moving_left and !moving_right:
-		velocity_vector.x -= 1
-	
-	# Rotate to face same direction as pawn
-	velocity_vector = velocity_vector.rotated(-pawn.global_rotation.y)
+	# Rotate input to face the same direction as the pawn
+	var velocity_vector: Vector2 = movement_vector.rotated(-pawn.global_rotation.y)
 	
 	# Scale velocity to player's max speed this frame
 	velocity_vector = velocity_vector.normalized() * max_speed

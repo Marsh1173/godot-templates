@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://13kijqd87f4p"]
 
 [ext_resource type="Script" uid="uid://00xue7ovj21m" path="res://agent-template/agent/controller/local-ai-controller/local-ai-controller.gd" id="1_pjyt3"]
+[ext_resource type="PackedScene" uid="uid://drwqgpi71xehb" path="res://agent-template/agent/controller/state-replicator/state-replicator.tscn" id="2_vmwtu"]
 
 [node name="LocalAiController" type="Node" unique_id=1665964371]
 script = ExtResource("1_pjyt3")
 metadata/_custom_type_script = "uid://bapun1w3hjin1"
+
+[node name="ControllerStateReplicator" parent="." unique_id=773652435 instance=ExtResource("2_vmwtu")]

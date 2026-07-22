@@ -1,9 +1,9 @@
 extends Node
 class_name Controller
+
+@onready var state_replicator: ControllerStateReplicator = $ControllerStateReplicator
 	
 var focus_node: Node3D = null
-var focus_pitch: float = 0
-var focus_yaw: float = 0
 
 var action_buffer: Array[Action] = []
 
@@ -41,7 +41,3 @@ func gather_actions() -> Array[Action]:
 
 func set_focus_node(node):
 	focus_node = node
-
-func set_view_direction(pitch: float, yaw: float):
-	focus_pitch = pitch
-	focus_yaw = yaw

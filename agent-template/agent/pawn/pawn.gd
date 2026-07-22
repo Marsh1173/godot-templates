@@ -37,11 +37,12 @@ func is_owned_by_peer() -> bool:
 	else:
 		return multiplayer.get_unique_id() == peer_id_or_null
 
+func set_view_direction(_pitch: float, yaw: float):
+	global_rotation.y = yaw
+	# Someday handle pitch too
+
 func handle_action(action: Action):
 	action_received.emit(action)
-	
-	if action.name == Action.Name.SetViewDirection:
-		global_rotation.y = action.yaw
 	
 	# Keep primary ability logic on Pawn for now, or move to an attack component later.
 	if action.name == Action.Name.StartPrimaryAbility:
@@ -66,4 +67,3 @@ func handle_action(action: Action):
 					closest_pawn = other_pawn
 		if closest_pawn is Pawn:
 			closest_pawn.health_component.health -= 4
-

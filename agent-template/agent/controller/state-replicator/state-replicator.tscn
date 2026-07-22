@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://drwqgpi71xehb"]
+
+[ext_resource type="Script" uid="uid://d0038q6yi18b8" path="res://agent-template/agent/controller/state-replicator/state-replicator.gd" id="1_7lwkq"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6anf5"]
+properties/0/path = NodePath(".:focus_pitch")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:focus_yaw")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:movement_vector")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="ControllerStateReplicator" type="Node" unique_id=773652435]
+script = ExtResource("1_7lwkq")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1919985301]
+replication_config = SubResource("SceneReplicationConfig_6anf5")

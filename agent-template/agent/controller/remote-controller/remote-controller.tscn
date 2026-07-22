@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cbg86mkrkfp4y"]
 
 [ext_resource type="Script" uid="uid://dwj64hlg260g" path="res://agent-template/agent/controller/remote-controller/remote-controller.gd" id="1_3dojb"]
+[ext_resource type="PackedScene" uid="uid://drwqgpi71xehb" path="res://agent-template/agent/controller/state-replicator/state-replicator.tscn" id="2_cdhb4"]
 
 [node name="RemoteController" type="Node" unique_id=1544290604]
 script = ExtResource("1_3dojb")
 metadata/_custom_type_script = "uid://bapun1w3hjin1"
+
+[node name="ControllerStateReplicator" parent="." unique_id=773652435 instance=ExtResource("2_cdhb4")]

@@ -6,15 +6,11 @@ extends Controller
 const view_sensitivity: float = 0.007
 
 func set_view_direction(pitch: float, yaw: float):
-	super.set_view_direction(pitch, yaw)
 	controlled_camera.rotation.x = pitch
 	controlled_camera.rotation.y = yaw
 	
-func _process(_delta):
-	var action = Action.new(Action.Name.SetViewDirection)
-	action.pitch = focus_pitch
-	action.yaw = focus_yaw
-	queue_action(action)
+	state_replicator.focus_pitch = pitch
+	state_replicator.focus_yaw = yaw
 	
 func _physics_process(_delta):
 	if focus_node != null:
@@ -29,10 +25,12 @@ func set_focus_node(node):
 		
 
 func _unhandled_input(event: InputEvent):
+	state_replicator.movement_vector = Input.get_vector("move-left", "move-right", "move-forward", "move-backward")
+
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		set_view_direction(
-			max(-PI / 2, min(PI / 2, focus_pitch + (-event.relative.y * view_sensitivity))),
-			fmod(focus_yaw - (event.relative.x * view_sensitivity), PI * 2),
+			max(-PI / 2, min(PI / 2, state_replicator.focus_pitch + (-event.relative.y * view_sensitivity))),
+			fmod(state_replicator.focus_yaw - (event.relative.x * view_sensitivity), PI * 2),
 		)
 		get_viewport().set_input_as_handled()
 	
@@ -44,31 +42,7 @@ func _unhandled_input(event: InputEvent):
 				queue_action(Action.new(Action.Name.StopPrimaryAbility))
 			get_viewport().set_input_as_handled()
 	elif event is InputEventKey:
-		if event.is_action_pressed("move-forward"):
-			queue_action(Action.new(Action.Name.StartMoveForward))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_released("move-forward"):
-			queue_action(Action.new(Action.Name.StopMoveForward))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("move-backward"):
-			queue_action(Action.new(Action.Name.StartMoveBackward))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_released("move-backward"):
-			queue_action(Action.new(Action.Name.StopMoveBackward))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("move-left"):
-			queue_action(Action.new(Action.Name.StartMoveLeft))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_released("move-left"):
-			queue_action(Action.new(Action.Name.StopMoveLeft))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("move-right"):
-			queue_action(Action.new(Action.Name.StartMoveRight))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_released("move-right"):
-			queue_action(Action.new(Action.Name.StopMoveRight))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("sprint"):
+		if event.is_action_pressed("sprint"):
 			queue_action(Action.new(Action.Name.StartSprint))
 			get_viewport().set_input_as_handled()
 		elif event.is_action_released("sprint"):
