@@ -40,7 +40,7 @@ const air_accel: float = 30
 #endregion
 
 #region smooth network interpolation
-const IGNORE_DISTANCE = 0.1  # Less than this - do nothing.
+const IGNORE_DISTANCE = 0.5  # Less than this - do nothing.
 const SNAP_DISTANCE = 2.0    # Greater than this - hard teleport.
 const CORRECTION_SPEED = 10.0 # How aggressively to dissolve the error.
 

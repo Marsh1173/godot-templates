@@ -6,7 +6,7 @@ How to keep the player rotating and moving with their controller?
 
 MOVEMENT ACTION FLOW
 Sends action to server
-	and if it's a movement or a look action, apply locally instantly
+	and if it's stateful input (movement direction, look direction), apply locally instantly
 Server gets action, applies, updates all peers
 	if peer tries to update itself with a movement action, 
 	else interpolate smoothly

@@ -53,7 +53,7 @@ metadata/_custom_type_script = "uid://j5y8uoj0iqa3"
 [node name="MaxStamina" type="Node" parent="." unique_id=244515823]
 script = ExtResource("2_orhve")
 min_value = 1.0
-base_value = 100.0
+base_value = 1000.0
 metadata/_custom_type_script = "uid://j5y8uoj0iqa3"
 
 [node name="MoveSpeed" type="Node" parent="." unique_id=718107495]
