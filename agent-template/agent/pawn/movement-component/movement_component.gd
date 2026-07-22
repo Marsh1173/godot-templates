@@ -39,6 +39,15 @@ const air_accel: float = 30
 #const sprint_speed_multiplier: float = 1.2
 #endregion
 
+#region smooth network interpolation
+const IGNORE_DISTANCE = 0.1  # Less than this - do nothing.
+const SNAP_DISTANCE = 2.0    # Greater than this - hard teleport.
+const CORRECTION_SPEED = 10.0 # How aggressively to dissolve the error.
+
+# This stores the vector difference between the server and the client
+var position_error: Vector3 = Vector3.ZERO
+#endregion
+
 func _ready():
 	stamina_component.exhausted.connect(stop_sprinting)
 	pawn.action_received.connect(_on_action_received)
@@ -82,8 +91,13 @@ func _physics_process(delta: float):
 			pawn.velocity.x,
 			pawn.velocity.y,
 			pawn.velocity.z,
-			pawn.global_rotation.y
+			pawn.global_rotation.y,
+			Time.get_unix_time_from_system()
 		])
+	elif position_error.length_squared() > 0.001:
+		var correction_step = position_error * clamp(CORRECTION_SPEED * delta, 0.0, 1.0)
+		pawn.global_position += correction_step
+		position_error -= correction_step
 	
 @rpc("authority", "call_remote", "unreliable_ordered")
 func sync_pos_from_host(data: Variant):
@@ -91,18 +105,26 @@ func sync_pos_from_host(data: Variant):
 	var velocity = Vector3(data[3], data[4], data[5])
 	var global_rotation_y = data[6]
 	
+	var snapshot_timestamp: float = data[7]
+	var now_timestamp: float = Time.get_unix_time_from_system()
+	var time_since_sync = now_timestamp - snapshot_timestamp
+	
+	var extrapolated_global_pos = global_position + (time_since_sync * velocity)
+	
 	if not pawn.is_owned_by_peer():
-		pawn.global_position = global_position
+		pawn.global_position = extrapolated_global_pos
 		pawn.velocity = velocity
 		pawn.global_rotation.y = global_rotation_y
 	else:
-		# Only set values if peer's values differ too much from host's values
-		if global_position.distance_to(pawn.global_position) > 0.3:
-			pawn.global_position = global_position
-		if velocity.distance_to(pawn.velocity) > 0.3:
+		var distance := extrapolated_global_pos.distance_to(pawn.global_position)
+		if distance > SNAP_DISTANCE:
+			pawn.global_position = extrapolated_global_pos
+			position_error = Vector3.ZERO
+		elif distance > IGNORE_DISTANCE:
+			position_error = extrapolated_global_pos - pawn.global_position
+		
+		if velocity.distance_to(pawn.velocity) > 0.1:
 			pawn.velocity = velocity
-		if abs(angle_difference(global_rotation_y, pawn.global_rotation.y)) > 0.3:
-			pawn.global_rotation.y = global_rotation_y
 
 func apply_gravity(delta: float):
 	var gravity_vec = pawn.get_gravity()
