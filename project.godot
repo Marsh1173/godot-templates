@@ -19,6 +19,7 @@ config/icon="uid://cjcftlf64l8dc"
 
 WindowManager="*uid://cdywqn2e27syq"
 NetworkManager="*res://utils/NetworkManager.gd"
+SteamLobbyManager="*res://utils/SteamLobbyManager.gd"
 
 [display]
 
