@@ -7,3 +7,6 @@
 
 # Export presets
 export_presets.cfg
+
+# Steamworks SDK binaries for multiple operating systems and architectures
+/addons/godotsteam

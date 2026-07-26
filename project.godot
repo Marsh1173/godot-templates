@@ -18,10 +18,15 @@ config/icon="uid://cjcftlf64l8dc"
 [autoload]
 
 WindowManager="*uid://cdywqn2e27syq"
+NetworkManager="*res://utils/NetworkManager.gd"
 
 [display]
 
 window/vsync/vsync_mode=3
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg")
 
 [global_group]
 
