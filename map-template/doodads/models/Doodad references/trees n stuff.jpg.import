@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dst2qkpcuiqeb"
-path="res://.godot/imported/test-removebg-preview.png-5551027326ecbc1e3b2575b9c0e588fe.ctex"
+uid="uid://bya0xyif5lwmy"
+path="res://.godot/imported/trees n stuff.jpg-8a9a746e40e49055756b0cfdc77833e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agent-template/models/Doodad references/test-removebg-preview.png"
-dest_files=["res://.godot/imported/test-removebg-preview.png-5551027326ecbc1e3b2575b9c0e588fe.ctex"]
+source_file="res://map-template/doodads/models/Doodad references/trees n stuff.jpg"
+dest_files=["res://.godot/imported/trees n stuff.jpg-8a9a746e40e49055756b0cfdc77833e7.ctex"]
 
 [params]
 

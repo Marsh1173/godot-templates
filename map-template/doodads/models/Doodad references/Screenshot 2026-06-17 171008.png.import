@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1rynex4an3qd"
-path="res://.godot/imported/test.jpg-abcc1672b466054eec9f37db7014c3b3.ctex"
+uid="uid://cj6eodpsw00ej"
+path="res://.godot/imported/Screenshot 2026-06-17 171008.png-24ca480ca85a53e032bee9bdd1efe47c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agent-template/models/Doodad references/test.jpg"
-dest_files=["res://.godot/imported/test.jpg-abcc1672b466054eec9f37db7014c3b3.ctex"]
+source_file="res://map-template/doodads/models/Doodad references/Screenshot 2026-06-17 171008.png"
+dest_files=["res://.godot/imported/Screenshot 2026-06-17 171008.png-24ca480ca85a53e032bee9bdd1efe47c.ctex"]
 
 [params]
 

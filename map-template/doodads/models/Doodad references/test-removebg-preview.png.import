@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj6eodpsw00ej"
-path="res://.godot/imported/Screenshot 2026-06-17 171008.png-c3e078561f21b315999d541728540c9a.ctex"
+uid="uid://dst2qkpcuiqeb"
+path="res://.godot/imported/test-removebg-preview.png-36f6325049d89545454dfd8326502ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agent-template/models/Doodad references/Screenshot 2026-06-17 171008.png"
-dest_files=["res://.godot/imported/Screenshot 2026-06-17 171008.png-c3e078561f21b315999d541728540c9a.ctex"]
+source_file="res://map-template/doodads/models/Doodad references/test-removebg-preview.png"
+dest_files=["res://.godot/imported/test-removebg-preview.png-36f6325049d89545454dfd8326502ed7.ctex"]
 
 [params]
 

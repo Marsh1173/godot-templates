@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnrbo1igqycgv"
-path="res://.godot/imported/2deeec6b-66f5-42c5-9869-c49695f25c24.png-91ea24587d7d12f0f0b9df2dd80e1fa5.ctex"
+path="res://.godot/imported/2deeec6b-66f5-42c5-9869-c49695f25c24.png-a0cf2237a02be5c314f8cef9ef6098e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://agent-template/models/Doodad references/2deeec6b-66f5-42c5-9869-c49695f25c24.png"
-dest_files=["res://.godot/imported/2deeec6b-66f5-42c5-9869-c49695f25c24.png-91ea24587d7d12f0f0b9df2dd80e1fa5.ctex"]
+source_file="res://map-template/doodads/models/Doodad references/2deeec6b-66f5-42c5-9869-c49695f25c24.png"
+dest_files=["res://.godot/imported/2deeec6b-66f5-42c5-9869-c49695f25c24.png-a0cf2237a02be5c314f8cef9ef6098e5.ctex"]
 
 [params]
 

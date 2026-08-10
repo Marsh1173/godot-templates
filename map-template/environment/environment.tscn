@@ -6,7 +6,7 @@
 [sub_resource type="Gradient" id="Gradient_02eft"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.1421051, 0.37029687, 0.65197355, 0.89539456)
-colors = PackedColorArray(0, 0, 0, 1, 0.6180157, 0.6983686, 0.7667954, 1, 0.6180157, 0.6983686, 0.7667954, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ydnvs"]
 gradient = SubResource("Gradient_02eft")
@@ -34,12 +34,12 @@ colors = PackedColorArray(2.1658838e-07, 0.1441397, 0.28976288, 1, 0.18039216, 0
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_k8y0t"]
 gradient = SubResource("Gradient_hugfm")
 
-[sub_resource type="Gradient" id="Gradient_xgiuy"]
-offsets = PackedFloat32Array(0.16, 0.2, 0.24, 0.33, 0.38, 0.61, 0.7, 0.76, 0.79, 0.82)
-colors = PackedColorArray(0, 0.33333334, 0.43529412, 1, 0.36286873, 0.25293383, 0.6274891, 1, 0.9490196, 0.46666667, 0.37254903, 1, 0.7420839, 0.8327773, 0.8462577, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.5389358, 0.687289, 0.7518928, 1, 0.7420839, 0.8327773, 0.8462577, 1, 0.8784314, 0.5529412, 0.2784314, 1, 0.4117647, 0.27058825, 0.63529414, 1, 0, 0.33333334, 0.43529412, 1)
+[sub_resource type="Gradient" id="Gradient_834qp"]
+offsets = PackedFloat32Array(0.16, 0.2, 0.24, 0.33, 0.38, 0.61, 0.7, 0.76, 0.7894388, 0.82)
+colors = PackedColorArray(0, 0.0599854, 0.12058824, 1, 0.08008974, 0.050643038, 0.18921572, 1, 0.31666672, 0.12977126, 0.16571265, 1, 0.37515995, 0.3683814, 0.40490198, 1, 0.16384947, 0.3004402, 0.39509803, 1, 0.14785084, 0.2736235, 0.36078435, 1, 0.41960782, 0.3406228, 0.36016968, 1, 0.28725493, 0.12616687, 0.1280832, 1, 0.1417418, 0.05861593, 0.19411767, 1, 0, 0.05882353, 0.12156863, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_fkqya"]
-gradient = SubResource("Gradient_xgiuy")
+gradient = SubResource("Gradient_834qp")
 
 [sub_resource type="Sky" id="Sky_834qp"]
 sky_material = ExtResource("1_deabe")

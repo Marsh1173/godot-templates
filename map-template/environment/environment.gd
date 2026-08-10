@@ -5,12 +5,12 @@ extends Node3D
 @onready var sunlight: DirectionalLight3D = $Sunlight
 @onready var moonlight: DirectionalLight3D = $Moonlight
 
-const day_len_in_seconds: float = 60 * 5 # 4 minutes
+const day_len_in_seconds: float = 60 * 1 # 4 minutes
 var time: float =  0.28 * day_len_in_seconds
 
 func _process(delta: float):
-	#time += delta
-	time = 0.30 * day_len_in_seconds # Lock to morning
+	time += delta
+	#time = 0.30 * day_len_in_seconds # Lock to morning
 	
 	var time_percent: float = fposmod(time, day_len_in_seconds) / day_len_in_seconds
 	_update_sky(time_percent)
