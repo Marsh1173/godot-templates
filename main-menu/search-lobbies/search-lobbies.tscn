@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bmbl4hpy2r6tl"]
+
+[ext_resource type="Script" uid="uid://b5wrqeealycs8" path="res://main-menu/search-lobbies/search-lobbies.gd" id="1_ykf2v"]
+[ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="2_no1cc"]
+
+[node name="SearchLobbies" type="Control" unique_id=590042467]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykf2v")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1001904672]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1220375504]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=556691205]
+layout_mode = 2
+theme = ExtResource("2_no1cc")
+theme_type_variation = &"Label_H2"
+text = "Search lobbies"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=1489146847]
+layout_mode = 2
+
+[node name="VScrollBar" type="ScrollContainer" parent="CenterContainer/VBoxContainer" unique_id=1822345845]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+scroll_hint_mode = 1
+
+[node name="LobbyList" type="VBoxContainer" parent="CenterContainer/VBoxContainer/VScrollBar" unique_id=1194389061]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Loading" type="Label" parent="CenterContainer/VBoxContainer/VScrollBar/LobbyList" unique_id=1389979861]
+layout_mode = 2
+text = "Loading..."
+horizontal_alignment = 1
+
+[node name="NoResults" type="Label" parent="CenterContainer/VBoxContainer/VScrollBar/LobbyList" unique_id=878898258]
+layout_mode = 2
+text = "No lobbies were found"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=558826350]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=991128396]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1250722123]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_no1cc")
+text = "Back"
+flat = true
+
+[node name="RefreshButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=25369987]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_no1cc")
+text = "Refresh"
+flat = true

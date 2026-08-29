@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://8lj2xemdavw"]
+
+[ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="1_hbphc"]
+[ext_resource type="Script" uid="uid://cu0tjajiaua12" path="res://main-menu/main-menu/main-menu.gd" id="1_quq7e"]
+[ext_resource type="Script" uid="uid://dvg6tbhfog61x" path="res://main-menu/main-menu/settings-container.gd" id="3_jjoei"]
+[ext_resource type="PackedScene" uid="uid://bmbl4hpy2r6tl" path="res://main-menu/search-lobbies/search-lobbies.tscn" id="4_ycbd5"]
+[ext_resource type="PackedScene" uid="uid://b8in4n1l4ml46" path="res://main-menu/create-game/create-game.tscn" id="6_gd2fh"]
+[ext_resource type="PackedScene" uid="uid://lldnwjot7s3d" path="res://main-menu/lobby/lobby.tscn" id="7_arx4s"]
+
+[node name="MainMenu" type="Control" unique_id=1116539096]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_quq7e")
+
+[node name="MainActionsContainer" type="CenterContainer" parent="." unique_id=2101719104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainActionsContainer" unique_id=240879025]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+
+[node name="GameTitle" type="Label" parent="MainActionsContainer/VBoxContainer" unique_id=937628260]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+theme_type_variation = &"Label_H1"
+text = "Goblin Tribes"
+
+[node name="CreateGameButton" type="Button" parent="MainActionsContainer/VBoxContainer" unique_id=1492292590]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+text = "Create game"
+flat = true
+
+[node name="SearchLobbiesButton" type="Button" parent="MainActionsContainer/VBoxContainer" unique_id=764840975]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+text = "Search lobbies"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="MainActionsContainer/VBoxContainer" unique_id=636388043]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+text = "Settings"
+flat = true
+
+[node name="ExitGame" type="Button" parent="MainActionsContainer/VBoxContainer" unique_id=1372357375]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+text = "Exit game"
+flat = true
+
+[node name="SettingsContainer" type="CenterContainer" parent="." unique_id=134695139]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_jjoei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer" unique_id=894049281]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+
+[node name="Label" type="Label" parent="SettingsContainer/VBoxContainer" unique_id=63125493]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_hbphc")
+theme_type_variation = &"Label_H2"
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparatorTop" type="HSeparator" parent="SettingsContainer/VBoxContainer" unique_id=579112992]
+layout_mode = 2
+
+[node name="FullscreenToggle" type="CheckButton" parent="SettingsContainer/VBoxContainer" unique_id=1201783282]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="HSeparatorBottom" type="HSeparator" parent="SettingsContainer/VBoxContainer" unique_id=1001415113]
+layout_mode = 2
+
+[node name="CloseSettingsButton" type="Button" parent="SettingsContainer/VBoxContainer" unique_id=1168074218]
+layout_mode = 2
+theme = ExtResource("1_hbphc")
+text = "Back"
+flat = true
+
+[node name="SearchLobbies" parent="." unique_id=590042467 instance=ExtResource("4_ycbd5")]
+visible = false
+layout_mode = 1
+
+[node name="CreateGame" parent="." unique_id=376722922 instance=ExtResource("6_gd2fh")]
+visible = false
+layout_mode = 1
+
+[node name="Lobby" parent="." unique_id=1039910367 instance=ExtResource("7_arx4s")]
+visible = false
+layout_mode = 1
+
+[node name="ProfileContainer" type="MarginContainer" parent="." unique_id=199557774]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 27.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ProfileContainer" unique_id=1391721343]
+layout_mode = 2
+
+[node name="AvatarRect" type="TextureRect" parent="ProfileContainer/HBoxContainer" unique_id=655738821]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 3
+
+[node name="SteamName" type="Label" parent="ProfileContainer/HBoxContainer" unique_id=2027728721]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("1_hbphc")
+text = "[Username]"
+
+[connection signal="pressed" from="MainActionsContainer/VBoxContainer/CreateGameButton" to="." method="_on_create_game_button_pressed"]
+[connection signal="pressed" from="MainActionsContainer/VBoxContainer/SearchLobbiesButton" to="." method="_on_search_lobbies_button_pressed"]
+[connection signal="pressed" from="MainActionsContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainActionsContainer/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
+[connection signal="toggled" from="SettingsContainer/VBoxContainer/FullscreenToggle" to="SettingsContainer" method="_on_fullscreen_toggle_toggled"]
+[connection signal="pressed" from="SettingsContainer/VBoxContainer/CloseSettingsButton" to="." method="_on_close_settings_button_pressed"]

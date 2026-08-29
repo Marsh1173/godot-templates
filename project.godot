@@ -10,20 +10,21 @@ config_version=5
 
 [application]
 
-config/name="game-templates"
-run/main_scene="uid://b5r54dlrescre"
+config/name="goblin-tribes"
+run/main_scene="uid://0n5avw7saw6p"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="uid://cjcftlf64l8dc"
 
 [autoload]
 
 WindowManager="*uid://cdywqn2e27syq"
-NetworkManager="*res://utils/NetworkManager.gd"
-SteamLobbyManager="*res://utils/SteamLobbyManager.gd"
-SessionManager="*res://utils/SessionManager.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/vsync/vsync_mode=3
 
 [editor_plugins]
@@ -97,3 +98,8 @@ interact={
 
 rendering_device/driver.windows="d3d12"
 anti_aliasing/quality/screen_space_aa=1
+
+[steam]
+
+initialization/app_data/app_id=5034360
+multiplayer_peer/max_channels=10

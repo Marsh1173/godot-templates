@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://kf23x7chvg3e"]
+
+[ext_resource type="Script" uid="uid://k1ttj02aq8iv" path="res://main-menu/landing-page/landing-page.gd" id="1_iply0"]
+[ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="2_prrft"]
+[ext_resource type="Script" uid="uid://v6waid0k38u7" path="res://main-menu/landing-page/press-any-button.gd" id="3_pcta6"]
+[ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="3_prrft"]
+[ext_resource type="ArrayMesh" uid="uid://been4yjmivdlr" path="res://map-template/doodads/models/Doodads_Pine_tree_large_2.res" id="4_mbon4"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_prrft"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcta6"]
+albedo_color = Color(0.35545835, 0.61522573, 0.509692, 1)
+
+[node name="LandingPage" type="Node3D" unique_id=1917022644]
+script = ExtResource("1_iply0")
+
+[node name="Control" type="Control" parent="." unique_id=1034973089]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=856323332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=318518657]
+layout_mode = 2
+theme = ExtResource("2_prrft")
+
+[node name="Title" type="Label" parent="Control/CenterContainer/VBoxContainer" unique_id=45992027]
+layout_mode = 2
+theme = ExtResource("2_prrft")
+theme_type_variation = &"Label_H1"
+text = "Goblin Tribes"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PressAnyButton" type="Label" parent="Control/CenterContainer/VBoxContainer" unique_id=1064781644]
+layout_mode = 2
+theme = ExtResource("2_prrft")
+text = "Press any button to continue."
+horizontal_alignment = 1
+script = ExtResource("3_pcta6")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=446504065]
+transform = Transform3D(0.66221464, -0.3518048, -0.66159284, -1.4901161e-08, 0.88293123, -0.4695024, 0.7493141, 0.3109114, 0.58469, -2.2700515, 0.03567815, 2.5720413)
+
+[node name="Environment" parent="." unique_id=1474578257 instance=ExtResource("3_prrft")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=483345786]
+transform = Transform3D(3.259999, 0.0021199249, -0.00081403606, -0.00212042, 3.2599986, -0.0019839117, 0.00081274565, 0.0019844407, 3.2599993, -0.0039930344, -0.83995473, 0.3184991)
+mesh = SubResource("TorusMesh_prrft")
+surface_material_override/0 = SubResource("StandardMaterial3D_pcta6")
+
+[node name="DoodadsPineTreeLarge2" type="MeshInstance3D" parent="." unique_id=418673164]
+transform = Transform3D(0.39748427, 0, -0.917609, 0, 1, 0, 0.917609, 0, 0.39748427, 16.541698, -0.42638636, 2.6472917)
+mesh = ExtResource("4_mbon4")
+
+[node name="DoodadsPineTreeLarge3" type="MeshInstance3D" parent="." unique_id=1046206909]
+transform = Transform3D(-0.98857033, 0, -0.15076047, 0, 1, 0, 0.15076047, 0, -0.98857033, 2.667263, -0.8527708, -27.733744)
+mesh = ExtResource("4_mbon4")

@@ -272,7 +272,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_pine_tree_large_1.res",
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Pine_tree_large_1.res",
 "save_to_file/path": "uid://bgduodxdtnj2q"
 },
 "Doodads_pine_tree_large_2": {
@@ -281,7 +281,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_pine_tree_large_2.res",
+"save_to_file/fallback_path": "res://map-template/doodads/models/Doodads_Pine_tree_large_2.res",
 "save_to_file/path": "uid://been4yjmivdlr"
 }
 },

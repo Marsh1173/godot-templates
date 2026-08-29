@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b8in4n1l4ml46"]
+
+[ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="1_an371"]
+[ext_resource type="Script" uid="uid://gpy718cegg3w" path="res://main-menu/create-game/create-game.gd" id="1_jotd2"]
+
+[node name="CreateGame" type="Control" unique_id=376722922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_jotd2")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2055789266]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1616876473]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("1_an371")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=12196450]
+layout_mode = 2
+theme = ExtResource("1_an371")
+theme_type_variation = &"Label_H2"
+text = "Host lobby"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=1276422935]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=559829993]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1258677199]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_an371")
+text = "Max players"
+
+[node name="MaxPlayersInput" type="SpinBox" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1412073268]
+layout_mode = 2
+min_value = 1.0
+max_value = 250.0
+value = 6.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1758862024]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=461921722]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_an371")
+text = "Lobby visibility"
+
+[node name="VisibilityMenu" type="OptionButton" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=1335160317]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Friends-only"
+popup/item_0/id = 1
+popup/item_1/text = "Public"
+popup/item_1/id = 2
+popup/item_2/text = "Private"
+popup/item_2/id = 0
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=1716004708]
+layout_mode = 2
+
+[node name="ActionButtons" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=736679783]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer/ActionButtons" unique_id=1282060362]
+layout_mode = 2
+theme = ExtResource("1_an371")
+text = "Back"
+flat = true
+
+[node name="CreateButton" type="Button" parent="CenterContainer/VBoxContainer/ActionButtons" unique_id=1225424917]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("1_an371")
+text = "Create"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ActionButtons/CreateButton" to="." method="_on_create_button_pressed"]

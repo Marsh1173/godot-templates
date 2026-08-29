@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dcb1fy2et50ua"]
+
+[ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="1_qhndi"]
+[ext_resource type="Script" uid="uid://dbs1kktx60d2x" path="res://main-menu/search-lobbies/lobby-list-item.gd" id="1_qws17"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhndi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blelr"]
+bg_color = Color(0, 0, 0, 0.3019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhndi"]
+bg_color = Color(0, 0, 0, 0.12156863)
+
+[node name="LobbyListItem" type="Button" unique_id=904762804]
+custom_minimum_size = Vector2(0, 45)
+anchors_preset = -1
+anchor_right = 0.17300001
+anchor_bottom = 0.069000006
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("1_qhndi")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qhndi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_blelr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qhndi")
+script = ExtResource("1_qws17")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1946191184]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=332293031]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/HBoxContainer" unique_id=41853528]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Game"
+text_overrun_behavior = 5
+
+[node name="PlayerCount" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1875965290]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0/0"

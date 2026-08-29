@@ -1,6 +1,5 @@
 extends Node3D
 
-
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
 @onready var sunlight: DirectionalLight3D = $Sunlight
 @onready var moonlight: DirectionalLight3D = $Moonlight

@@ -7,7 +7,7 @@ func _ready():
 	spawn_function = _custom_spawn_logic
 
 # Only called on host, at the start of the game
-func ready_with_host_data(agent_id_to_peer_id: Dictionary[int, int], agent_datas: Array[Array]):
+func ready_with_host_data(agent_id_to_peer_id: Dictionary[int, int], agent_id_to_steam_id: Dictionary[int, int], agent_datas: Array[Array]):
 	for agent_data in agent_datas:
 		var agent_id = agent_data[0]
 		var agent_name = agent_data[1]

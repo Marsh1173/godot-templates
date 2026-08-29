@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://lldnwjot7s3d"]
+
+[ext_resource type="Script" uid="uid://ciu8cneotrrv4" path="res://main-menu/lobby/lobby.gd" id="1_jjlvv"]
+[ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="2_xqpgx"]
+
+[node name="Lobby" type="Control" unique_id=1039910367]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jjlvv")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2103514527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=98332720]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme = ExtResource("2_xqpgx")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=977569503]
+layout_mode = 2
+theme = ExtResource("2_xqpgx")
+theme_type_variation = &"Label_H2"
+text = "Lobby"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=152782459]
+layout_mode = 2
+
+[node name="PlayerEntryContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=2078838574]
+layout_mode = 2
+theme = ExtResource("2_xqpgx")
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer" unique_id=1682845220]
+layout_mode = 2
+
+[node name="ActionButtons" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=641533861]
+layout_mode = 2
+
+[node name="LeaveButton" type="Button" parent="CenterContainer/VBoxContainer/ActionButtons" unique_id=1587548637]
+layout_mode = 2
+theme = ExtResource("2_xqpgx")
+text = "Leave"
+flat = true
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer/ActionButtons" unique_id=1599823450]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_xqpgx")
+disabled = true
+text = "Start"
+flat = true

@@ -52,6 +52,7 @@ func do() -> bool:
 func create_meshes(solver: Solver):
 	for child in get_children():
 		remove_child(child)
+		child.queue_free()
 	for cell: Cell in solver.grid.values():
 		if !cell.is_collapsed:
 			continue

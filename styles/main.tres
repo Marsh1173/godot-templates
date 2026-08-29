@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://8vslbp1mlfxt"]
+
+[ext_resource type="FontFile" uid="uid://00p5jfgwy13q" path="res://styles/MouseMemoirs-Regular.ttf" id="1_7klfi"]
+
+[resource]
+BoxContainer/constants/separation = 16
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_7klfi")
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.24705882)
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_7klfi")
+Label_H1/base_type = &"Label"
+Label_H1/font_sizes/font_size = 64
+Label_H2/base_type = &"Label"
+Label_H2/font_sizes/font_size = 48
+RichTextLabel/fonts/normal_font = ExtResource("1_7klfi")

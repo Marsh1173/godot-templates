@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://0n5avw7saw6p"]
+
+[ext_resource type="Script" uid="uid://d2p42talwhl3f" path="res://app-orchestrator/app-orchestrator.gd" id="1_gdkou"]
+[ext_resource type="Script" uid="uid://d3w01rhf2p54e" path="res://app-orchestrator/lobby-manager.gd" id="2_db5e7"]
+
+[node name="AppOrchestrator" type="Node" unique_id=1021641025]
+script = ExtResource("1_gdkou")
+
+[node name="LobbyManager" type="Node" parent="." unique_id=414795471]
+script = ExtResource("2_db5e7")

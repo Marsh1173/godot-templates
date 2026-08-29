@@ -53,15 +53,18 @@ uppercase = true
 
 [node name="Tree 1" type="MeshInstance3D" parent="Trees" unique_id=650967038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.51083, -0.17822164, -4.855956)
+visible = false
 instance_shader_parameters/rim_enabled = 0.0
 mesh = ExtResource("22_d0th3")
 
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Trees" unique_id=890459416]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.46237803, 0)
+visible = false
 multimesh = SubResource("MultiMesh_ofsbt")
 
 [node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="Trees" unique_id=1116588595]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 5.937952, -0.92475605, 0)
+visible = false
 multimesh = SubResource("MultiMesh_ofsbt")
 
 [node name="MultiMeshInstance3D3" type="MultiMeshInstance3D" parent="Trees" unique_id=1920498414]

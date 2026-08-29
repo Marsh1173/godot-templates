@@ -6,5 +6,5 @@ class_name World
 @onready var entity_spawner: EntitySpawner = $EntitySpawner
 
 # Only called on host
-func ready_with_host_data(agent_id_to_peer_id: Dictionary[int, int], agent_datas: Array[Array]):
-	agent_spawner.ready_with_host_data(agent_id_to_peer_id, agent_datas)
+func ready_with_host_data(agent_id_to_peer_id: Dictionary[int, int], agent_id_to_steam_id: Dictionary[int, int], agent_datas: Array[Array]):
+	agent_spawner.ready_with_host_data(agent_id_to_peer_id, agent_id_to_steam_id, agent_datas)
