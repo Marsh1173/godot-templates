@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dj88y7lcgjn8h"]
+
+[ext_resource type="Script" uid="uid://dshksly2x1lvo" path="res://agent-template/world/loading-screen/loading-screen.gd" id="1_hdf6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgs3h"]
+bg_color = Color(1, 1, 1, 0.078431375)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdf6k"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="LoadingScreen" type="Control" unique_id=1013434954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdf6k")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=970191334]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1987681173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1914081447]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=897262441]
+layout_mode = 2
+text = "Loading..."
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/VBoxContainer" unique_id=1718147426]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_rgs3h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hdf6k")
+max_value = 1.0
+show_percentage = false

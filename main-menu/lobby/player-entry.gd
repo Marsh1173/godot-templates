@@ -12,6 +12,6 @@ func _ready_with_data(_player_id: int):
 	
 	Steam.persona_state_change.connect(_update_ui)
 
-func _update_ui(steam_id: int, _flags: int = 0):
+func _update_ui(_steam_id: int, _flags: int = 0):
 	name_text.text = Steam.getFriendPersonaName(player_id)
 	

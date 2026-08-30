@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bay0n5pxunoyo" path="res://agent-template/world/world.gd" id="1_app24"]
 [ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="2_ica1m"]
+[ext_resource type="PackedScene" uid="uid://dj88y7lcgjn8h" path="res://agent-template/world/loading-screen/loading-screen.tscn" id="2_uvuju"]
 [ext_resource type="PackedScene" uid="uid://crwmspi1hlio7" path="res://agent-template/agent/spawner/agent-spawner.tscn" id="3_ica1m"]
 [ext_resource type="PackedScene" uid="uid://bevu27xslljg4" path="res://inventory-template/item-spawner/item-spawner.tscn" id="4_uvuju"]
 [ext_resource type="PackedScene" uid="uid://cpk1kgenu45jm" path="res://agent-template/entities/entity-spawner.tscn" id="5_ica1m"]
@@ -16,3 +17,5 @@ script = ExtResource("1_app24")
 [node name="ItemSpawner" parent="." unique_id=796922595 instance=ExtResource("4_uvuju")]
 
 [node name="EntitySpawner" parent="." unique_id=1172790732 instance=ExtResource("5_ica1m")]
+
+[node name="LoadingScreen" parent="." unique_id=1013434954 instance=ExtResource("2_uvuju")]

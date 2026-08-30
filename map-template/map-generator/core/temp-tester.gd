@@ -1,7 +1,7 @@
 class_name TempTester
 extends Node
 
-@export var size: int = 7
+@export var size: int = 8
 @export var height: int = 3
 
 ## Background thread for solving.
