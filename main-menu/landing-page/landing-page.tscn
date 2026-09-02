@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://k1ttj02aq8iv" path="res://main-menu/landing-page/landing-page.gd" id="1_iply0"]
 [ext_resource type="Theme" uid="uid://8vslbp1mlfxt" path="res://styles/main.tres" id="2_prrft"]
 [ext_resource type="Script" uid="uid://v6waid0k38u7" path="res://main-menu/landing-page/press-any-button.gd" id="3_pcta6"]
-[ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="3_prrft"]
-[ext_resource type="ArrayMesh" uid="uid://been4yjmivdlr" path="res://map-template/doodads/models/Doodads_Pine_tree_large_2.res" id="4_mbon4"]
+[ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map/environment/environment.tscn" id="3_prrft"]
+[ext_resource type="ArrayMesh" uid="uid://been4yjmivdlr" path="res://map/doodads/models/Doodads_Pine_tree_large_2.res" id="4_mbon4"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_prrft"]
 

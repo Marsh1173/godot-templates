@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dcmhs1ist7n8a"]
+
+[ext_resource type="Shader" uid="uid://em87tm8hf17e" path="res://map/doodads/models/leaf-material.gdshader" id="1_pqrtf"]
+[ext_resource type="Texture2D" uid="uid://bevowetclaf1l" path="res://map/doodads/models/leaf alpha cards.jpg" id="2_esgj0"]
+[ext_resource type="Texture2D" uid="uid://bmqmltesggmp7" path="res://agent-template/textures/texture-gradient/texture-gradient.png" id="3_prkjk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pqrtf")
+shader_parameter/color_texture = ExtResource("3_prkjk")
+shader_parameter/alpha_mask = ExtResource("2_esgj0")
+shader_parameter/alpha_scissor_threshold = 0.50000002375

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dr0mjka3ukg4q"]
 
 [ext_resource type="Script" uid="uid://bay0n5pxunoyo" path="res://agent-template/world/world.gd" id="1_app24"]
-[ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map-template/environment/environment.tscn" id="2_ica1m"]
+[ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map/environment/environment.tscn" id="2_ica1m"]
 [ext_resource type="PackedScene" uid="uid://dj88y7lcgjn8h" path="res://agent-template/world/loading-screen/loading-screen.tscn" id="2_uvuju"]
 [ext_resource type="PackedScene" uid="uid://crwmspi1hlio7" path="res://agent-template/agent/spawner/agent-spawner.tscn" id="3_ica1m"]
 [ext_resource type="PackedScene" uid="uid://bevu27xslljg4" path="res://inventory-template/item-spawner/item-spawner.tscn" id="4_uvuju"]

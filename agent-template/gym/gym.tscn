@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://didjxeru7lnjk" path="res://agent-template/gym/gym.gd" id="1_w5k1r"]
 [ext_resource type="PackedScene" uid="uid://2bqc3owq6734" path="res://agent-template/gym/block/block.tscn" id="2_me3mq"]
 [ext_resource type="PackedScene" uid="uid://dr0mjka3ukg4q" path="res://agent-template/world/world.tscn" id="2_ntnsb"]
-[ext_resource type="ArrayMesh" uid="uid://been4yjmivdlr" path="res://map-template/doodads/models/Doodads_Pine_tree_large_2.res" id="4_bpitf"]
-[ext_resource type="ArrayMesh" uid="uid://bgduodxdtnj2q" path="res://map-template/doodads/models/Doodads_Pine_tree_large_1.res" id="5_q64bu"]
-[ext_resource type="ArrayMesh" uid="uid://b3s7jfo23fatr" path="res://map-template/doodads/models/Doodads_Rock_med_3.res" id="7_1o4se"]
-[ext_resource type="ArrayMesh" uid="uid://d2khvl0ryp5d4" path="res://map-template/doodads/models/Doodads_Cube_015.res" id="18_ofsbt"]
-[ext_resource type="ArrayMesh" uid="uid://day8o8y7msk4w" path="res://map-template/doodads/models/Doodads_Cube_012.res" id="19_p6jkq"]
-[ext_resource type="ArrayMesh" uid="uid://o3drw68tjks5" path="res://map-template/doodads/models/Doodads_Plane_016.res" id="22_d0th3"]
+[ext_resource type="ArrayMesh" uid="uid://been4yjmivdlr" path="res://map/doodads/models/Doodads_Pine_tree_large_2.res" id="4_bpitf"]
+[ext_resource type="ArrayMesh" uid="uid://bgduodxdtnj2q" path="res://map/doodads/models/Doodads_Pine_tree_large_1.res" id="5_q64bu"]
+[ext_resource type="ArrayMesh" uid="uid://b3s7jfo23fatr" path="res://map/doodads/models/Doodads_Rock_med_3.res" id="7_1o4se"]
+[ext_resource type="ArrayMesh" uid="uid://d2khvl0ryp5d4" path="res://map/doodads/models/Doodads_Cube_015.res" id="18_ofsbt"]
+[ext_resource type="ArrayMesh" uid="uid://day8o8y7msk4w" path="res://map/doodads/models/Doodads_Cube_012.res" id="19_p6jkq"]
+[ext_resource type="ArrayMesh" uid="uid://o3drw68tjks5" path="res://map/doodads/models/Doodads_Plane_016.res" id="22_d0th3"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_ofsbt"]
 transform_format = 1

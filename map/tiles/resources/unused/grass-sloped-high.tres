@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://d2mkucgppo263"]
+
+[ext_resource type="PackedScene" uid="uid://dkrbi8u2ihjr" path="res://map/tiles/resources/gltfs/hex_grass_sloped_high.gltf" id="1_poegu"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/generator/hex-tile.gd" id="2_te4s3"]
+
+[resource]
+script = ExtResource("2_te4s3")
+tile_name = &"grass-sloped-high"
+scene = ExtResource("1_poegu")
+edges = Array[int]([0, 0, 0, 0, 0, 0])
+edge_heights = Array[int]([2, 2, 0, 0, 0, 2])
+symmetry_mod = 6
+metadata/_custom_type_script = "uid://cmjk2lbq52sd8"
