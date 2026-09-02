@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bd8gn0bg3cpxp"]
+
+[ext_resource type="Texture2D" uid="uid://cgocjdg5iswv0" path="res://map-template/tiles/resources/gltfs/hexagons_medieval.png" id="1_gxvim"]
+
+[resource]
+albedo_texture = ExtResource("1_gxvim")

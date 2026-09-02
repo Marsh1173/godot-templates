@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://cxytvff6td26i"]
+
+[ext_resource type="PackedScene" uid="uid://broifw83psa0d" path="res://map-template/tiles/resources/gltfs/hex_river_A.gltf" id="1_8ij67"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map-template/tiles/generator/hex-tile.gd" id="2_7lr81"]
+
+[resource]
+script = ExtResource("2_7lr81")
+tile_name = &"river-a"
+scene = ExtResource("1_8ij67")
+weight = 0.3
+edges = Array[int]([2, 0, 0, 2, 0, 0])
+symmetry_mod = 2
+metadata/_custom_type_script = "uid://cmjk2lbq52sd8"

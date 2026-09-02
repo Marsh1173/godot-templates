@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://cu2x5dxvm1ww8"]
+
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map-template/tiles/generator/hex-tile.gd" id="1_3j3w2"]
+[ext_resource type="PackedScene" uid="uid://b1br220wo8n5t" path="res://map-template/tiles/resources/gltfs/hex_grass.gltf" id="1_fi27n"]
+
+[resource]
+script = ExtResource("1_3j3w2")
+tile_name = &"grass"
+scene = ExtResource("1_fi27n")
+weight = 5.0
+edges = Array[int]([0, 0, 0, 0, 0, 0])
+symmetry_mod = 6
+metadata/_custom_type_script = "uid://cmjk2lbq52sd8"

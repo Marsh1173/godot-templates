@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cgxoaaup87ecs"]
+
+[ext_resource type="PackedScene" uid="uid://b1br220wo8n5t" path="res://map-template/tiles/resources/gltfs/hex_grass.gltf" id="1_d0krt"]
+[ext_resource type="ArrayMesh" uid="uid://bme52wf206qn7" path="res://map-template/tiles/resources/gltfs/tiles_hex_coast_E_waterless.res" id="2_djkau"]
+
+[node name="CliffE" type="Node3D" unique_id=1599230208]
+
+[node name="hex_grass2" parent="." unique_id=1992887594 instance=ExtResource("1_d0krt")]
+
+[node name="TilesHexCoastBWaterless" type="MeshInstance3D" parent="." unique_id=1991235776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("2_djkau")

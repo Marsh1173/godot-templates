@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://ivq1d14tabm3"]
+
+[ext_resource type="PackedScene" uid="uid://dr81luhiahmmb" path="res://map-template/tiles/resources/gltfs/hex_road_B.gltf" id="1_tpj88"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map-template/tiles/generator/hex-tile.gd" id="2_s7oyi"]
+
+[resource]
+script = ExtResource("2_s7oyi")
+tile_name = &"road-b"
+scene = ExtResource("1_tpj88")
+edges = Array[int]([0, 0, 0, 1, 0, 1])
+metadata/_custom_type_script = "uid://cmjk2lbq52sd8"
