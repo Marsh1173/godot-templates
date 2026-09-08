@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwj7o5kgvl8fe"]
+
+[ext_resource type="ArrayMesh" uid="uid://pu561trlyfnn" path="res://map/tiles/resources/map-tile-models/map-tiles_Road-B.res" id="1_l2t5t"]
+
+[node name="MapTilesRoadB" type="Node3D" unique_id=1989136411]
+
+[node name="MapTilesRoadB" type="MeshInstance3D" parent="." unique_id=728064172]
+mesh = ExtResource("1_l2t5t")

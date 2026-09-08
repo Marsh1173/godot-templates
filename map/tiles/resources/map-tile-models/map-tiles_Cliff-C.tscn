@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnx25q7dnd3lh"]
+
+[ext_resource type="ArrayMesh" uid="uid://dy0ustr0u3re4" path="res://map/tiles/resources/map-tile-models/map-tiles_Cliff-C.res" id="1_8b62u"]
+
+[node name="MapTilesCliffC" type="Node3D" unique_id=1989136411]
+
+[node name="MapTilesCliffC" type="MeshInstance3D" parent="." unique_id=1101219383]
+mesh = ExtResource("1_8b62u")

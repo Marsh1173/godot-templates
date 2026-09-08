@@ -22,5 +22,4 @@ visible = false
 mesh = SubResource("BoxMesh_l3gvf")
 
 [node name="TempTester" parent="." unique_id=1781223095 instance=ExtResource("4_l3gvf")]
-size = 5
-height = 2
+size = 6

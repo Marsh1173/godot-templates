@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="goblin-tribes"
-run/main_scene="uid://0n5avw7saw6p"
+run/main_scene="uid://bjbscjjr4acqj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -96,6 +96,7 @@ interact={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 anti_aliasing/quality/screen_space_aa=1
 
@@ -103,3 +104,9 @@ anti_aliasing/quality/screen_space_aa=1
 
 initialization/app_data/app_id=5034360
 multiplayer_peer/max_channels=10
+initialization/app_data/app_type=0
+initialization/app_data/demo_id=0
+initialization/app_data/playtest_id=0
+initialization/app_data/tool_id=0
+initialization/processes/initialize_on_startup=false
+initialization/processes/embed_callbacks=false

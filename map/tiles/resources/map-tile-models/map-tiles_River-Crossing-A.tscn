@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cuqdmrduf4yjw"]
+
+[ext_resource type="ArrayMesh" uid="uid://57grwehbalil" path="res://map/tiles/resources/map-tile-models/map-tiles_River-Crossing-A.res" id="1_fxn63"]
+
+[node name="MapTilesRiverCrossingA" type="Node3D" unique_id=1989136411]
+
+[node name="MapTilesRiverCrossingA" type="MeshInstance3D" parent="." unique_id=2091155925]
+mesh = ExtResource("1_fxn63")

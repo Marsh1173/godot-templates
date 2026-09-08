@@ -57,9 +57,9 @@ func create_meshes(solver: Solver):
 		if !cell.is_collapsed:
 			continue
 		var scene: Node3D = cell.possible_tiles[0].scene.instantiate()
-		scene.position = HexMath.axial_to_world(cell.coords.x, cell.coords.y, 1.1547)
+		scene.position = HexMath.axial_to_world(cell.coords.x, cell.coords.y, 30)
 		scene.rotation.y = cell.possible_tiles[0].rotation * PI / 3
-		scene.position.y = cell.possible_tiles[0].edge_heights.min()
+		scene.position.y = cell.possible_tiles[0].edge_heights.min() * 15
 		add_child(scene)
 	if _thread != null:
 		_thread.wait_to_finish()

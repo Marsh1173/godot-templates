@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://jjsdu74nsefe"]
 
-[ext_resource type="PackedScene" uid="uid://d1nq1x35uxdih" path="res://map/tiles/resources/gltfs/hex_river_crossing_B.gltf" id="1_65vhf"]
+[ext_resource type="PackedScene" uid="uid://2td4jrou443s" path="res://map/tiles/resources/map-tile-models/map-tiles_River-Crossing-B.tscn" id="1_frlfb"]
 [ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/generator/hex-tile.gd" id="2_g5ydd"]
 
 [resource]
 script = ExtResource("2_g5ydd")
 tile_name = &"river-crossing-b"
-scene = ExtResource("1_65vhf")
+scene = ExtResource("1_frlfb")
 weight = 0.5
 edges = Array[int]([2, 0, 1, 2, 0, 1])
 symmetry_mod = 2

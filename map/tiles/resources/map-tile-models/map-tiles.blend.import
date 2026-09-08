@@ -1,0 +1,278 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ccdg7cmnb6ami"
+path="res://.godot/imported/map-tiles.blend-5d39a842c560f4862de51b6903159bdc.scn"
+
+[deps]
+
+source_file="res://map/tiles/resources/map-tile-models/map-tiles.blend"
+dest_files=["res://.godot/imported/map-tiles.blend-5d39a842c560f4862de51b6903159bdc.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://agent-template/textures/texture-gradient/Texture gradients.tres",
+"use_external/path": "uid://bpb0fgemrmoru"
+}
+},
+"meshes": {
+"map-tiles_Cliff-A": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cliff-A.res",
+"save_to_file/path": "uid://bdy8b2b11yfhh"
+},
+"map-tiles_Cliff-B": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cliff-B.res",
+"save_to_file/path": "uid://citims1q40q1l"
+},
+"map-tiles_Cliff-C": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cliff-C.res",
+"save_to_file/path": "uid://dkforg1ra2335"
+},
+"map-tiles_Cylinder": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cylinder.res",
+"save_to_file/path": "uid://8um5nkeg77rs"
+},
+"map-tiles_Cylinder_003": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cylinder_003.res",
+"save_to_file/path": "uid://bssyrsds82pqs"
+},
+"map-tiles_Cylinder_008": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cylinder_008.res",
+"save_to_file/path": "uid://b1yll2fjywa8d"
+},
+"map-tiles_Cylinder_014": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Cylinder_014.res",
+"save_to_file/path": "uid://cx8jl243uy0fn"
+},
+"map-tiles_Grass": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Grass.res",
+"save_to_file/path": "uid://btibwbqh3n0bk"
+},
+"map-tiles_River-A": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_River-A.res",
+"save_to_file/path": "uid://dmd4mxtf4mter"
+},
+"map-tiles_River-A-Curvy": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_River-A-Curvy.res",
+"save_to_file/path": "uid://d1h31i6soylqi"
+},
+"map-tiles_River-B": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_River-B.res",
+"save_to_file/path": "uid://cnvnvnkibbei5"
+},
+"map-tiles_River-Crossing-A": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_River-Crossing-A.res",
+"save_to_file/path": "uid://dse5ccinfj350"
+},
+"map-tiles_River-Crossing-B": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_River-Crossing-B.res",
+"save_to_file/path": "uid://3dty7s5r7xuo"
+},
+"map-tiles_River-D": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_River-D.res",
+"save_to_file/path": "uid://dk7pbadkg5f41"
+},
+"map-tiles_Road-A": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Road-A.res",
+"save_to_file/path": "uid://bm6pjd4vsjdin"
+},
+"map-tiles_Road-B": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Road-B.res",
+"save_to_file/path": "uid://c8i65bmgwef08"
+},
+"map-tiles_Road-D": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Road-D.res",
+"save_to_file/path": "uid://kujkdel13njv"
+},
+"map-tiles_Road-M": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://map/tiles/resources/map-tile-models/map-tiles_Road-M.res",
+"save_to_file/path": "uid://bpfx3bvuiddkn"
+}
+},
+"nodes": {
+"PATH:Camera": {
+"import/skip_import": true
+},
+"PATH:Cliff-A": {
+"generate/physics": true
+},
+"PATH:Cliff-B": {
+"generate/physics": true
+},
+"PATH:Cliff-C": {
+"generate/physics": true
+},
+"PATH:Grass": {
+"generate/physics": true
+},
+"PATH:Iteration 1 river template": {
+"import/skip_import": true
+},
+"PATH:Iteration 1 road template": {
+"import/skip_import": true
+},
+"PATH:Iteration 1 template": {
+"import/skip_import": true
+},
+"PATH:Iteration 1 template flat": {
+"import/skip_import": true
+},
+"PATH:Light": {
+"import/skip_import": true
+},
+"PATH:River-A": {
+"generate/physics": true
+},
+"PATH:River-A-Curvy": {
+"generate/physics": true
+},
+"PATH:River-B": {
+"generate/physics": true
+},
+"PATH:River-Crossing-A": {
+"generate/physics": true
+},
+"PATH:River-Crossing-B": {
+"generate/physics": true
+},
+"PATH:River-D": {
+"generate/physics": true
+},
+"PATH:Road-A": {
+"generate/physics": true
+},
+"PATH:Road-B": {
+"generate/physics": true
+},
+"PATH:Road-D": {
+"generate/physics": true
+},
+"PATH:Road-M": {
+"generate/physics": true
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/export_geometry_nodes_instances=false
+blender/meshes/gpu_instances=false
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
+gltf/naming_version=2

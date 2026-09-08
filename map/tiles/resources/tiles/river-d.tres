@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://chyp02t2qb2jv"]
 
-[ext_resource type="PackedScene" uid="uid://cicff3qyprtif" path="res://map/tiles/resources/gltfs/hex_river_D.gltf" id="1_bgp5i"]
+[ext_resource type="PackedScene" uid="uid://g8277ceysi73" path="res://map/tiles/resources/map-tile-models/map-tiles_River-D.tscn" id="1_6xjea"]
 [ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/generator/hex-tile.gd" id="2_ldgid"]
 
 [resource]
 script = ExtResource("2_ldgid")
 tile_name = &"river-d"
-scene = ExtResource("1_bgp5i")
+scene = ExtResource("1_6xjea")
 weight = 0.25
 edges = Array[int]([0, 2, 0, 2, 0, 2])
 symmetry_mod = 3
