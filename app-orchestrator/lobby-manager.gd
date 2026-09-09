@@ -4,7 +4,7 @@ extends Node
 var current_lobby_id: int = -1
 
 const DEFAULT_ENET_PORT: int = 8321
-const STEAM_APP_ID: int = 5034360
+const STEAM_APP_ID: int = 5245800
 var _steam_active: bool = false
 
 # Used to track a lobby ID from Steam invites or joining via Friends List
