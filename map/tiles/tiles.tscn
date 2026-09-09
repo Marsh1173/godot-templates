@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cyaa3n8ggshhw"]
+
+[ext_resource type="Script" uid="uid://bc1ptvjglrg4d" path="res://map/tiles/tiles.gd" id="1_jev0a"]
+
+[node name="Tiles" type="Node" unique_id=821018371]
+script = ExtResource("1_jev0a")

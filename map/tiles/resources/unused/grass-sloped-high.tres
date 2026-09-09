@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://d2mkucgppo263"]
 
 [ext_resource type="PackedScene" uid="uid://dkrbi8u2ihjr" path="res://map/tiles/resources/gltfs/hex_grass_sloped_high.gltf" id="1_poegu"]
-[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/generator/hex-tile.gd" id="2_te4s3"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/solver/hex-tile.gd" id="2_te4s3"]
 
 [resource]
 script = ExtResource("2_te4s3")

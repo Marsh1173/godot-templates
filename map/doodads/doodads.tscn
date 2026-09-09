@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://n3g8cx6ytmyh"]
+
+[ext_resource type="Script" uid="uid://bdlmplwjg1unv" path="res://map/doodads/doodads.gd" id="1_5wbrk"]
+
+[node name="Doodads" type="Node" unique_id=880931743]
+script = ExtResource("1_5wbrk")

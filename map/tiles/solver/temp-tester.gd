@@ -35,7 +35,7 @@ func _do_thread_entry():
 func do() -> bool:
 	var start_time = Time.get_ticks_msec()
 	
-	var solver = Solver.new()
+	var solver = MapTilesSolver.new()
 	var success: bool = solver.solve(size, height)
 	if !success:
 		return false
@@ -49,11 +49,11 @@ func do() -> bool:
 	print("Elapsed time: ", elapsed_sec, " seconds")
 	return true
 
-func create_meshes(solver: Solver):
+func create_meshes(solver: MapTilesSolver):
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()
-	for cell: Cell in solver.grid.values():
+	for cell: MapCell in solver.grid.values():
 		if !cell.is_collapsed:
 			continue
 		var scene: Node3D = cell.possible_tiles[0].scene.instantiate()

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bijw6o6fl0y6f"]
+
+[ext_resource type="Script" uid="uid://bvn4v4x80mbn0" path="res://map/map.gd" id="1_a0dt8"]
+[ext_resource type="PackedScene" uid="uid://cyaa3n8ggshhw" path="res://map/tiles/tiles.tscn" id="2_4hjbm"]
+[ext_resource type="PackedScene" uid="uid://n3g8cx6ytmyh" path="res://map/doodads/doodads.tscn" id="3_4hjbm"]
+
+[node name="Map" type="Node" unique_id=1631399066]
+script = ExtResource("1_a0dt8")
+
+[node name="Tiles" parent="." unique_id=1454508434 instance=ExtResource("2_4hjbm")]
+
+[node name="Doodads" parent="." unique_id=880931743 instance=ExtResource("3_4hjbm")]

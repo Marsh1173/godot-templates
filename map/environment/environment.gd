@@ -4,7 +4,7 @@ extends Node3D
 @onready var sunlight: DirectionalLight3D = $Sunlight
 @onready var moonlight: DirectionalLight3D = $Moonlight
 
-const day_len_in_seconds: float = 60 * 1 # 4 minutes
+const day_len_in_seconds: float = 60 * 4 # 4 minutes
 var time: float =  0.28 * day_len_in_seconds
 
 func _process(delta: float):

@@ -41,13 +41,21 @@ const MAIN_MENU = preload("uid://8lj2xemdavw")
 func show_main_menu():
 	var main_menu = MAIN_MENU.instantiate()
 	_set_as_current(main_menu)
+
+# TEMP
+const GYM = preload("uid://bn0uskicgq7l0")
 	
 const WORLD = preload("uid://dr0mjka3ukg4q")
 func show_game():
-	var world = WORLD.instantiate()
-	_set_as_current(world)
+	#var world = WORLD.instantiate()
+	#_set_as_current(world)
+	var gym = GYM.instantiate()
+	_set_as_current(gym)
 
 func show_game_as_host(agent_id_to_peer_id: Dictionary[int, int], agent_id_to_steam_id: Dictionary[int, int], agent_datas: Array[Array]):
-	var world: World = WORLD.instantiate()
-	_set_as_current(world)
-	world.ready_with_host_data(agent_id_to_peer_id, agent_id_to_steam_id, agent_datas)
+	#var world: World = WORLD.instantiate()
+	#_set_as_current(world)
+	#world.ready_with_host_data(agent_id_to_peer_id, agent_id_to_steam_id, agent_datas)
+	var gym = GYM.instantiate()
+	_set_as_current(gym)
+	gym.world.ready_with_host_data(agent_id_to_peer_id, agent_id_to_steam_id, agent_datas)

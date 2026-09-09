@@ -1,8 +1,8 @@
-class_name Cell
+class_name MapCell
 extends RefCounted
 
 var coords: Vector2i = Vector2i(0, 0)
-var possible_tiles: Array[HexTile]= []
+var possible_tiles: Array[MapHexTile]= []
 var is_collapsed: bool = false
 
 func get_entropy() -> float:

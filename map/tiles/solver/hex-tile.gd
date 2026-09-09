@@ -1,4 +1,4 @@
-class_name HexTile
+class_name MapHexTile
 extends Resource
 
 enum Edge {
@@ -15,7 +15,7 @@ enum Edge {
 @export var randomly_occuring: bool = true
 
 ## Must be 6 items in length. Each index represents a direction in HexMath.offsets
-@export var edges: Array[HexTile.Edge]
+@export var edges: Array[MapHexTile.Edge]
 
 ## Must be 6 items in length. Each index represents a direction in HexMath.offsets
 @export var edge_heights: Array[int] = [0,0,0,0,0,0]
@@ -29,11 +29,11 @@ var rotation: int = 0
 ## Index in Solver.all_possible_tiles_master_list, assigned at load time
 var index: int = 0
 
-func create_raised_variants(height: int) -> Array[HexTile]:
-	var copies: Array[HexTile] = []
+func create_raised_variants(height: int) -> Array[MapHexTile]:
+	var copies: Array[MapHexTile] = []
 	
 	for i: int in range(height):
-		var dup: HexTile = self.duplicate(true)
+		var dup: MapHexTile = self.duplicate(true)
 		for j in range(len(dup.edge_heights)):
 			dup.edge_heights[j] += i + 1
 		copies.append(dup)
@@ -41,8 +41,8 @@ func create_raised_variants(height: int) -> Array[HexTile]:
 	copies.append(self)
 	return copies
 
-func create_rotated_variants() -> Array[HexTile]:
-	var copies: Array[HexTile] = []
+func create_rotated_variants() -> Array[MapHexTile]:
+	var copies: Array[MapHexTile] = []
 	match symmetry_mod:
 		1:
 			copies = [
