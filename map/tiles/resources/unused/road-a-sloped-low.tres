@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://bsktmwn7rs3pt"]
+[gd_resource type="Resource" script_class="MapHexTile" format=3 uid="uid://bsktmwn7rs3pt"]
 
 [ext_resource type="PackedScene" uid="uid://dsi07wy2rnx61" path="res://map/tiles/resources/gltfs/hex_road_A_sloped_low.gltf" id="1_lojo3"]
 [ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/solver/hex-tile.gd" id="2_kas76"]

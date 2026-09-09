@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://id7r86oibyum"]
+[gd_resource type="Resource" script_class="MapHexTile" format=3 uid="uid://id7r86oibyum"]
 
 [ext_resource type="PackedScene" uid="uid://c6dnrj7qmtii1" path="res://map/tiles/resources/map-tile-models/map-tiles_Road-A.tscn" id="1_a68uw"]
-[ext_resource type="PackedScene" uid="uid://ba20e3y71f8pf" path="res://map/tiles/resources/gltfs/hex_road_A.gltf" id="1_oea4c"]
+[ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/solver/hex-tile.gd" id="2_s7oyi"]
 
 [resource]
-script = ExtResource("1_iuhb5")
+script = ExtResource("2_s7oyi")
 tile_name = &"road-a"
 scene = ExtResource("1_a68uw")
 edges = Array[int]([1, 0, 0, 1, 0, 0])

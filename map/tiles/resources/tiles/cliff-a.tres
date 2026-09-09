@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://c3e86nhi6p286"]
+[gd_resource type="Resource" script_class="MapHexTile" format=3 uid="uid://c3e86nhi6p286"]
 
 [ext_resource type="PackedScene" uid="uid://bnb3lknk3k6iv" path="res://map/tiles/resources/map-tile-models/map-tiles_Cliff-A.tscn" id="1_qrr3e"]
 [ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/solver/hex-tile.gd" id="2_5tosk"]

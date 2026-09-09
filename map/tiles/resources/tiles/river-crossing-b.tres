@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HexTile" format=3 uid="uid://jjsdu74nsefe"]
+[gd_resource type="Resource" script_class="MapHexTile" format=3 uid="uid://jjsdu74nsefe"]
 
 [ext_resource type="PackedScene" uid="uid://2td4jrou443s" path="res://map/tiles/resources/map-tile-models/map-tiles_River-Crossing-B.tscn" id="1_frlfb"]
 [ext_resource type="Script" uid="uid://cmjk2lbq52sd8" path="res://map/tiles/solver/hex-tile.gd" id="2_g5ydd"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btfg4rnjwhha4"]
 
-[ext_resource type="ArrayMesh" uid="uid://bhr44s0m7lot" path="res://map/tiles/resources/map-tile-models/map-tiles_Grass.res" id="1_a6168"]
+[ext_resource type="ArrayMesh" uid="uid://btibwbqh3n0bk" path="res://map/tiles/resources/map-tile-models/map-tiles_Grass.res" id="1_a6168"]
 
 [node name="MapTilesGrass" type="Node3D" unique_id=1989136411]
 

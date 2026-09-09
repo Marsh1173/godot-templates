@@ -11,11 +11,6 @@ func _ready():
 	doodads.doodads_done.connect(_start_navmesh_generation)
 
 func generate(map_size: int, map_height: int, seed = null):
-	if seed == null:
-		seed = randi()
-	seed(seed)
-	print("Map seed: " + str(seed))
-	
 	_start_tiles_generation(map_size, map_height)
 
 func _start_tiles_generation(map_size: int, map_height: int):
@@ -32,5 +27,4 @@ func _start_navmesh_generation():
 
 # TODO implement
 func finish():
-	randomize()
 	done.emit()
