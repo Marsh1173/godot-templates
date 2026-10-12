@@ -74,6 +74,7 @@ func _start_game_as_host():
 	
 	_start_game.rpc()
 	AppOrchestrator.get_or_error(self).show_game_as_host(agent_id_to_peer_id, agent_id_to_steam_id, agent_datas)
+	lobby_manager.set_lobby_data(lobby_id, LobbyManager.LobbyDataKey.InProgress, "true")
 
 # called on peers, not host
 @rpc("authority", 'call_remote', 'reliable')

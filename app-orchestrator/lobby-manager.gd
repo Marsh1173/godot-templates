@@ -52,9 +52,17 @@ signal lobby_data_changed(lobby_id: int, member_id: int)
 #endregion
 
 #region interface
+var _pending_lobby_metadata: Dictionary = {}
 func create_lobby(visibility: Steam.LobbyType, max_players: int):
+	# 1. Stage the metadata locally before sending the request to Steam
+	_pending_lobby_metadata = {
+		LobbyDataKey.Visibility: str(visibility),
+		LobbyDataKey.CreatorId: str(Steam.getSteamID())
+	}
+	
+	# 2. Trigger the asynchronous creation process
 	print("Attempting to create lobby")
-	Steam.createLobby(visibility, max_players)
+	Steam.createLobby(Steam.LobbyType.LOBBY_TYPE_PUBLIC, max_players)
 
 func get_lobby_list():
 	print("Searching for lobbies…")
@@ -71,21 +79,24 @@ func leave_lobby(lobby_id: int):
 	Steam.leaveLobby(lobby_id)
 	_on_lobby_leave(lobby_id)
 
-enum DataKey {
+enum LobbyDataKey {
 	InProgress,
 	Name,
 	NumMaxPlayers,
 	NumCurrentPlayers,
+	Visibility,
+	CreatorId
 }
 
-func get_lobby_data(lobby_id: int, key: DataKey) -> String:
-	if key == DataKey.NumMaxPlayers:
+# Returns an empty string if key or lobby doesn't exist
+func get_lobby_data(lobby_id: int, key: LobbyDataKey) -> String:
+	if key == LobbyDataKey.NumMaxPlayers:
 		return str(Steam.getLobbyMemberLimit(lobby_id))
-	if key == DataKey.NumCurrentPlayers:
+	if key == LobbyDataKey.NumCurrentPlayers:
 		return str(Steam.getNumLobbyMembers(lobby_id))
 	return Steam.getLobbyData(lobby_id, str(key))
 
-func set_lobby_data(lobby_id: int, key: DataKey, value: String):
+func set_lobby_data(lobby_id: int, key: LobbyDataKey, value: String):
 	if not Steam.setLobbyData(lobby_id, str(key), value):
 		printerr("Failed to set lobby data. Key: " + str(key) + ", value: " + value)
 
@@ -125,7 +136,14 @@ func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 		return
 	
 	print("Successfully created lobby %s" % lobby_id)
-	set_lobby_data(lobby_id, DataKey.Name, Steam.getFriendPersonaName(Steam.getSteamID()) + "'s Game")
+	set_lobby_data(lobby_id, LobbyDataKey.Name, Steam.getFriendPersonaName(Steam.getSteamID()) + "'s Game")
+	
+	# Flush the staged data into Steam's backend using the fresh lobby_id
+	for key: LobbyDataKey in _pending_lobby_metadata.keys():
+		var value: String = _pending_lobby_metadata[key]
+		set_lobby_data(lobby_id, key, value)
+	# Clear the staging area now that it's live
+	_pending_lobby_metadata.clear()
 	
 	var peer: MultiplayerPeer
 	if SWAP_IN_ENET:
@@ -205,13 +223,24 @@ func _on_lobby_leave(lobby_id: int):
 	current_lobby_id = -1
 
 func _on_lobbies_list(lobby_ids: Array) -> void:
-	print("Received %d lobbies from Steam" % lobby_ids.size())
+	var filtered_lobby_ids: Array[int] = []
 	
-	# I love Godot's type system
-	var typed_lobby_ids: Array[int]
-	typed_lobby_ids.assign(lobby_ids)
+	for lobby_id: int in lobby_ids:
+		var is_in_progress: bool = get_lobby_data(lobby_id, LobbyDataKey.InProgress) == "true"
+		if is_in_progress:
+			continue
+		
+		var visibility: Steam.LobbyType = int(get_lobby_data(lobby_id, LobbyDataKey.Visibility))
+		if visibility == Steam.LobbyType.LOBBY_TYPE_PUBLIC:
+			filtered_lobby_ids.append(lobby_id)
+		elif visibility == Steam.LobbyType.LOBBY_TYPE_FRIENDS_ONLY:
+			var lobby_creator_id: Steam.LobbyType = int(get_lobby_data(lobby_id, LobbyDataKey.CreatorId))
+			var relationship_to_me: Steam.FriendRelationship = Steam.getFriendRelationship(lobby_creator_id)
+			if relationship_to_me == Steam.FriendRelationship.FRIEND_RELATION_FRIEND:
+				filtered_lobby_ids.push_front(lobby_id)
 	
-	lobby_list_updated.emit(typed_lobby_ids)
+	print("Received %d lobbies from Steam" % filtered_lobby_ids.size())
+	lobby_list_updated.emit(filtered_lobby_ids)
 
 func _on_lobby_data_changed(success: int, lobby_id: int, member_id: int):
 	if success == Steam.Result.RESULT_OK:

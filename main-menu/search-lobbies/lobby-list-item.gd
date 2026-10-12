@@ -31,14 +31,14 @@ func _on_lobby_data_changed(changed_lobby_id: int, _member_id: int):
 		_set_text();
 
 func _set_text():
-	name_label.text = lobby_manager.get_lobby_data(lobby_id, LobbyManager.DataKey.Name)
+	name_label.text = lobby_manager.get_lobby_data(lobby_id, LobbyManager.LobbyDataKey.Name)
 	
-	in_progress = lobby_manager.get_lobby_data(lobby_id, LobbyManager.DataKey.InProgress) == "true"
+	in_progress = lobby_manager.get_lobby_data(lobby_id, LobbyManager.LobbyDataKey.InProgress) == "true"
 
 	if in_progress:
 		player_count_label.text = "Spectate"
 	else:
-		var current_players = int(lobby_manager.get_lobby_data(lobby_id, LobbyManager.DataKey.NumCurrentPlayers))
-		var max_players = int(lobby_manager.get_lobby_data(lobby_id, LobbyManager.DataKey.NumMaxPlayers))
+		var current_players = int(lobby_manager.get_lobby_data(lobby_id, LobbyManager.LobbyDataKey.NumCurrentPlayers))
+		var max_players = int(lobby_manager.get_lobby_data(lobby_id, LobbyManager.LobbyDataKey.NumMaxPlayers))
 		player_count_label.text = str(current_players) + "/" + str(max_players)
 	
