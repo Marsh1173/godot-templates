@@ -7,6 +7,8 @@ const DEFAULT_ENET_PORT: int = 8321
 const STEAM_APP_ID: int = 5245800
 var _steam_active: bool = false
 
+const SWAP_IN_ENET: bool = false
+
 # Used to track a lobby ID from Steam invites or joining via Friends List
 # var invite_lobby_id: int = 0
 
@@ -126,7 +128,7 @@ func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 	set_lobby_data(lobby_id, DataKey.Name, Steam.getFriendPersonaName(Steam.getSteamID()) + "'s Game")
 	
 	var peer: MultiplayerPeer
-	if OS.is_debug_build():
+	if SWAP_IN_ENET:
 		peer = ENetMultiplayerPeer.new()
 		var err = peer.create_server(DEFAULT_ENET_PORT)
 		if err != OK:
@@ -154,7 +156,7 @@ func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: 
 		# Only create a client if this player is not the host.
 		if id != Steam.getSteamID():
 			var peer: MultiplayerPeer
-			if OS.is_debug_build():
+			if SWAP_IN_ENET:
 				peer = ENetMultiplayerPeer.new()
 				var err = peer.create_client("127.0.0.1", DEFAULT_ENET_PORT)
 				if err != OK:
