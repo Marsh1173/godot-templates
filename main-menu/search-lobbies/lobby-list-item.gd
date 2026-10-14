@@ -23,8 +23,11 @@ func ready_with_data(_lobby_id: int):
 	pressed.connect(attempt_join)
 
 func attempt_join():
-	joining_lobby.emit()
-	lobby_manager.join_lobby(lobby_id)
+	if in_progress:
+		assert(false, "ERROR: spectate not implemented yet")
+	else:
+		joining_lobby.emit()
+		lobby_manager.join_lobby(lobby_id)
 
 func _on_lobby_data_changed(changed_lobby_id: int, _member_id: int):
 	if lobby_id == changed_lobby_id:

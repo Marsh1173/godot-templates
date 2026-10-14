@@ -226,9 +226,6 @@ func _on_lobbies_list(lobby_ids: Array) -> void:
 	var filtered_lobby_ids: Array[int] = []
 	
 	for lobby_id: int in lobby_ids:
-		var is_in_progress: bool = get_lobby_data(lobby_id, LobbyDataKey.InProgress) == "true"
-		if is_in_progress:
-			continue
 		
 		var visibility: Steam.LobbyType = int(get_lobby_data(lobby_id, LobbyDataKey.Visibility))
 		if visibility == Steam.LobbyType.LOBBY_TYPE_PUBLIC:
