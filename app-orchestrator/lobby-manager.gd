@@ -7,8 +7,6 @@ const DEFAULT_ENET_PORT: int = 8321
 const STEAM_APP_ID: int = 5245800
 var _steam_active: bool = false
 
-const SWAP_IN_ENET: bool = false
-
 # Used to track a lobby ID from Steam invites or joining via Friends List
 # var invite_lobby_id: int = 0
 
@@ -57,7 +55,8 @@ func create_lobby(visibility: Steam.LobbyType, max_players: int):
 	# 1. Stage the metadata locally before sending the request to Steam
 	_pending_lobby_metadata = {
 		LobbyDataKey.Visibility: str(visibility),
-		LobbyDataKey.CreatorId: str(Steam.getSteamID())
+		LobbyDataKey.CreatorId: str(Steam.getSteamID()),
+		LobbyDataKey.Name: Steam.getFriendPersonaName(Steam.getSteamID()) + "'s Game"
 	}
 	
 	# 2. Trigger the asynchronous creation process
@@ -130,13 +129,13 @@ func _init_steam() -> void:
 
 func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 	lobby_created.emit(connect_status, lobby_id)
+	
+	# Error check on creation
 	if connect_status != Steam.Result.RESULT_OK:
 		# Our lobby creation failed
 		printerr("Failed to create a lobby: %s" % connect_status)
 		return
-	
 	print("Successfully created lobby %s" % lobby_id)
-	set_lobby_data(lobby_id, LobbyDataKey.Name, Steam.getFriendPersonaName(Steam.getSteamID()) + "'s Game")
 	
 	# Flush the staged data into Steam's backend using the fresh lobby_id
 	for key: LobbyDataKey in _pending_lobby_metadata.keys():
@@ -145,24 +144,13 @@ func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 	# Clear the staging area now that it's live
 	_pending_lobby_metadata.clear()
 	
-	var peer: MultiplayerPeer
-	if SWAP_IN_ENET:
-		peer = ENetMultiplayerPeer.new()
-		var err = peer.create_server(DEFAULT_ENET_PORT)
-		if err != OK:
-			printerr("ENet create_server failed: ", err)
-			return
-	else:
-		peer = SteamMultiplayerPeer.new()
-		
-		#peer.server_relay = true # Note: GodotSteam defaults to SDR/relay automatically, but if you set it, do it before create_*
-		var err = peer.create_host(0)
-		if err != OK:
-			printerr("Steam create_server failed: ", err)
-			return
-	
+	var peer: SteamMultiplayerPeer = SteamMultiplayerPeer.new()
+	var err = peer.host_with_lobby(lobby_id)
+	if err != OK:
+		printerr("Steam host_with_lobby failed: ", err)
+		return
+
 	multiplayer.set_multiplayer_peer(peer)
-	set_member_data(lobby_id, MemberDataKey.PeerId, str(multiplayer.get_unique_id()))
 
 func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: Steam.ChatRoomEnterResponse) -> void:
 	if response == Steam.ChatRoomEnterResponse.CHAT_ROOM_ENTER_RESPONSE_SUCCESS:
@@ -173,22 +161,12 @@ func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: 
 		var id = Steam.getLobbyOwner(lobby_id)
 		# Only create a client if this player is not the host.
 		if id != Steam.getSteamID():
-			var peer: MultiplayerPeer
-			if SWAP_IN_ENET:
-				peer = ENetMultiplayerPeer.new()
-				var err = peer.create_client("127.0.0.1", DEFAULT_ENET_PORT)
-				if err != OK:
-					printerr("ENet create_client failed: ", err)
-					return
-			else:
-				peer = SteamMultiplayerPeer.new()
-				
-				var server_steam_id: int = Steam.getLobbyOwner(lobby_id)
-				#peer.server_relay = true # Note: GodotSteam defaults to SDR/relay automatically, but if you set it, do it before create_*
-				var err = peer.create_client(server_steam_id, 0)
-				if err != OK:
-					printerr("Steam create_client failed: ", err)
-					return
+			var peer: SteamMultiplayerPeer = SteamMultiplayerPeer.new()
+			var err = peer.connect_to_lobby(lobby_id)
+			if err != OK:
+				printerr("Steam connect_to_lobby failed: ", err)
+				return
+
 			multiplayer.set_multiplayer_peer(peer)
 			set_member_data(lobby_id, MemberDataKey.PeerId, str(multiplayer.get_unique_id()))
 	else:
@@ -227,11 +205,11 @@ func _on_lobbies_list(lobby_ids: Array) -> void:
 	
 	for lobby_id: int in lobby_ids:
 		
-		var visibility: Steam.LobbyType = int(get_lobby_data(lobby_id, LobbyDataKey.Visibility))
+		var visibility: Steam.LobbyType = int(get_lobby_data(lobby_id, LobbyDataKey.Visibility)) as Steam.LobbyType
 		if visibility == Steam.LobbyType.LOBBY_TYPE_PUBLIC:
 			filtered_lobby_ids.append(lobby_id)
 		elif visibility == Steam.LobbyType.LOBBY_TYPE_FRIENDS_ONLY:
-			var lobby_creator_id: Steam.LobbyType = int(get_lobby_data(lobby_id, LobbyDataKey.CreatorId))
+			var lobby_creator_id: int = int(get_lobby_data(lobby_id, LobbyDataKey.CreatorId))
 			var relationship_to_me: Steam.FriendRelationship = Steam.getFriendRelationship(lobby_creator_id)
 			if relationship_to_me == Steam.FriendRelationship.FRIEND_RELATION_FRIEND:
 				filtered_lobby_ids.push_front(lobby_id)
