@@ -25,8 +25,9 @@ const ground_accel: float = 70.0
 const air_accel: float = 30.0
 
 # Tick-based reconciliation
-const RECONCILIATION_THRESHOLD: float = 0.05 # 5cm divergence threshold
+const RECONCILIATION_THRESHOLD: float = 0.20 # 20cm divergence threshold (filters single-frame timing jitter)
 const MAX_HISTORY: int = 120 # ~2 seconds at 60Hz
+const JITTER_BUFFER_TARGET: int = 2 # 2 frames (~33ms) cushion on server to absorb network delivery jitter
 
 var current_input_id: int = 0
 var input_history: Array[Dictionary] = []
@@ -78,39 +79,48 @@ func simulate_step(input: Dictionary, delta: float):
 
 func _physics_process(delta: float):
 	if MyUtils.is_authority(multiplayer):
+		var should_broadcast = false
+		
 		# Server / Host Simulation
 		if is_local_human():
 			# Host player controlling their own pawn
 			var player_input = get_player_input()
 			simulate_step(player_input, delta)
+			should_broadcast = true
 		elif pawn.peer_id_or_null != null:
-			# Step 4: Server processes client inputs from queue
+			# Step 4: Server processes client inputs from jitter buffer queue
 			if server_input_queue.size() > 0:
-				var steps = min(server_input_queue.size(), 5)
-				for _i in range(steps):
-					var input_data = server_input_queue.pop_front()
-					simulate_step(input_data, delta)
-					last_processed_input_id = input_data.id
-			elif last_processed_input_id > 0:
-				apply_gravity(delta)
-				pawn.move_and_slide()
+				# Buffer JITTER_BUFFER_TARGET (2) inputs initially to absorb network delivery fluctuations
+				if last_processed_input_id > 0 or server_input_queue.size() >= JITTER_BUFFER_TARGET:
+					# Normally process 1 input per physics tick. If backlog forms, process 2 to catch up.
+					var steps = 1
+					if server_input_queue.size() > JITTER_BUFFER_TARGET + 2:
+						steps = 2
+					steps = min(steps, server_input_queue.size())
+					for _i in range(steps):
+						var input_data = server_input_queue.pop_front()
+						simulate_step(input_data, delta)
+						last_processed_input_id = input_data.id
+					should_broadcast = true
 		else:
 			# AI pawn running on host
 			apply_gravity(delta)
 			apply_movement(delta)
 			pawn.move_and_slide()
+			should_broadcast = true
 
-		# Step 4: Periodically broadcast snapshot back to clients
-		sync_pos_from_host.rpc([
-			pawn.global_position.x,
-			pawn.global_position.y,
-			pawn.global_position.z,
-			pawn.velocity.x,
-			pawn.velocity.y,
-			pawn.velocity.z,
-			pawn.global_rotation.y,
-			last_processed_input_id
-		])
+		# Step 4: Broadcast snapshot only when an input was processed
+		if should_broadcast:
+			sync_pos_from_host.rpc([
+				pawn.global_position.x,
+				pawn.global_position.y,
+				pawn.global_position.z,
+				pawn.velocity.x,
+				pawn.velocity.y,
+				pawn.velocity.z,
+				pawn.global_rotation.y,
+				last_processed_input_id
+			])
 	elif is_local_human():
 		# Step 2 & 3: Client Prediction & Send Inputs to Server
 		var player_input = get_player_input()
