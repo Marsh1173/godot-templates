@@ -100,7 +100,6 @@ func set_lobby_data(lobby_id: int, key: LobbyDataKey, value: String):
 		printerr("Failed to set lobby data. Key: " + str(key) + ", value: " + value)
 
 enum MemberDataKey {
-	PeerId
 }
 
 func get_member_data(lobby_id: int, member_id: int, key: MemberDataKey) -> String:
@@ -150,6 +149,8 @@ func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 		printerr("Steam host_with_lobby failed: ", err)
 		return
 
+	peer.set_debug_level(SteamMultiplayerPeer.DEBUG_LEVEL_PEER)
+	peer.no_nagle = true
 	multiplayer.set_multiplayer_peer(peer)
 
 func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: Steam.ChatRoomEnterResponse) -> void:
@@ -167,8 +168,9 @@ func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: 
 				printerr("Steam connect_to_lobby failed: ", err)
 				return
 
+			peer.set_debug_level(SteamMultiplayerPeer.DEBUG_LEVEL_PEER)
+			peer.no_nagle = true
 			multiplayer.set_multiplayer_peer(peer)
-			set_member_data(lobby_id, MemberDataKey.PeerId, str(multiplayer.get_unique_id()))
 	else:
 		match response:
 			Steam.ChatRoomEnterResponse.CHAT_ROOM_ENTER_RESPONSE_DOESNT_EXIST:

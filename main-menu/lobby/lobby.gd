@@ -61,12 +61,8 @@ func _start_game_as_host():
 		
 		agent_id_to_steam_id.set(current_agent_id, player_id)
 		
-		var peer_id_str: String = lobby_manager.get_member_data(lobby_id, player_id, LobbyManager.MemberDataKey.PeerId)
-		if multiplayer.multiplayer_peer is SteamMultiplayerPeer:
-			var test = multiplayer.multiplayer_peer.get_peer_id_for_steam_id(player_id)
-			print(test)
-		
-		agent_id_to_peer_id.set(current_agent_id, int(peer_id_str))
+		var peer_id_str: int = multiplayer.multiplayer_peer.get_peer_id_for_steam_id(player_id)
+		agent_id_to_peer_id.set(current_agent_id, peer_id_str)
 		
 		var agent_name = Steam.getFriendPersonaName(player_id)
 		agent_datas.append([
