@@ -1,16 +1,23 @@
 class_name LobbyManager
 extends Node
 
+static var instance: LobbyManager = null
+
 var current_lobby_id: int = -1
 
 const DEFAULT_ENET_PORT: int = 8321
 const STEAM_APP_ID: int = 5245800
 var _steam_active: bool = false
 
+var current_ping: float = 0.0
+var _ping_timer: float = 0.0
+const PING_INTERVAL: float = 1.0
+
 # Used to track a lobby ID from Steam invites or joining via Friends List
 # var invite_lobby_id: int = 0
 
 func _ready() -> void:
+	instance = self
 	OS.set_environment("SteamAppId", str(STEAM_APP_ID))
 	OS.set_environment("SteamGameId", str(STEAM_APP_ID))
 	
@@ -24,9 +31,26 @@ func _ready() -> void:
 	Steam.lobby_data_update.connect(_on_lobby_data_changed)
 	Steam.lobby_kicked.connect(_on_lobby_leave)
 
-func _process(_delta: float) -> void:
+	multiplayer.connected_to_server.connect(func(): print("CLIENT: Successfully connected to host!"))
+	multiplayer.connection_failed.connect(func(): printerr("CLIENT: Connection failed!"))
+	multiplayer.server_disconnected.connect(func(): printerr("CLIENT: Disconnected from host!"))
+	multiplayer.peer_connected.connect(func(id): print("PEER CONNECTED: ", id))
+	multiplayer.peer_disconnected.connect(func(id): print("PEER DISCONNECTED: ", id))
+
+func _exit_tree() -> void:
+	if instance == self:
+		instance = null
+
+func _process(delta: float) -> void:
 	if _steam_active:
 		Steam.run_callbacks()
+	
+	if multiplayer.has_multiplayer_peer() and multiplayer.get_unique_id() != 1:
+		if multiplayer.multiplayer_peer.get_connection_status() == MultiplayerPeer.CONNECTION_CONNECTED:
+			_ping_timer -= delta
+			if _ping_timer <= 0.0:
+				_ping_timer = PING_INTERVAL
+				_ping_server.rpc_id(1, Time.get_ticks_msec())
 
 # Leave the lobby if the app closes via X button or crashes
 func _notification(what):
@@ -199,6 +223,7 @@ func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: 
 func _on_lobby_leave(lobby_id: int):
 	print("Left lobby %d" % lobby_id)
 	multiplayer.set_multiplayer_peer(null)
+	current_ping = 0.0
 	lobby_left.emit(lobby_id)
 	current_lobby_id = -1
 
@@ -224,4 +249,13 @@ func _on_lobby_data_changed(success: int, lobby_id: int, member_id: int):
 		lobby_data_changed.emit(lobby_id, member_id)
 	else:
 		print("_on_lobby_data_changed failed, error code: ", str(success))
+
+@rpc("any_peer", "call_remote", "unreliable")
+func _ping_server(client_time: int) -> void:
+	var sender_id = multiplayer.get_remote_sender_id()
+	_pong_client.rpc_id(sender_id, client_time)
+
+@rpc("authority", "call_remote", "unreliable")
+func _pong_client(sent_time: int) -> void:
+	current_ping = float(Time.get_ticks_msec() - sent_time)
 #endregion

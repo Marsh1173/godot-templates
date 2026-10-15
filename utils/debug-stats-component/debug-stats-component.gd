@@ -16,11 +16,17 @@ func _process(delta):
 		var fps = Engine.get_frames_per_second()
 		fps_label.text = "FPS: " + str(int(fps)) # Trim leading .0
 		
-		if multiplayer.get_unique_id() != 1 and multiplayer.multiplayer_peer is ENetMultiplayerPeer:
-			# Access the low-level ENetPacketPeer for this specific ID
-			var enet_peer: ENetPacketPeer = multiplayer.multiplayer_peer.get_peer(1)
-			# Returns the RTT in milliseconds
-			var ping: float = enet_peer.get_statistic(ENetPacketPeer.PEER_LAST_ROUND_TRIP_TIME)
-			ping_label.text = "Ping: " + str(int(ping)) + "ms" # Trim leading .0
+		if multiplayer.has_multiplayer_peer() and multiplayer.get_unique_id() != 1:
+			if multiplayer.multiplayer_peer is ENetMultiplayerPeer:
+				# Access the low-level ENetPacketPeer for this specific ID
+				var enet_peer: ENetPacketPeer = multiplayer.multiplayer_peer.get_peer(1)
+				# Returns the RTT in milliseconds
+				var ping: float = enet_peer.get_statistic(ENetPacketPeer.PEER_LAST_ROUND_TRIP_TIME)
+				ping_label.text = "Ping: " + str(int(ping)) + "ms" # Trim leading .0
+			elif LobbyManager.instance != null:
+				var ping: float = LobbyManager.instance.current_ping
+				ping_label.text = "Ping: " + str(int(ping)) + "ms"
+			else:
+				ping_label.text = ""
 		else:
 			ping_label.text = ""
