@@ -42,22 +42,8 @@ func _unhandled_input(event: InputEvent):
 				queue_action(Action.new(Action.Name.StopPrimaryAbility))
 			get_viewport().set_input_as_handled()
 	elif event is InputEventKey:
-		if event.is_action_pressed("sprint"):
-			queue_action(Action.new(Action.Name.StartSprint))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_released("sprint"):
-			queue_action(Action.new(Action.Name.StopSprint))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("jump"):
-			queue_action(Action.new(Action.Name.StartJump))
-			get_viewport().set_input_as_handled()
-		elif event.is_action_released("jump"):
-			queue_action(Action.new(Action.Name.StopJump))
-			get_viewport().set_input_as_handled()
-		#elif event.is_action_pressed("roll"):
-			#queue_action(Action.new(Action.Name.Roll))
-			#get_viewport().set_input_as_handled()
-		elif event.is_action_pressed("interact"):
+		# Jump and sprint are handled tick-by-tick in MovementComponent
+		if event.is_action_pressed("interact"):
 			if focus_node is Pawn:
 				get_viewport().set_input_as_handled()
 				var targeted_interactable = focus_node.interactor_component.targeted_interactable_or_null
