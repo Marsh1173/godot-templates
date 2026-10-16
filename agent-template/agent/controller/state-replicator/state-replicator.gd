@@ -4,8 +4,6 @@ class_name ControllerStateReplicator
 @export var focus_pitch: float = 0
 @export var focus_yaw: float = 0
 
-@export var movement_vector: Vector2 = Vector2.ZERO
-
 @onready var controller: Controller = $".."
 
 func _process(_delta):

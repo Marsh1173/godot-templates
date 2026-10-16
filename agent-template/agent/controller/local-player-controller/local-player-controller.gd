@@ -12,7 +12,7 @@ func set_view_direction(pitch: float, yaw: float):
 	state_replicator.focus_pitch = pitch
 	state_replicator.focus_yaw = yaw
 	
-func _physics_process(_delta):
+func _process(_delta):
 	if focus_node != null:
 		controlled_camera.global_position = focus_node.global_position
 
@@ -25,7 +25,6 @@ func set_focus_node(node):
 		
 
 func _unhandled_input(event: InputEvent):
-	state_replicator.movement_vector = Input.get_vector("move-left", "move-right", "move-forward", "move-backward")
 
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		set_view_direction(
@@ -42,8 +41,19 @@ func _unhandled_input(event: InputEvent):
 				queue_action(Action.new(Action.Name.StopPrimaryAbility))
 			get_viewport().set_input_as_handled()
 	elif event is InputEventKey:
-		# Jump and sprint are handled tick-by-tick in MovementComponent
-		if event.is_action_pressed("interact"):
+		if event.is_action_pressed("sprint"):
+			queue_action(Action.new(Action.Name.StartSprint))
+			get_viewport().set_input_as_handled()
+		elif event.is_action_released("sprint"):
+			queue_action(Action.new(Action.Name.StopSprint))
+			get_viewport().set_input_as_handled()
+		elif event.is_action_pressed("roll"):
+			queue_action(Action.new(Action.Name.Roll))
+			get_viewport().set_input_as_handled()
+		elif event.is_action_pressed("explode"):
+			queue_action(Action.new(Action.Name.Explode))
+			get_viewport().set_input_as_handled()
+		elif event.is_action_pressed("interact"):
 			if focus_node is Pawn:
 				get_viewport().set_input_as_handled()
 				var targeted_interactable = focus_node.interactor_component.targeted_interactable_or_null

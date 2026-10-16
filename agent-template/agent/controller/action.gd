@@ -7,6 +7,7 @@ enum Name {
 	StartSprint,
 	StopSprint,
 	Roll,
+	Explode,
 	StartPrimaryAbility,
 	StopPrimaryAbility,
 }
@@ -19,9 +20,7 @@ func _init(_name: Name = Name.StartJump):
 # Some actions are applied locally instantly for snappy responsiveness, e.g. jumping
 func is_locally_applied_action() -> bool:
 	return name == Name.StartJump or\
-		name == Name.StopJump or\
-		name == Name.StartSprint or\
-		name == Name.StopSprint
+		name == Name.StopJump
 
 static var _serialization_config: Dictionary[String, int] = {
 	"name": TYPE_INT,
