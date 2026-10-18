@@ -13,3 +13,5 @@ export_presets.cfg
 !/addons/godotsteam/
 !/addons/godotsteam/win64
 !/addons/godotsteam/win64/**
+!/addons/godotsteam/linux64
+!/addons/godotsteam/linux64/**
