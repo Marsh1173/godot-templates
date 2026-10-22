@@ -29,11 +29,13 @@ func _ready() -> void:
 	Steam.lobby_created.connect(_on_lobby_created)
 	Steam.lobby_match_list.connect(_on_lobbies_list)
 	Steam.lobby_data_update.connect(_on_lobby_data_changed)
-	Steam.lobby_kicked.connect(_on_lobby_leave)
+	Steam.lobby_chat_update.connect(_on_lobby_chat_update)
+	if Steam.has_signal("lobby_kicked"):
+		Steam.lobby_kicked.connect(_on_lobby_leave)
 
 	multiplayer.connected_to_server.connect(func(): print("CLIENT: Successfully connected to host!"))
-	multiplayer.connection_failed.connect(func(): printerr("CLIENT: Connection failed!"))
-	multiplayer.server_disconnected.connect(func(): printerr("CLIENT: Disconnected from host!"))
+	multiplayer.connection_failed.connect(_on_connection_failed)
+	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	multiplayer.peer_connected.connect(func(id): print("PEER CONNECTED: ", id))
 	multiplayer.peer_disconnected.connect(func(id): print("PEER DISCONNECTED: ", id))
 
@@ -227,6 +229,22 @@ func _on_lobby_leave(lobby_id: int):
 	lobby_left.emit(lobby_id)
 	current_lobby_id = -1
 
+func _on_server_disconnected() -> void:
+	printerr("CLIENT: Disconnected from host!")
+	if current_lobby_id != -1:
+		leave_lobby(current_lobby_id)
+	else:
+		multiplayer.set_multiplayer_peer(null)
+		current_ping = 0.0
+
+func _on_connection_failed() -> void:
+	printerr("CLIENT: Connection failed!")
+	if current_lobby_id != -1:
+		leave_lobby(current_lobby_id)
+	else:
+		multiplayer.set_multiplayer_peer(null)
+		current_ping = 0.0
+
 func _on_lobbies_list(lobby_ids: Array) -> void:
 	var filtered_lobby_ids: Array[int] = []
 	
@@ -249,6 +267,14 @@ func _on_lobby_data_changed(success: int, lobby_id: int, member_id: int):
 		lobby_data_changed.emit(lobby_id, member_id)
 	else:
 		print("_on_lobby_data_changed failed, error code: ", str(success))
+
+func _on_lobby_chat_update(lobby_id: int, changed_id: int, _making_change_id: int, chat_state: int) -> void:
+	if changed_id == Steam.getSteamID() and (chat_state & (Steam.CHAT_MEMBER_STATE_CHANGE_KICKED | Steam.CHAT_MEMBER_STATE_CHANGE_BANNED)):
+		print("Kicked/banned from lobby %d" % lobby_id)
+		_on_lobby_leave(lobby_id)
+		return
+	
+	lobby_data_changed.emit(lobby_id, changed_id)
 
 @rpc("any_peer", "call_remote", "unreliable")
 func _ping_server(client_time: int) -> void:
