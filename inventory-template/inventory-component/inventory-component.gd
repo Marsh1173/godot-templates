@@ -83,7 +83,7 @@ func has_items(items: Dictionary[ItemData.ID, int]) -> bool:
 	return true
 
 # Attempts to put the item in the provided index, then first available space if any.
-# Only called on host. Throws error if no space.
+# Only called on host. Throws out the item if no space
 func add_item(item_data: ItemData, index: int = -1):
 	# Get valid index
 	if index == -1 or index >= inventory.size() or inventory[index] != null:
@@ -91,7 +91,7 @@ func add_item(item_data: ItemData, index: int = -1):
 	
 	if index == -1:
 		# Still couldn't find any valid inventory spots
-		assert(false, "Tried to insert into a full inventory")
+		throw_out_item(item_data)
 		return
 	
 	# Apply
@@ -118,7 +118,7 @@ func swap_indices(i_1: int, i_2: int):
 	inventory = inventory.duplicate() # Trigger network sync
 
 # Only called on host
-func throw_out_item(index: int):
+func throw_out_item_at_index(index: int):
 	if index < 0 or index >= inventory.size():
 		return # Tried to throw out index outside of inventory size limit
 	
@@ -127,6 +127,10 @@ func throw_out_item(index: int):
 	if item is ItemData:
 		return # Tried to throw out a null
 
+	throw_out_item(item)
+
+# Only called on host
+func throw_out_item(item: ItemData):
 	var world: World = MyUtils.get_world_or_throw(self)
 	world.item_spawner.spawn_item(item, global_position)
 	inventory = inventory.duplicate() # Trigger network sync
