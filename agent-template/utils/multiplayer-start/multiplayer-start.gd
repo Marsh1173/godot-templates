@@ -46,6 +46,7 @@ func get_game_instance() -> int:
 
 func as_server():
 	# Create server.
+	assert(false, "ENET PEERS NO LONGER SUPPORTED")
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT)
 	multiplayer.multiplayer_peer = peer
@@ -54,6 +55,7 @@ func as_server():
 
 func as_client():
 	# Create client.
+	assert(false, "ENET PEERS NO LONGER SUPPORTED")
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(IP_ADDRESS, PORT)
 	multiplayer.multiplayer_peer = peer

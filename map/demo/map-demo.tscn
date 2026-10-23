@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjbscjjr4acqj"]
 
-[ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/debug-stats-component/debug-stats-component.tscn" id="1_g50rc"]
+[ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/performance-stats-component/performance-stats-component.tscn" id="1_g50rc"]
 [ext_resource type="PackedScene" uid="uid://bngva1yirtiw6" path="res://map/environment/environment.tscn" id="1_usepk"]
 [ext_resource type="PackedScene" uid="uid://cnobe2d080jb4" path="res://map/demo/observer/observer.tscn" id="2_g50rc"]
 [ext_resource type="PackedScene" uid="uid://5votfdsc4kxk" path="res://map/tiles/solver/temp-tester.tscn" id="4_l3gvf"]
@@ -9,7 +9,7 @@
 
 [node name="MapDemo" type="Node3D" unique_id=2146387203]
 
-[node name="DebugStatsComponent" parent="." unique_id=1299180042 instance=ExtResource("1_g50rc")]
+[node name="PerformanceStatsComponent" parent="." unique_id=1299180042 instance=ExtResource("1_g50rc")]
 
 [node name="Environment" parent="." unique_id=1474578257 instance=ExtResource("1_usepk")]
 

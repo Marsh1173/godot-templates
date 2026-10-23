@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d2p42talwhl3f" path="res://app-orchestrator/app-orchestrator.gd" id="1_gdkou"]
 [ext_resource type="Script" uid="uid://d3w01rhf2p54e" path="res://app-orchestrator/lobby-manager.gd" id="2_db5e7"]
+[ext_resource type="Script" uid="uid://f1x4rbxtsl4l" path="res://app-orchestrator/network-manager.gd" id="3_net01"]
 
 [node name="AppOrchestrator" type="Node" unique_id=1021641025]
 script = ExtResource("1_gdkou")
+
+[node name="NetworkManager" type="Node" parent="." unique_id=618294012]
+script = ExtResource("3_net01")
 
 [node name="LobbyManager" type="Node" parent="." unique_id=414795471]
 script = ExtResource("2_db5e7")

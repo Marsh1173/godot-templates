@@ -2,6 +2,7 @@ extends Node
 class_name AppOrchestrator
 
 @onready var lobby_manager: LobbyManager = $LobbyManager
+@onready var network_manager: NetworkManager = $NetworkManager
 
 #region boilerplate
 var current: Node = null

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://lwvqdo34mrv2" path="res://agent-template/agent/controller/local-player-controller/ui-manager/ui-manager.gd" id="1_xbw7b"]
 [ext_resource type="PackedScene" uid="uid://whiy1lp0tl7t" path="res://agent-template/agent/controller/local-player-controller/ui-manager/in-game-menu/in-game-menu.tscn" id="2_ycub8"]
+[ext_resource type="PackedScene" uid="uid://bh2mqx3hbr7ok" path="res://utils/performance-stats-component/performance-stats-component.tscn" id="3_02f5t"]
 
 [node name="UiManagers" type="Control" unique_id=393131892]
 layout_mode = 3
@@ -15,3 +16,6 @@ script = ExtResource("1_xbw7b")
 
 [node name="InGameMenu" parent="." unique_id=1235966956 instance=ExtResource("2_ycub8")]
 layout_mode = 1
+
+[node name="PerformanceStatsComponent" parent="." unique_id=1299180042 instance=ExtResource("3_02f5t")]
+layout_mode = 0
